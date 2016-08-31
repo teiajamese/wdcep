@@ -1,3 +1,5 @@
+@import 'colors.less';
+@import 'fonts.less';
 html,body{
 	margin:0;
 	padding:0;
@@ -5,4 +7,57 @@ html,body{
 section{
 	width:100%;
 	height:100vh;
+	overflow: auto;
+	.hero{
+		height:390px;
+		.wrapper{
+			display: table;
+			height:100%;
+			h2{
+				color: #fff;
+			    font-size: 6.625em;
+			    text-align: center;
+			    vertical-align: middle;
+	    		display: table-cell;
+	    		text-transform: uppercase;
+			}
+		}
+		
+	}
+	.wrapper{
+		overflow: auto;
+	}
+}
+nav{
+	transition: all 0.4s ease;
+	&.nav{
+		position: absolute;
+	    bottom: 0;
+	    width: 100%;
+	    background: @red;
+	  
+	}
+    &.sticky{
+    	position: fixed;
+		width: 100%;
+		left: 0;
+		top: 0;
+		z-index: 100;
+		background: @red;
+		bottom: inherit;
+    }
+    ul{
+    	list-style: none;
+    	font-size: 1.4em;
+    	margin:0;
+    	li{
+    		float: left;
+		    padding: 2.6em 6em;
+    		a{
+    			color: @white;
+    			text-transform: uppercase;
+    			font-family: @Geometos;
+    		}
+    	}
+    }
 }

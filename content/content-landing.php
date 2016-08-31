@@ -19,10 +19,15 @@
 		<?php }
 	}
 ?>
-<nav>
+<nav class="nav">
 	<?php 
 	$args = array(
 		'menu' => "main"
 		);
 	wp_nav_menu($args);?>
 </nav>
+<div class="wrapper">
+	<div class="desc">
+		<?php the_content()?>
+	</div>
+</div>

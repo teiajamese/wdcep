@@ -10,7 +10,12 @@ module.exports = function(grunt) {
       },
       
     },
-  
+    uglify:{
+      build:{
+        src: 'js/*.js',
+        dest: 'js/wdcep.min.js'
+      }
+    },
     watch: {
       css: {
         files: ['less/*.less'],

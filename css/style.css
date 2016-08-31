@@ -1,13 +1,38 @@
 
+section#events .events {
+  margin-top: 6em;
+}
+section#events .events .event-container {
+  float: left;
+  width: 25%;
+  padding-right: 40px;
+}
+
 @font-face {
-  font-family: 'Header';
-  src: url('../fonts/Geometos-Rounded.tff') format('truetype');
+  font-family: 'Geometos';
+  src: url('../fonts/Geometos-Rounded.ttf') format('truetype');
 }
 @font-face {
   font-family: 'OpenSans-Bold';
-  src: url('../fonts/OpenSans-Bold.tff') format('truetype');
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Geometos';
+  src: url('../fonts/Geometos-Rounded.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 html,
 body {
   margin: 0;
@@ -16,27 +41,100 @@ body {
 section {
   width: 100%;
   height: 100vh;
+  overflow: auto;
+}
+section .hero {
+  height: 390px;
+}
+section .hero .wrapper {
+  display: table;
+  height: 100%;
+}
+section .hero .wrapper h2 {
+  color: #fff;
+  font-size: 6.625em;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  text-transform: uppercase;
+}
+section .wrapper {
+  overflow: auto;
+}
+nav {
+  transition: all 0.4s ease;
+}
+nav.nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #CA272F;
+}
+nav.sticky {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: #CA272F;
+  bottom: inherit;
+}
+nav ul {
+  list-style: none;
+  font-size: 1.4em;
+  margin: 0;
+}
+nav ul li {
+  float: left;
+  padding: 2.6em 6em;
+}
+nav ul li a {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Geometos;
 }
 
+@font-face {
+  font-family: 'Geometos';
+  src: url('../fonts/Geometos-Rounded.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 section#landing .wrapper {
-  padding-top: 15%;
+  padding-top: 19.8%;
 }
 section#landing .wrapper h2 {
   color: #3399cc;
-  font-size: 4.7em;
+  font-size: 6.7em;
   margin: 0;
   text-transform: uppercase;
+  font-family: Geometos;
+  line-height: 1em;
 }
 section#landing .wrapper h3 {
   color: #fff;
-  font-size: 3em;
+  font-size: 3.6em;
   font-weight: 300;
   margin: 0;
+  font-family: OpenSans_Light;
+}
+.wrapper .desc {
+  font-size: 1.875em;
+}
+.wrapper .desc p {
+  padding: 2em 186px;
+  text-align: center;
 }
 
 .logo {
   position: absolute;
   top: 0;
-  margin-left: 4em;
-  margin-top: 1em;
+  margin-left: 5.8em;
+  margin-top: 4em;
 }
