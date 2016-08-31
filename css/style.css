@@ -1,3 +1,42 @@
+
+@font-face {
+  font-family: 'Header';
+  src: url('../fonts/Geometos-Rounded.tff') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('../fonts/OpenSans-Bold.tff') format('truetype');
+}
+
+html,
 body {
-  font: 24px;
+  margin: 0;
+  padding: 0;
+}
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+section#landing .wrapper {
+  padding-top: 15%;
+}
+section#landing .wrapper h2 {
+  color: #3399cc;
+  font-size: 4.7em;
+  margin: 0;
+  text-transform: uppercase;
+}
+section#landing .wrapper h3 {
+  color: #fff;
+  font-size: 3em;
+  font-weight: 300;
+  margin: 0;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  margin-left: 4em;
+  margin-top: 1em;
 }
