@@ -1,7 +1,4 @@
 
-section#events .events {
-  margin-top: 6em;
-}
 section#events .events .event-container {
   float: left;
   width: 25%;
@@ -60,6 +57,7 @@ section .hero .wrapper h2 {
 }
 section .wrapper {
   overflow: auto;
+  margin-top: 6em;
 }
 nav {
   transition: all 0.4s ease;
@@ -124,6 +122,12 @@ section#landing .wrapper h3 {
   margin: 0;
   font-family: OpenSans_Light;
 }
+section#landing .landing-hero {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
 .wrapper .desc {
   font-size: 1.875em;
 }
@@ -131,10 +135,20 @@ section#landing .wrapper h3 {
   padding: 2em 186px;
   text-align: center;
 }
+iframe {
+  width: 100%;
+  height: 100%;
+}
 
 .logo {
   position: absolute;
   top: 0;
   margin-left: 5.8em;
   margin-top: 4em;
+  z-index: 1;
+}
+
+section#reports .report-container {
+  width: 33.333%;
+  float: left;
 }

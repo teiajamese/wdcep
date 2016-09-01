@@ -10,7 +10,9 @@
 			$the_query->the_post();
 
 	?>
-		<section id="landing" style="background-image:url(<?php echo get_field('hero_image')?>);">
+		<section id="landing" style="background-image:url();">
+		<div class="landing-hero" data-video="<?php echo get_field('video');?>" style="background-image:url('<?php echo get_field('hero_image')?>')">
+		</div>
 			<div class="wrapper">
 				<h2><?php echo get_field("headline_text");?></h2>
 				<h3><?php echo get_field("sub_headline_text");?></h3>

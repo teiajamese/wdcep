@@ -358,6 +358,7 @@ add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comment
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+add_action('init', 'create_post_type_pastreport'); //Add Reports Cutom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -440,6 +441,41 @@ function create_post_type_html5()
 
     ));
 }
+
+//Events Custom Post Type 
+function create_post_type_pastreport()
+{
+
+    register_post_type('report', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Past Reports', 'wdcep'), // Rename these to suit
+            'singular_name' => __('Past Report', 'wdcep'),
+            'add_new' => __('Add New', 'wdcep'),
+            'add_new_item' => __('Add New Report', 'wdcep'),
+            'edit' => __('Edit', 'wdcep'),
+            'edit_item' => __('Edit Report', 'wdcep'),
+            'new_item' => __('New Report', 'wdcep'),
+            'view' => __('View Report', 'wdcep'),
+            'view_item' => __('View Report', 'wdcep'),
+            'search_items' => __('Search Reports', 'wdcep'),
+            'not_found' => __('No Reports found', 'wdcep'),
+            'not_found_in_trash' => __('No Reports found in Trash', 'wdcep')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+
+    ));
+}
+
 
 /*------------------------------------*\
 	ShortCode Functions

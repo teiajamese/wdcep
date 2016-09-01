@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       build:{
         src: 'js/*.js',
         dest: 'js/wdcep.min.js'
-      }
+      },
     },
     watch: {
       css: {

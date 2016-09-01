@@ -19,6 +19,12 @@
 		$(window).scroll(function() {
 		  stickyNav();
 		});
+
+		$('.landing-hero').click(function(){
+		    var video = '<iframe src="'+ $(this).attr('data-video') +'"></iframe>';
+		    $(this).replaceWith(video);
+		    console.log('clicked');
+		});
 	});
 	
 })(jQuery, this);
