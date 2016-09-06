@@ -1,10 +1,41 @@
+@import 'colors.less';
+@import 'fonts.less';
 section#events{
 	.events{
 		
 		.event-container{
-			float: left;
-	    	width: 25%;
-	    	padding-right: 40px;	
+			display: inline-block;
+		    width: 24%;
+		    padding-right: 15px;
+		    vertical-align: top;
+		    h4{
+		    	font-size: 1.4vw;
+			    padding-top: .6em;
+			    color: @black;
+			    text-transform: uppercase;
+			    margin: 0;
+		    }
+		    p{
+		    	margin:0;
+		    	font-size: 1vw;
+		    }
+		    a{
+		    	color: @red;
+		    	text-transform: uppercase;
+		    	text-decoration: underline;
+		    }	
 	    }
+	    .past{
+	    	margin-top: 2em;
+	    }
+	    h3{
+	    	font-size: 4vw;
+    		text-transform: uppercase;
+    		color: @blue;
+    		margin-top: 0;
+    		margin-bottom: .42em;
+    		font-family: @Geometos;
+	    }
+
 	}
 }

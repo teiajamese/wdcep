@@ -1,8 +1,52 @@
 
+@font-face {
+  font-family: 'Geometos';
+  src: url('../fonts/Geometos-Rounded.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 section#events .events .event-container {
-  float: left;
-  width: 25%;
-  padding-right: 40px;
+  display: inline-block;
+  width: 24%;
+  padding-right: 15px;
+  vertical-align: top;
+}
+section#events .events .event-container h4 {
+  font-size: 1.4vw;
+  padding-top: .6em;
+  color: #000;
+  text-transform: uppercase;
+  margin: 0;
+}
+section#events .events .event-container p {
+  margin: 0;
+  font-size: 1vw;
+}
+section#events .events .event-container a {
+  color: #CA272F;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+section#events .events .past {
+  margin-top: 2em;
+}
+section#events .events h3 {
+  font-size: 4vw;
+  text-transform: uppercase;
+  color: #3399cc;
+  margin-top: 0;
+  margin-bottom: .42em;
+  font-family: Geometos;
 }
 
 @font-face {
@@ -17,6 +61,10 @@ section#events .events .event-container {
   font-family: 'OpenSans_Light';
   src: url('../fonts/OpenSans-Light.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Roboto_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 
 @font-face {
   font-family: 'Geometos';
@@ -28,6 +76,10 @@ section#events .events .event-container {
 }
 @font-face {
   font-family: 'OpenSans_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto_Light';
   src: url('../fonts/OpenSans-Light.ttf') format('truetype');
 }
 html,
@@ -37,7 +89,7 @@ body {
 }
 section {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: auto;
 }
 section .hero {
@@ -54,10 +106,11 @@ section .hero .wrapper h2 {
   vertical-align: middle;
   display: table-cell;
   text-transform: uppercase;
+  font-family: Geometos;
 }
 section .wrapper {
   overflow: auto;
-  margin-top: 6em;
+  padding: 4.4em 0;
 }
 nav {
   transition: all 0.4s ease;
@@ -79,12 +132,16 @@ nav.sticky {
 }
 nav ul {
   list-style: none;
-  font-size: 1.4em;
+  font-size: 1.2vw;
   margin: 0;
+  /* overflow: auto; */
+  text-align: center;
 }
 nav ul li {
-  float: left;
-  padding: 2.6em 6em;
+  display: inline-block;
+  padding-right: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 nav ul li a {
   color: #fff;
@@ -104,29 +161,48 @@ nav ul li a {
   font-family: 'OpenSans_Light';
   src: url('../fonts/OpenSans-Light.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Roboto_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 section#landing .wrapper {
-  padding-top: 19.8%;
+  padding-top: 7.2%;
+  margin-left: 12%;
+  width: auto;
+  overflow: hidden;
 }
 section#landing .wrapper h2 {
   color: #3399cc;
-  font-size: 6.7em;
+  font-size: 4vw;
   margin: 0;
   text-transform: uppercase;
   font-family: Geometos;
   line-height: 1em;
+  letter-spacing: 2px;
 }
 section#landing .wrapper h3 {
   color: #fff;
-  font-size: 3.6em;
+  font-size: 2.2vw;
   font-weight: 300;
   margin: 0;
   font-family: OpenSans_Light;
+  margin-top: -4px;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  word-spacing: -3px;
+  margin-left: 2px;
 }
 section#landing .landing-hero {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
+}
+section#landing .play {
+  position: absolute;
+  left: 5%;
+  bottom: 14%;
+  cursor: pointer;
 }
 .wrapper .desc {
   font-size: 1.875em;
@@ -141,14 +217,52 @@ iframe {
 }
 
 .logo {
-  position: absolute;
-  top: 0;
+  position: relative;
   margin-left: 5.8em;
   margin-top: 4em;
   z-index: 1;
 }
 
+@font-face {
+  font-family: 'Geometos';
+  src: url('../fonts/Geometos-Rounded.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 section#reports .report-container {
   width: 33.333%;
   float: left;
+}
+section#reports .report-container .report-image {
+  padding: 14px 14px 0px 14px;
+}
+section#reports .report-container .report-content {
+  padding: 14px;
+}
+section#reports .report-container .report-content h3 {
+  font-size: 2.2vh;
+  margin: 0px;
+  font-family: Geometos;
+}
+section#reports .report-container .report-content p {
+  font-size: 1.7vh;
+  margin: 0px;
+  font-family: OpenSans_Light;
+}
+section#reports .report-container .report-content a {
+  color: #CA272F;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 1vh;
+  font-weight: bold;
 }

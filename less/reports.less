@@ -1,6 +1,32 @@
+@import 'colors.less';
+@import 'fonts.less';
 section#reports{
 	.report-container{
 		width:33.333%;
 		float: left;
+	
+		.report-image{
+			padding: 14px 14px 0px 14px;
+		}
+		.report-content{
+			padding:14px;
+			h3{
+				font-size: 2.2vh;
+	    		margin: 0px;
+	    		font-family: @Geometos;
+			}
+			p{
+				font-size: 1.7vh;
+				margin: 0px;
+				font-family: @OpenSans_Light;
+			}
+			a{
+		    	color: @red;
+		    	text-transform: uppercase;
+		    	text-decoration: underline;
+		    	font-size: 1vh;
+    			font-weight: bold;
+			}	
+		}
 	}
 }

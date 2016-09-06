@@ -15,8 +15,7 @@
 					<h2>what do you think</h2>
 				</div>
 			</div>
+		</section>
 		<?php }
 	}
 ?>
-	<?php wp_reset_query(); ?>
-	</section>

@@ -1,3 +1,5 @@
+<section id="events">
+
 <?php 
 	$args = array(
 		'post_type' => 'page',
@@ -9,7 +11,7 @@
 			$the_query->the_post();
 
 	?>
-		<section id="events">
+		
 			<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
 				<div class="wrapper">
 					<h2>Events</h2>
@@ -21,32 +23,88 @@
 	<?php wp_reset_query(); ?>
 			<div class="wrapper">
 				<div class="events">
-				<?php $args = array(
-					'post_type'=>'event',
-					'order'=>'ASC');
-				$the_query = new WP_Query($args);
-				if($the_query->have_posts()):
-					while ( $the_query->have_posts() ) :
-						$the_query->the_post();
+					<div class="upcoming">
+						<h3>Upcoming Events</h3>
+						<?php 
+						//$paged = get_query_var('paged');
+						$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+						$args = array(
+							'post_type'=>'event',
+							'order'=>'DESC',
+							'posts_per_page' => 2,
+							'paged' => $paged,
+							'meta_query' => array(
+								'relation' => 'AND',
+								array(
+									'key' => 'date',
+									'value' => date("mdY"),
+									'compare' => '>'
+									)
+								)
+							);
+						$the_query = new WP_Query($args);
+						if($the_query->have_posts()):
+							
+							while ( $the_query->have_posts() ) :
+								$the_query->the_post();	
 
+						?>
+						<?php
+						?>
+							<div class="event-container">
+								<div class="event-image">
+									<?php the_post_thumbnail();?>
+								</div>
+								<div class="event-content">
+									<h4><?php the_title();?></h4>
+									<p><?php the_field("date");?> - <?php the_field("time");?></p>
+									<p><?php the_content();?></p>
+									<a href="#" alt="read more">Read More</a>
+								</div>
+							</div>
 						
+							<?php endwhile;?>
 
-				?>
-				
-					<div class="event-container">
-						<div class="event-image">
-							<?php the_post_thumbnail();?>
-						</div>
-						<div class="event-content">
-							<h3><?php the_title();?></h3>
-							<p><?php the_field("date");?></p>
-							<p><?php the_field("time");?></p>
-							<p><?php the_content();?></p>
-						</div>
+						<?php endif;?>
 					</div>
-				
-					<?php endwhile;?>
-				<?php endif;?>
+					<div class="past">
+						<h3>Past Events</h3>
+						<?php $args = array(
+							'post_type'=>'event',
+							'order'=>'ASC',
+							'meta_query' => array(
+								'relation' => 'AND',
+								array(
+									'key' => 'date',
+									'value' => date("mdY"),
+									'compare' => '<'
+									)
+								)
+							);
+						$the_query = new WP_Query($args);
+						if($the_query->have_posts()):
+							
+							while ( $the_query->have_posts() ) :
+								$the_query->the_post();	
+
+						?>
+						<?php
+						?>
+							<div class="event-container">
+								<div class="event-image">
+									<?php the_post_thumbnail();?>
+								</div>
+								<div class="event-content">
+									<h4><?php the_title();?></h4>
+									<p><?php the_field("date");?> - <?php the_field("time");?></p>
+									<p><?php the_content();?></p>
+									<a href="#" alt="read more">Read More</a>
+								</div>
+							</div>
+						
+							<?php endwhile;?>
+						<?php endif;?>
+					</div>
 				</div>
 			</div>
 		</section>

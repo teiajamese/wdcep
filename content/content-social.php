@@ -15,8 +15,9 @@
 					<h2>join the conversation</h2>
 				</div>
 			</div>
+		</section>
 		<?php }
 	}
 ?>
-	<?php wp_reset_query(); ?>
-	</section>
+	
+	

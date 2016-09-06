@@ -20,9 +20,9 @@
 		  stickyNav();
 		});
 
-		$('.landing-hero').click(function(){
-		    var video = '<iframe src="'+ $(this).attr('data-video') +'"></iframe>';
-		    $(this).replaceWith(video);
+		$('.play').click(function(){
+		    var video = '<iframe src="'+ $('.landing-hero').attr('data-video') +'"></iframe>';
+		    $('.landing-hero').replaceWith(video);
 		    console.log('clicked');
 		});
 	});

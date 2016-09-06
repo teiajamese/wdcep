@@ -1,3 +1,4 @@
+<section id="reports">
 <?php 
 	$args = array(
 		'post_type' => 'page',
@@ -9,7 +10,7 @@
 			$the_query->the_post();
 
 	?>
-		<section id="reports">
+		
 			<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
 				<div class="wrapper">
 					<h2>Past reports</h2>
@@ -18,8 +19,8 @@
 		<?php }
 	}
 ?>
-	<?php wp_reset_query(); ?>
-	<div class="wrapper">
+			<?php wp_reset_query(); ?>
+			<div class="wrapper">
 				<div class="reports">
 				<?php $args = array(
 					'post_type'=>'report',
@@ -40,12 +41,14 @@
 						<div class="report-content">
 							<h3><?php the_title();?></h3>
 							<p><?php the_content();?></p>
-							<p>Read More</p>
+							<a href="#" alt="read more">Read More</a>
 						</div>
 					</div>
 				
 					<?php endwhile;?>
 				<?php endif;?>
+
+			
 				</div>
 			</div>
 		</section>
