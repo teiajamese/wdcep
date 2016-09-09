@@ -534,11 +534,6 @@ section#reports .report-container {
   width: 33.333%;
   float: left;
 }
-@media only screen and (max-width: 420px) {
-  section#reports .report-container {
-    width: 50%;
-  }
-}
 section#reports .report-container .report-image {
   padding: 14px 14px 0px 14px;
 }
@@ -561,4 +556,21 @@ section#reports .report-container .report-content a {
   text-decoration: underline;
   font-size: 1vh;
   font-weight: bold;
+}
+@media only screen and (max-width: 768px) {
+  section#reports .report-container {
+    width: 50%;
+  }
+  section#reports .report-container .report-content h3 {
+    font-size: 1.8em;
+  }
+  section#reports .report-container .report-content p,
+  section#reports .report-container .report-content a {
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  section#reports .report-container {
+    width: 100%;
+  }
 }

@@ -35,13 +35,15 @@
 				?>
 				
 					<div class="report-container">
+					<a href="<?php echo get_field('url')?>" target="_blank">
 						<div class="report-image">
 							<?php the_post_thumbnail();?>
 						</div>
+					</a>
 						<div class="report-content">
 							<h3><?php the_title();?></h3>
 							<p><?php the_content();?></p>
-							<a href="#" alt="read more">Read More</a>
+							<a href="<?php echo get_field('url')?>" target="_blank" alt="read more">Read More</a>
 						</div>
 					</div>
 				
