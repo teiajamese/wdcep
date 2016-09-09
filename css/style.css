@@ -15,6 +15,10 @@
   font-family: 'Roboto_Light';
   src: url('../fonts/OpenSans-Light.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'GothamBlack';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 section#events .events .event-container {
   display: inline-block;
   width: 24%;
@@ -139,7 +143,31 @@ section#events .events h3 {
   font-family: 'Roboto_Light';
   src: url('../fonts/OpenSans-Light.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'GothamBlack';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 
+@font-face {
+  font-family: 'Geometos';
+  src: url('../fonts/Geometos-Rounded.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'GothamBlack';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 .frm_style_formidable-style.with_frm_style input[type=text],
 .frm_style_formidable-style.with_frm_style input[type=password],
 .frm_style_formidable-style.with_frm_style input[type=email],
@@ -150,8 +178,38 @@ section#events .events h3 {
 .frm_style_formidable-style.with_frm_style input[type=search],
 .frm_style_formidable-style.with_frm_style select {
   background-color: #ebebeb;
+  font-size: 1vw;
+  padding: 20px;
+  font-family: OpenSans_Light;
+}
+.frm_style_formidable-style.with_frm_style label.frm_primary_label,
+.frm_style_formidable-style.with_frm_style.frm_login_form label {
+  font-size: 1.3vw;
+  text-transform: uppercase;
+  font-family: Geometos;
+  font-weight: 200;
 }
 
+@font-face {
+  font-family: 'Geometos';
+  src: url('../fonts/Geometos-Rounded.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'GothamBlack';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 .form-container {
   width: 33%;
   display: inline-block;
@@ -164,33 +222,49 @@ section#events .events h3 {
   top: 0;
 }
 .form-container .form-overlay h3 {
-  font-size: 4em;
+  font-size: 2.5vw;
   text-transform: uppercase;
   color: #fff;
   text-align: center;
+  font-family: GothamBlack;
+  margin: 0;
+  margin-top: 27px;
 }
-.form-single .issue-details {
+.form-container .form-overlay p {
+  color: #fff;
+  font-size: 1vw;
+  font-family: OpenSans_Light;
+  text-align: center;
+  padding: 0px 10px;
+}
+.form-single .wrapper {
+  margin-top: 110px;
+}
+.form-single .wrapper .issue-details {
   width: 50%;
   float: left;
   margin-top: 56px;
 }
-.form-single .issue-details p {
-  font-size: 1.8em;
-  padding-right: 17px;
+.form-single .wrapper .issue-details p {
+  font-size: 1vw;
+  padding-right: 43px;
 }
-.form-single .issue-details h3 {
-  font-size: 4em;
+.form-single .wrapper .issue-details h3 {
+  font-size: 2.3vw;
   text-transform: uppercase;
   margin: 0;
 }
-.form-single .issue-form-container {
+.form-single .wrapper .issue-form-container {
   width: 50%;
   float: left;
   margin-top: 56px;
 }
-.form-single .issue-form-container textarea,
-.form-single .issue-form-container input {
+.form-single .wrapper .issue-form-container textarea,
+.form-single .wrapper .issue-form-container input {
   background-color: #ebebeb;
+}
+#whatdoyouthink .close {
+  top: 0;
 }
 
 .fp-slidesContainer {
@@ -212,6 +286,11 @@ section#events .events h3 {
   opacity: 1;
   z-index: 1;
 }
+@media only screen and (max-width: 769px) {
+  .fp-tableCell {
+    height: auto !important;
+  }
+}
 
 @font-face {
   font-family: 'Geometos';
@@ -229,6 +308,10 @@ section#events .events h3 {
   font-family: 'Roboto_Light';
   src: url('../fonts/OpenSans-Light.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'GothamBlack';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 html,
 body {
   margin: 0;
@@ -242,7 +325,7 @@ section {
 section .hero {
   height: 390px;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   section .hero {
     height: 170px;
   }
@@ -260,7 +343,7 @@ section .hero .wrapper h2 {
   text-transform: uppercase;
   font-family: Geometos;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   section .hero .wrapper h2 {
     color: #fff;
   }
@@ -268,6 +351,11 @@ section .hero .wrapper h2 {
 section .wrapper {
   overflow: auto;
   padding: 4.4em 0;
+}
+@media only screen and (max-width: 769px) {
+  section {
+    min-height: auto;
+  }
 }
 nav {
   transition: all 0.4s ease;
@@ -319,7 +407,7 @@ nav .whiteLogo {
   padding-left: 18px;
   padding-top: 2px;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   nav {
     display: none;
   }
@@ -344,7 +432,7 @@ nav .whiteLogo {
   margin: 7px 0;
   transition: 0.4s;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   .mobile-menu {
     display: block;
   }
@@ -424,6 +512,7 @@ nav .whiteLogo {
 }
 .inter-nav {
   text-align: center;
+  clear: both;
 }
 .inter-nav p,
 .inter-nav .prev,
@@ -467,6 +556,10 @@ h2.title {
   font-family: 'Roboto_Light';
   src: url('../fonts/OpenSans-Light.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'GothamBlack';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 section#landing .wrapper {
   padding-top: 7.2%;
   margin-left: 12%;
@@ -506,7 +599,7 @@ section#landing .play {
   bottom: 14%;
   cursor: pointer;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   section#landing .wrapper {
     padding-top: 10em;
     margin-left: 4.4em;
@@ -551,7 +644,7 @@ section#landing .play {
   padding: 2em 186px;
   text-align: center;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   .wrapper {
     width: 85%;
   }
@@ -575,7 +668,7 @@ iframe {
   margin-top: 4em;
   z-index: 1;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   .logo {
     margin-left: 4em;
     margin-top: 12.4em;
@@ -607,6 +700,10 @@ iframe {
   font-family: 'Roboto_Light';
   src: url('../fonts/OpenSans-Light.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'GothamBlack';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
 section#reports .report-container {
   width: 33.333%;
   float: left;
@@ -618,12 +715,12 @@ section#reports .report-container .report-content {
   padding: 14px;
 }
 section#reports .report-container .report-content h3 {
-  font-size: 2.2vh;
+  font-size: 2.2vw;
   margin: 0px;
   font-family: Geometos;
 }
 section#reports .report-container .report-content p {
-  font-size: 1.7vh;
+  font-size: 1.7vw;
   margin: 0px;
   font-family: OpenSans_Light;
 }
@@ -631,10 +728,10 @@ section#reports .report-container .report-content a {
   color: #CA272F;
   text-transform: uppercase;
   text-decoration: underline;
-  font-size: 1vh;
+  font-size: 1vw;
   font-weight: bold;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   section#reports .report-container {
     width: 50%;
   }

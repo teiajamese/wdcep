@@ -1,4 +1,5 @@
 @import 'colors.less';
+@import 'fonts.less';
 .form-container{
 	width: 33%;
     display: inline-block;
@@ -9,34 +10,51 @@
 	    width: 100%;
 	    top: 0;
 	    h3{
-	    	font-size: 4em;
+	    	font-size: 2.5vw;
     		text-transform: uppercase;
     		color: @white;
     		text-align: center;
+    		font-family: @GothamBlack;
+    		margin: 0;
+    		margin-top: 27px;
+	    }
+	    p{
+	    	color: @white;
+	    	font-size: 1vw;
+	    	font-family: @OpenSans_Light;
+	    	text-align: center;
+	    	padding: 0px 10px;
 	    }
     }
 }
 .form-single{
-	.issue-details{
-		width: 50%;
-    	float: left;
-    	margin-top: 56px;
-    	p{
-			font-size: 1.8em;
-    		padding-right: 17px;
-    	}
-    	h3{
-    		font-size: 4em;
-		    text-transform: uppercase;
-		    margin: 0;
-    	}
+	.wrapper{
+		margin-top: 110px;
+	
+		.issue-details{
+			width: 50%;
+	    	float: left;
+	    	margin-top: 56px;
+	    	p{
+				font-size: 1vw;
+	    		padding-right: 43px;
+	    	}
+	    	h3{
+	    		 font-size: 2.3vw;
+			    text-transform: uppercase;
+			    margin: 0;
+	    	}
+		}
+		.issue-form-container{
+			width: 50%;
+	    	float: left;
+	    	margin-top: 56px;
+	    	textarea, input{
+	    		background-color: #ebebeb;
+	    	}
+		}
 	}
-	.issue-form-container{
-		width: 50%;
-    	float: left;
-    	margin-top: 56px;
-    	textarea, input{
-    		background-color: #ebebeb;
-    	}
-	}
+}
+#whatdoyouthink .close{
+	top:0;
 }

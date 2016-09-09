@@ -1,3 +1,4 @@
+@import 'media-queries.less';
 .fp-slidesContainer {
 	width: 100%!important;
 	transform: none!important;
@@ -18,4 +19,10 @@
 	visibility: visible;
 	opacity: 1;
 	z-index: 1;
+}
+
+.fp-tableCell{
+	@media @tablet{
+		height: auto !important;	
+		}
 }

@@ -53,6 +53,7 @@
 								<?php the_post_thumbnail();?>
 								<div class=form-overlay>
 									<h3><?php the_title();?></h3>
+									<p><?php the_excerpt();?></p>
 								</div>
 							
 						</div>
