@@ -31,8 +31,8 @@
 					</div>
 					<div class="inter-nav">
 						<p>&#60;</p>
-						<p class="prev">Previous Event</p><p> | </p>
-						<p class="next">Next Event<span></span></p>
+						<p class="prev">Previous Issue</p><p> | </p>
+						<p class="next">Next Issue<span></span></p>
 						<p>&#62;</p>
 					</div>
 					<!-- Br needed to create white space padding/margin breaks plugin -->

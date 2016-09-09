@@ -2,7 +2,7 @@
 	<?php 
 		$args = array(
 			'post_type' => 'page',
-			'pagename' => 'landing-page-2'); 
+			'pagename' => 'landing-page'); 
 		$the_query = new WP_Query($args);
 		if($the_query->have_posts()){
 			
