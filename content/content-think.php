@@ -47,14 +47,16 @@
 					?>
 					<?php
 					?>
-					<div class="form-container">
-						<a href="#whatdoyouthink/form-<?php echo get_the_ID(); ?>">
-							<?php the_post_thumbnail();?>
-							<div class=fomr-overlay>
-								<?php the_title();?>
-							</div>
-						</a>
-					</div>
+					<a href="#whatdoyouthink/form-<?php echo get_the_ID(); ?>">
+						<div class="form-container" style="background-image:url()">
+							
+								<?php the_post_thumbnail();?>
+								<div class=form-overlay>
+									<h3><?php the_title();?></h3>
+								</div>
+							
+						</div>
+					</a>
 				<?php endwhile; ?>
 			<?php endif; ?>
 				</div>

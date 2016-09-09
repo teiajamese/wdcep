@@ -12,8 +12,13 @@
 		<section id="social">
 			<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
 				<div class="wrapper">
-					<h2>join the conversation</h2>
+					<h2>Join the conversation</h2>
+					
 				</div>
+
+			</div>
+			<div class="wrapper">
+				<?php the_content() ?>
 			</div>
 		</section>
 		<?php }

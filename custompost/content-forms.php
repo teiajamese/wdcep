@@ -23,13 +23,27 @@
 					</a>
 					<h2 class="title"><?php the_title();?></h2>
 					<div class="issue-details">
+						<h3>Issue Details</h3>
 						<?php the_content(); ?>
 					</div>
 					<div class="issue-form-container">
 						<?php echo do_shortcode(get_field('formidable'));?>
 					</div>
-				<p class="prev">Previous Issue</p>
-				<p class="next">Next Issue</p>
+					<div class="inter-nav">
+						<p>&#60;</p>
+						<p class="prev">Previous Event</p><p> | </p>
+						<p class="next">Next Event<span></span></p>
+						<p>&#62;</p>
+					</div>
+					<!-- Br needed to create white space padding/margin breaks plugin -->
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
 				</div>
 			</div>
 		<?php endwhile; ?>

@@ -140,9 +140,57 @@ section#events .events h3 {
   src: url('../fonts/OpenSans-Light.ttf') format('truetype');
 }
 
+.frm_style_formidable-style.with_frm_style input[type=text],
+.frm_style_formidable-style.with_frm_style input[type=password],
+.frm_style_formidable-style.with_frm_style input[type=email],
+.frm_style_formidable-style.with_frm_style input[type=number],
+.frm_style_formidable-style.with_frm_style input[type=url],
+.frm_style_formidable-style.with_frm_style input[type=tel],
+.frm_style_formidable-style.with_frm_style input[type=file],
+.frm_style_formidable-style.with_frm_style input[type=search],
+.frm_style_formidable-style.with_frm_style select {
+  background-color: #ebebeb;
+}
+
 .form-container {
   width: 33%;
   display: inline-block;
+  position: relative;
+}
+.form-container .form-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+.form-container .form-overlay h3 {
+  font-size: 4em;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+.form-single .issue-details {
+  width: 50%;
+  float: left;
+  margin-top: 56px;
+}
+.form-single .issue-details p {
+  font-size: 1.8em;
+  padding-right: 17px;
+}
+.form-single .issue-details h3 {
+  font-size: 4em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.form-single .issue-form-container {
+  width: 50%;
+  float: left;
+  margin-top: 56px;
+}
+.form-single .issue-form-container textarea,
+.form-single .issue-form-container input {
+  background-color: #ebebeb;
 }
 
 .fp-slidesContainer {
@@ -373,6 +421,9 @@ nav .whiteLogo {
   background-color: #CA272F;
   margin: 7px 0;
   transition: 0.4s;
+}
+.inter-nav {
+  text-align: center;
 }
 .inter-nav p,
 .inter-nav .prev,

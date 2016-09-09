@@ -1,4 +1,42 @@
+@import 'colors.less';
 .form-container{
 	width: 33%;
     display: inline-block;
+    position: relative;
+    .form-overlay{
+    	position: absolute;
+	    height: 100%;
+	    width: 100%;
+	    top: 0;
+	    h3{
+	    	font-size: 4em;
+    		text-transform: uppercase;
+    		color: @white;
+    		text-align: center;
+	    }
+    }
+}
+.form-single{
+	.issue-details{
+		width: 50%;
+    	float: left;
+    	margin-top: 56px;
+    	p{
+			font-size: 1.8em;
+    		padding-right: 17px;
+    	}
+    	h3{
+    		font-size: 4em;
+		    text-transform: uppercase;
+		    margin: 0;
+    	}
+	}
+	.issue-form-container{
+		width: 50%;
+    	float: left;
+    	margin-top: 56px;
+    	textarea, input{
+    		background-color: #ebebeb;
+    	}
+	}
 }
