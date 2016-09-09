@@ -107,7 +107,7 @@ function html5blank_header_scripts()
         wp_enqueue_script('scrolloverflow'); // Enqueue it!
         wp_register_script('scrollslim', get_template_directory_uri() . '/js/vendors/jquery.slimscroll.min.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('scrollslim'); // Enqueue it!        
-        wp_register_script('fullPage', get_template_directory_uri() . '/js/jquery.fullPage.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_register_script('fullPage', get_template_directory_uri() . '/js/jquery.fullpage.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('fullPage'); // Enqueue it!
 
         wp_register_script('mainjs', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0');

@@ -1,32 +1,5 @@
 <?php get_header(); ?>
-<nav class="nav" id="nav2nd">
-	<div class="whiteLogo">
-		<a href="#landingPage"><img src="<?php echo get_template_directory_uri()?>/img/icons/whiteLogo.png"></a>
-	</div>
-		<?php 
-		$args = array(
-			'menu' => "main"
-			);
-		wp_nav_menu($args);?>
-	</nav>
-<div class="mobile-menu">
-  <div class="bar1"></div>
-  <div class="bar2"></div>
-  <div class="bar3"></div>
-</div>	
-<div class="mobile-menu-close">
-	  <div class="bar1"></div>
-	  <div class="bar2"></div>
-	</div>
-<div class="mobile-menu-container">
-	<nav class="nav" id="nav2nd">
-		<?php 
-		$args = array(
-			'menu' => "main"
-			);
-		wp_nav_menu($args);?>
-	</nav>
-</div>
+
 <div id="fullpage">
 
 	<?php get_template_part('content/content','landing'); ?>

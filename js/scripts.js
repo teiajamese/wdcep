@@ -77,6 +77,7 @@
 					//stickyNav(); 
 				}
 			},
+			
 			//fixedElements: '#prev, #next',
 		});
 		$('a').on('click',(function(){

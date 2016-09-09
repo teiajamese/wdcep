@@ -169,30 +169,40 @@ nav{
 		}
 	}
 .close{
+	position: absolute;
+	top:22px;
+	right:0px;
 	.bar1{
-		transform: rotate(-45deg) translate(-6px, 6px) ;
-		width: 68px;
-	    height: 11px;
+		transform: rotate(-50deg) translate(-4px, 4px);
+	    width: 50px;
+	    height: 8px;
 	    background-color: @red;
 	    margin: 7px 0;
 	    transition: 0.4s;
 	}
 	.bar2{
-		transform: rotate(45deg) translate(-8px, -8px) ;
-		 width: 68px;
-	    height: 11px;
+		transform: rotate(50deg) translate(-7px, -7px);
+	    width: 50px;
+	    height: 8px;
 	    background-color: @red;
 	    margin: 7px 0;
 	    transition: 0.4s;
 	}
 }
-.prev, .next{
-	text-transform: uppercase;
-	font-size: 2em;
-	color: @red;
-	cursor: pointer;
-	display: inline-block;
-	margin-right: 32px;
+.inter-nav{
+	p, .prev, .next{
+		text-transform: uppercase;
+		font-size: 3em;
+	    text-decoration: underline;
+		color: @red;
+		cursor: pointer;
+		display: inline-block;
+		margin-right: 32px;
+		font-family: @Geometos;
+	}
+	p{
+		text-decoration: none;
+	} 
 }
 h2.title{
 

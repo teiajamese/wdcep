@@ -32,23 +32,25 @@
 						</div>
 					</div>
 					<div class="event-details">
-					<div class="date">
-						<h4>Date & Time</h4>
-						<?php echo get_field('time');?>
-						<?php echo get_field('date');?>
-					</div>
-					<div class="location">
-					<h4>Location</h4>
-					<?php $location = get_field('location');
-						if( !empty($location) ):
-							$address = explode( "," , $location['address']);
-							echo $address[1].'<br/>'; // street address
-							echo $address[2].','.$address[3]; // city, state zip
-						endif;
-					?>
-					</div>
-					
-					<h4>Register</h4>
+						<div class="date">
+							<h4>Date & Time</h4>
+							<p class="time"><?php echo get_field('time');?></p>
+							<p class="datetime"><?php echo get_field('date');?></p>
+						</div>
+						<div class="location">
+							<h4>Location</h4>
+							<p class="loc"><?php $location = get_field('location');
+								if( !empty($location) ):
+									$address = explode( "," , $location['address']);
+									echo $address[1].'<br/>'; // street address
+									echo $address[2].','.$address[3]; // city, state zip
+								endif;
+							?>
+							</p>
+						</div>
+						<div class="register">
+							<h4>Register</h4>
+						</div>
 					</div>
 					<?php 
 
@@ -58,9 +60,21 @@
 							<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
 						</div>
 					<?php endif; ?>
-
-					<p class="prev">Previous Event</p>
-					<p class="next">Next Event</p>
+					<div class="inter-nav">
+						<p>&#60;</p>
+						<p class="prev">Previous Event</p><p> | </p>
+						<p class="next">Next Event<span></span></p>
+						<p>&#62;</p>
+					</div>
+					<!-- Br needed to create white space padding/margin breaks plugin -->
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
 				</div>
 			</div>
 		<?php $i = $i+1;?>

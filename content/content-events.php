@@ -1,5 +1,5 @@
 <div class="slide" data-anchor="all">
-<section id="events">
+	<section id="events">
 
 <?php 
 	$args = array(
@@ -70,12 +70,13 @@
 								</div>
 							</div>
 						
-							<?php endwhile;?><div id="arrowL">
-    </div>
-    <div id="arrowR">
-    </div>
+							<?php endwhile;?>
+							<div id="arrowL">
+						    </div>
+						    <div id="arrowR">
+						    </div>
 						<?php endif;?>
-					</div>
+					</div><!-- End upcoming -->
 					<div class="past">
 						<h3>Past Events</h3>
 						<?php $args = array(
@@ -85,7 +86,7 @@
 								'relation' => 'AND',
 								array(
 									'key' => 'date',
-									'value' => date("mdY"),
+									'value' => date("m/d/Y"),
 									'compare' => '<'
 									)
 								)
@@ -117,7 +118,6 @@
 						<?php endif;?>
 					</div><!--- End Past Events-->
 				</div><!--- End of Events -->
-				
 			</div><!--- End of Wrapper -->
 		</section>
 </div>

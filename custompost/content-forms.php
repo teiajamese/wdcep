@@ -28,8 +28,8 @@
 					<div class="issue-form-container">
 						<?php echo do_shortcode(get_field('formidable'));?>
 					</div>
-				<p class="prev">Previous Event</p>
-				<p class="next">Next Event</p>
+				<p class="prev">Previous Issue</p>
+				<p class="next">Next Issue</p>
 				</div>
 			</div>
 		<?php endwhile; ?>
