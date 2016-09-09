@@ -1,3 +1,4 @@
+<div class="slide" data-anchor="all">
 <section id="events">
 
 <?php 
@@ -26,12 +27,15 @@
 					<div class="upcoming">
 						<h3>Upcoming Events</h3>
 						<?php 
-						//$paged = get_query_var('paged');
+						/*$paged = get_query_var('paged');
 						$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+						if ( get_query_var( 'paged' ) ) { $paged = get_query_var( 'paged' ); }
+						elseif ( get_query_var( 'page' ) ) { $paged = get_query_var( 'page' ); }
+						else { $paged = 1; }*/
 						$args = array(
 							'post_type'=>'event',
 							'order'=>'DESC',
-							'posts_per_page' => 2,
+							//'posts_per_page' => 2,
 							'paged' => $paged,
 							'meta_query' => array(
 								'relation' => 'AND',
@@ -53,18 +57,23 @@
 						?>
 							<div class="event-container">
 								<div class="event-image">
-									<?php the_post_thumbnail();?>
+									<a href="#eventsPage/event-<?php echo get_the_ID(); ?>">
+										<?php the_post_thumbnail();?>
+									</a>
 								</div>
 								<div class="event-content">
 									<h4><?php the_title();?></h4>
-									<p><?php the_field("date");?> - <?php the_field("time");?></p>
+									<p><?php $day =the_field("date");?> - <?php the_field("time");?></p>
+
 									<p><?php the_content();?></p>
-									<a href="#" alt="read more">Read More</a>
+									<a href="#eventsPage/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
 								</div>
 							</div>
 						
-							<?php endwhile;?>
-
+							<?php endwhile;?><div id="arrowL">
+    </div>
+    <div id="arrowR">
+    </div>
 						<?php endif;?>
 					</div>
 					<div class="past">
@@ -92,20 +101,24 @@
 						?>
 							<div class="event-container">
 								<div class="event-image">
+								<a href="#eventsPage/event-<?php echo get_the_ID(); ?>">
 									<?php the_post_thumbnail();?>
+								</a>
 								</div>
 								<div class="event-content">
 									<h4><?php the_title();?></h4>
 									<p><?php the_field("date");?> - <?php the_field("time");?></p>
 									<p><?php the_content();?></p>
-									<a href="#" alt="read more">Read More</a>
+									<a class="link" href="#eventsPage/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
 								</div>
 							</div>
 						
 							<?php endwhile;?>
 						<?php endif;?>
-					</div>
-				</div>
-			</div>
+					</div><!--- End Past Events-->
+				</div><!--- End of Events -->
+				
+			</div><!--- End of Wrapper -->
 		</section>
-		
+</div>
+<?php get_template_part('custompost/content','events'); ?>

@@ -1,5 +1,6 @@
 @import 'colors.less';
 @import 'fonts.less';
+@import 'media-queries.less';
 html,body{
 	margin:0;
 	padding:0;
@@ -10,17 +11,23 @@ section{
 	overflow: auto;
 	.hero{
 		height:390px;
+		@media @tablet{
+			height:170px;
+		}
 		.wrapper{
 			display: table;
 			height:100%;
 			h2{
 				color: #fff;
-			    font-size: 6.625em;
+			    font-size: 6vw;
 			    text-align: center;
 			    vertical-align: middle;
 	    		display: table-cell;
 	    		text-transform: uppercase;
 	    		font-family: @Geometos;
+	    		@media @tablet{
+					color: #fff;
+	    		}
 			}
 		}
 		
@@ -32,12 +39,23 @@ section{
 }
 nav{
 	transition: all 0.4s ease;
+	&#nav2nd{
+		
+		&.nav.sticky{
+			display: block;
+			opacity: 1;
+
+		}
+		&.nav{
+			display: none;
+			opacity: 0;
+		}
+	}
 	&.nav{
 		position: absolute;
 	    bottom: 0;
 	    width: 100%;
 	    background: @red;
-	  
 	}
     &.sticky{
     	position: fixed;
@@ -66,4 +84,125 @@ nav{
     		}
     	}
     }
+    .whiteLogo{
+    	max-width: 21vw;
+	    float: left;
+	    padding-left: 18px;
+	    padding-top: 2px;
+    }
+    @media @tablet{
+    	display: none;
+    	&#nav2nd.nav.sticky{
+    		display: none;
+    	}
+    }
+}
+.mobile-menu{
+	display: none;
+	cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    right: 22px;
+    top: 32px;
+    .bar1, .bar2, .bar3 {
+	    width: 68px;
+	    height: 11px;
+	    background-color: @white;
+	    margin: 7px 0;
+	    transition: 0.4s;
+	}
+	@media @tablet{
+		display: block;
+	}
+}
+.mobile-menu-container{
+	background: rgba(202,39,47,.9);
+	position: fixed;
+	top:0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 1;
+	display: none;
+	nav#nav2nd.nav{
+		display: table;
+	    opacity: 1;
+	    height: 92%;
+	    ul{
+	    	display: table-cell;
+	    	vertical-align: middle;
+	    	font-size: 4vh;
+	    	li{
+	    		padding-bottom: 13%;
+	    	}
+	    }
+	}
+	nav.nav{
+		background: none;
+	}
+	
+}
+.mobile-menu-close{
+		cursor: pointer;
+	    position: absolute;
+	    width: 70px;
+    	height: 70px;
+	    right: 22px;
+	    top: 32px;
+	    z-index: 2;
+	    display: none;
+		.bar1{
+			transform: rotate(-45deg) translate(-6px, 6px) ;
+			width: 68px;
+		    height: 11px;
+		    background-color: @white;
+		    margin: 7px 0;
+		    transition: 0.4s;
+		}
+		.bar2{
+			transform: rotate(45deg) translate(-8px, -8px) ;
+			 width: 68px;
+		    height: 11px;
+		    background-color: @white;
+		    margin: 7px 0;
+		    transition: 0.4s;
+		}
+	}
+.close{
+	.bar1{
+		transform: rotate(-45deg) translate(-6px, 6px) ;
+		width: 68px;
+	    height: 11px;
+	    background-color: @red;
+	    margin: 7px 0;
+	    transition: 0.4s;
+	}
+	.bar2{
+		transform: rotate(45deg) translate(-8px, -8px) ;
+		 width: 68px;
+	    height: 11px;
+	    background-color: @red;
+	    margin: 7px 0;
+	    transition: 0.4s;
+	}
+}
+.prev, .next{
+	text-transform: uppercase;
+	font-size: 2em;
+	color: @red;
+	cursor: pointer;
+	display: inline-block;
+	margin-right: 32px;
+}
+h2.title{
+
+	color: @blue;
+	font-size: 4vw;
+	margin: 0;
+	text-transform: uppercase;
+	font-family: @Geometos;
+	line-height: 1em;
+	letter-spacing: 2px;
+	text-align: center;
+
 }

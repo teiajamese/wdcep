@@ -39,3 +39,66 @@ section#events{
 
 	}
 }
+.event-single{
+	.fp-tableCell{
+		display: block;
+	}
+	.wrapper{
+		margin-top: 120px;
+		h2{
+			color: @blue;
+			font-size: 4vw;
+	    	margin: 0;
+	    	text-transform: uppercase;
+	    	font-family: @Geometos;
+	    	line-height: 1em;
+    		letter-spacing: 2px;
+    		text-align: center;
+		}
+		.event-details{
+			overflow: auto;
+		
+			.event-img{
+				width: 30%;
+				float: left;
+			}
+			.event-content{
+				width: 70%;
+				float: left;
+				h3{
+					font-size: 2vw;
+				    text-transform: uppercase;
+				    margin: 0;
+				    font-family: @Geometos;
+				}
+
+				
+			}
+			h4{
+				font-size: 1.7vw;
+			    text-transform: uppercase;
+			    margin: 0;
+			    font-family: @Geometos;
+			}
+			p{
+				font-size: 1.4em;
+				font-family: @OpenSans_Light;
+			}
+			.date, .location, .register{
+				width: 33%;
+				float: left;
+			}
+		}
+	}
+}
+.acf-map {
+	width: 100%;
+	height: 400px;
+	border: #ccc solid 1px;
+	margin: 20px 0;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+   max-width: inherit !important;
+}

@@ -1,3 +1,4 @@
+<div class="slide" id="form0" data-anchor="all">
 <?php 
 	$args = array(
 		'post_type' => 'page',
@@ -10,12 +11,54 @@
 
 	?>
 		<section id="think">
+
 			<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
 				<div class="wrapper">
 					<h2>what do you think</h2>
 				</div>
+
 			</div>
-		</section>
+		
+
 		<?php }
 	}
 ?>
+		<?php wp_reset_query(); ?>
+			<div class="wrapper">
+				<div class="forms">
+				<?php the_content(); ?>
+				<?php 
+					/*$paged = get_query_var('paged');
+					$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+					if ( get_query_var( 'paged' ) ) { $paged = get_query_var( 'paged' ); }
+					elseif ( get_query_var( 'page' ) ) { $paged = get_query_var( 'page' ); }
+					else { $paged = 1; }*/
+					$args = array(
+						'post_type'=>'form',
+						'order'=>'DESC',
+						//'posts_per_page' => 2,
+						//'paged' => $paged,
+						
+						);
+					$the_query = new WP_Query($args);
+					if($the_query->have_posts()):
+						while ( $the_query->have_posts() ) :
+							$the_query->the_post();	
+					?>
+					<?php
+					?>
+					<div class="form-container">
+						<a href="#whatdoyouthink/form-<?php echo get_the_ID(); ?>">
+							<?php the_post_thumbnail();?>
+							<div class=fomr-overlay>
+								<?php the_title();?>
+							</div>
+						</a>
+					</div>
+				<?php endwhile; ?>
+			<?php endif; ?>
+				</div>
+			</div>
+		</section>
+</div>
+<?php get_template_part('custompost/content','forms'); ?>

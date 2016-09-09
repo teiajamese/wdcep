@@ -97,9 +97,21 @@ function html5blank_header_scripts()
 
         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
-
+  /* 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/wdcep.min.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
+*/             
+
+
+        wp_register_script('scrolloverflow', get_template_directory_uri() . '/js/vendors/scrolloverflow.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('scrolloverflow'); // Enqueue it!
+        wp_register_script('scrollslim', get_template_directory_uri() . '/js/vendors/jquery.slimscroll.min.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('scrollslim'); // Enqueue it!        
+        wp_register_script('fullPage', get_template_directory_uri() . '/js/jquery.fullPage.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('fullPage'); // Enqueue it!
+
+        wp_register_script('mainjs', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0');
+        wp_enqueue_script('mainjs');
     }
 }
 
@@ -359,6 +371,7 @@ add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('init', 'create_post_type_pastreport'); //Add Reports Cutom Post Type
+add_action('init', 'create_post_type_form'); //Add Reports Cutom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -475,7 +488,39 @@ function create_post_type_pastreport()
 
     ));
 }
+//Forms Custom Post Type 
+function create_post_type_form()
+{
 
+    register_post_type('form', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Forms', 'wdcep'), // Rename these to suit
+            'singular_name' => __('Form', 'wdcep'),
+            'add_new' => __('Add New', 'wdcep'),
+            'add_new_item' => __('Add New Form', 'wdcep'),
+            'edit' => __('Edit', 'wdcep'),
+            'edit_item' => __('Edit Form', 'wdcep'),
+            'new_item' => __('New Form', 'wdcep'),
+            'view' => __('View Form', 'wdcep'),
+            'view_item' => __('View Form', 'wdcep'),
+            'search_items' => __('Search Forms', 'wdcep'),
+            'not_found' => __('No Forms found', 'wdcep'),
+            'not_found_in_trash' => __('No Forms found in Trash', 'wdcep')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+
+    ));
+}
 
 /*------------------------------------*\
 	ShortCode Functions

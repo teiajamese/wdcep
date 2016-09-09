@@ -1,6 +1,17 @@
+@import 'media-queries.less';
 .logo{
 	position: relative;
     margin-left: 5.8em;
     margin-top: 4em;
     z-index: 1;
+    @media @tablet{
+    	margin-left: 4em;
+    	margin-top: 12.4em;
+    	max-width: 684px;
+    	width:80%;
+    }
+    @media @mobile{
+    	margin-left: 7.5%;
+    	width: 85%;
+    }
 }    

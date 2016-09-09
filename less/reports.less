@@ -1,10 +1,13 @@
 @import 'colors.less';
 @import 'fonts.less';
+@import 'media-queries.less';
 section#reports{
 	.report-container{
 		width:33.333%;
 		float: left;
-	
+		@media @mobile{
+			width: 50%;
+		}
 		.report-image{
 			padding: 14px 14px 0px 14px;
 		}
