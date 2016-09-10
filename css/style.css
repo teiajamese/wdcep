@@ -178,13 +178,13 @@ section#events .events h3 {
 .frm_style_formidable-style.with_frm_style input[type=search],
 .frm_style_formidable-style.with_frm_style select {
   background-color: #ebebeb;
-  font-size: 1vw;
+  font-size: 1.4vw;
   padding: 20px;
   font-family: OpenSans_Light;
 }
 .frm_style_formidable-style.with_frm_style label.frm_primary_label,
 .frm_style_formidable-style.with_frm_style.frm_login_form label {
-  font-size: 1.3vw;
+  font-size: 1.4vw;
   text-transform: uppercase;
   font-family: Geometos;
   font-weight: 200;
@@ -232,7 +232,7 @@ section#events .events h3 {
 }
 .form-container .form-overlay p {
   color: #fff;
-  font-size: 1vw;
+  font-size: 1.4vw;
   font-family: OpenSans_Light;
   text-align: center;
   padding: 0px 10px;
@@ -246,7 +246,7 @@ section#events .events h3 {
   margin-top: 56px;
 }
 .form-single .wrapper .issue-details p {
-  font-size: 1vw;
+  font-size: 1.4vw;
   padding-right: 43px;
 }
 .form-single .wrapper .issue-details h3 {
