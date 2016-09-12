@@ -109,8 +109,9 @@ function html5blank_header_scripts()
         wp_enqueue_script('scrollslim'); // Enqueue it!        
         wp_register_script('fullPage', get_template_directory_uri() . '/js/jquery.fullpage.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('fullPage'); // Enqueue it!
-
-        wp_register_script('mainjs', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0');
+        wp_register_script('owl', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('owl'); // Enqueue it!
+        wp_register_script('mainjs', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.1');
         wp_enqueue_script('mainjs');
     }
 }
@@ -141,6 +142,9 @@ function html5blank_styles()
 
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
+    
+    wp_register_style('owl', get_template_directory_uri() . '/css/owl.carousel.css', array(), '1.0', 'all');
+    wp_enqueue_style('owl'); 
 
     wp_register_style('wdcep', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
     wp_enqueue_style('wdcep'); // Enqueue it!
