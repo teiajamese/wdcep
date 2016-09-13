@@ -16,8 +16,8 @@
   src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'GothamBlack';
-  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+  font-family: 'Gotham_Black';
+  src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
 section#events .events .event-container {
   display: inline-block;
@@ -148,8 +148,8 @@ section#events .events h3 {
   src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'GothamBlack';
-  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+  font-family: 'Gotham_Black';
+  src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
 
 @font-face {
@@ -169,8 +169,8 @@ section#events .events h3 {
   src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'GothamBlack';
-  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+  font-family: 'Gotham_Black';
+  src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
 .frm_style_formidable-style.with_frm_style input[type=text],
 .frm_style_formidable-style.with_frm_style input[type=password],
@@ -211,8 +211,8 @@ section#events .events h3 {
   src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'GothamBlack';
-  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+  font-family: 'Gotham_Black';
+  src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
 .form-container {
   width: 33%;
@@ -230,14 +230,14 @@ section#events .events h3 {
   text-transform: uppercase;
   color: #fff;
   text-align: center;
-  font-family: GothamBlack;
+  font-family: Gotham_Black;
   margin: 0;
   margin-top: 27px;
 }
 .form-container .form-overlay p {
   color: #fff;
   font-size: 1.4vw;
-  font-family: OpenSans_Light;
+  font-family: OpenSans_Regular;
   text-align: center;
   padding: 0px 10px;
 }
@@ -313,8 +313,8 @@ section#events .events h3 {
   src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'GothamBlack';
-  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+  font-family: 'Gotham_Black';
+  src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
 html,
 body {
@@ -408,8 +408,8 @@ h2.title {
   src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'GothamBlack';
-  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+  font-family: 'Gotham_Black';
+  src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
 section#landing .wrapper {
   padding-top: 7.2%;
@@ -553,8 +553,8 @@ iframe {
   src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'GothamBlack';
-  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+  font-family: 'Gotham_Black';
+  src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
 nav {
   transition: all 0.4s ease;
@@ -779,8 +779,8 @@ nav .whiteLogo {
   src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'GothamBlack';
-  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+  font-family: 'Gotham_Black';
+  src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
 section#reports .report-container {
   width: 33.333%;
