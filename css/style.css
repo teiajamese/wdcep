@@ -215,7 +215,6 @@ section#events .events h3 {
   src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
 .form-container {
-  width: 33%;
   display: inline-block;
   position: relative;
 }

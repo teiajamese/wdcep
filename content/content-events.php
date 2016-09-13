@@ -36,6 +36,7 @@
 							$args = array(
 								'post_type'=>'event',
 								'order'=>'DESC',
+								'orderby'=> 'meta_value',
 								'posts_per_page' => -1,
 								'paged' => $paged,
 								'meta_query' => array(

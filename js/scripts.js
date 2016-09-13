@@ -127,8 +127,30 @@
 		 		
 		 	}
 		});
-
-		 
+		$(".issues-carousel").owlCarousel({
+				 	nav:true,
+				 	/*navText: [
+				      "<i class='icon-chevron-left icon-white'><</i>",
+				      "<i class='icon-chevron-right icon-white'>></i>"
+				      ],*/
+				 	margin:30,
+				 	dots: true,
+				 	pagination: true,
+				 	owl2row: false, // enable plugin
+		            owl2rowTarget: 'form-container',    // class for items in carousel div
+		            owl2rowContainer: 'formrow-item', // class for items container
+		            owl2rowDirection: 'ltr', // utd : directions
+				 	responsive : {
+				 		0:{
+				 			items: 2,
+				 		},
+				 		768:{
+				 			items: 3,
+				 		}
+				 		
+				 	}
+				});
+			 
 	});
 
 

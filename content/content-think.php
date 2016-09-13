@@ -25,7 +25,7 @@
 ?>
 		<?php wp_reset_query(); ?>
 			<div class="wrapper">
-				<div class="forms">
+				<div class="forms issues-carousel">
 				<?php the_content(); ?>
 				<?php 
 					/*$paged = get_query_var('paged');
