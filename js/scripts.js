@@ -51,7 +51,7 @@
 			},
 			controlArrows: false,
 			lockAnchors: false,
-			anchors:['landingPage', 'landing-blurb', 'eventsPage', 'join-the-conversation', 'whatdoyouthink','pastReports'],
+			anchors:['landingPage', 'landing-blurb', 'whatdoyouthink','join-the-conversation','discussions',  'pastReports'],
 			animateAnchor: false,
 			afterLoad: function(anchorLink, index){
             	var loadedSection = $(this);

@@ -15,7 +15,7 @@
 			<div class="slide event-single" data-anchor="event-<?php echo get_the_ID(); ?>">
 			
 				<div class="wrapper">
-					<a href="#eventsPage/all">
+					<a href="#discussions/all">
 						<div class="event-menu-close close">
 						  <div class="bar1"></div>
 						  <div class="bar2"></div>
@@ -34,8 +34,7 @@
 					<div class="event-details">
 						<div class="date">
 							<h4>Date & Time</h4>
-							<p class="time"><?php echo get_field('time');?></p>
-							<p class="datetime"><?php echo get_field('date');?></p>
+							<p class="time"><?php echo get_field('datetime');?></p>
 						</div>
 						<div class="location">
 							<h4>Location</h4>

@@ -15,7 +15,7 @@
 		
 			<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
 				<div class="wrapper">
-					<h2>Events</h2>
+					<h2>Discussions</h2>
 				</div>
 			</div>
 		<?php }
@@ -25,7 +25,7 @@
 			<div class="wrapper">
 				<div class="events">
 					<div class="upcoming">
-						<h3>Upcoming Events</h3>
+						<h3>Upcoming Events</h3><?php $datetime = date("F j, Y g:i a");?>
 						<div class="owl-carousel owl-theme">
 							<?php 
 							/*$paged = get_query_var('paged');
@@ -41,9 +41,10 @@
 								'meta_query' => array(
 									'relation' => 'AND',
 									array(
-										'key' => 'date',
-										'value' => date("mdY"),
-										'compare' => '>'
+										'key' => 'datetime',
+										'value' => $datetime,
+										'compare' => '<=',
+										'type' => 'DATETIME',
 										)
 									)
 								);
@@ -58,16 +59,16 @@
 							?>
 								<div class="event-container">
 									<div class="event-image">
-										<a href="#eventsPage/event-<?php echo get_the_ID(); ?>">
+										<a href="#discussions/event-<?php echo get_the_ID(); ?>">
 											<?php the_post_thumbnail();?>
 										</a>
 									</div>
 									<div class="event-content">
 										<h4><?php the_title();?></h4>
-										<p><?php $day =the_field("date");?> - <?php the_field("time");?></p>
+										<p><?php $day =the_field("datetime");?></p>
 
 										<p><?php //the_content();?></p>
-										<a href="#eventsPage/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
+										<a href="#discussions/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
 									</div>
 								</div>
 							
