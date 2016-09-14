@@ -14,7 +14,7 @@
 
 			<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
 				<div class="wrapper">
-					<h2>what do you think</h2>
+					<h2>what do you think?</h2>
 				</div>
 
 			</div>
@@ -47,16 +47,17 @@
 					?>
 					<?php
 					?>
-					
-						<div class="form-container" style="background-image:url()">
-							
+						
+						<div class="form-container">
+							<a href="#whatdoyouthink/form-<?php echo get_the_ID(); ?>">
 								<?php the_post_thumbnail();?>
 								<div class=form-overlay>
 									<h3><?php the_title();?></h3>
 									<p><?php the_excerpt();?></p>
 								</div>
-							
+							</a>
 						</div>
+						
 				
 				<?php endwhile; ?>
 			<?php endif; ?>

@@ -32,7 +32,7 @@ section#events{
 			    text-transform: uppercase;
 			    margin: 0;
 			    font-family: @Geometos;
-			    @media @tablet{
+			    @media @largeDesktop{
 			    	font-size: 1.4em;
 			    }
 		    }
@@ -40,6 +40,9 @@ section#events{
 		    	margin:0;
 		    	font-size: 1.3vw;
 		    	font-family: @OpenSans_Regular;
+		    	@media @largeDesktop{
+			    	font-size: 1.52em;
+			    }
 		    	@media @tablet{
 			    	font-size: 1.3em;
 			    }
@@ -51,6 +54,7 @@ section#events{
 		    	font-family: @OpenSans_Bold;
 		    	margin-top: 5px;
     			display: block;
+    			font-size: 1.2em;
 		    }	
 	    }
 	    .past{
@@ -63,8 +67,10 @@ section#events{
     		margin-top: 0;
     		margin-bottom: .42em;
     		font-family: @Geometos;
+    		@media @largeDesktop{
+    			font-size: 4.8em;
+    		}
 	    }
-
 	}
 }
 .event-single{
@@ -83,6 +89,9 @@ section#events{
     		letter-spacing: 2px;
     		text-align: center;
     		padding-top: 66px;
+    		@media @largeDesktop{
+				font-size: 4.8em;
+			}
 		}
 		.event-details{
 			overflow: auto;
@@ -101,23 +110,24 @@ section#events{
 				    text-transform: uppercase;
 				    margin: 0;
 				    font-family: @Geometos;
+				    @media @largeDesktop{
+				    	font-size: 2.8em;
+				    }
 				}	
 			}
 			h4{
-				font-size: 3.4em;
+				font-size: 2.8em;
 			    text-transform: uppercase;
 			    margin: 0;
 			    font-family: @Geometos;
 			}
 			p{
-				font-size: 1.5em;
+				font-size: 1.875em;
 				font-family: @OpenSans_Light;
 				margin:0;
-				&.time{
+				&.time,&.datetime, &.loc{
 					margin-top: -9px;
-				}
-				&.datetime, &.loc{
-					margin-top: -9px;
+					font-size: 1.5em;
 				}
 			}
 			.date, .location, .register{

@@ -1,5 +1,6 @@
 @import 'colors.less';
 @import 'fonts.less';
+@import 'media-queries.less';
 .form-container{
 
     display: inline-block;
@@ -24,6 +25,7 @@
 	    	font-family: @OpenSans_Regular;
 	    	text-align: center;
 	    	padding: 0px 10px;
+	    	margin-top: 6px;
 	    }
     }
 }
@@ -38,11 +40,17 @@
 	    	p{
 				font-size: 1.4vw;
 	    		padding-right: 43px;
+	    		@media @largeDesktop{
+	    			font-size: 1.875em;
+	    		}
 	    	}
 	    	h3{
-	    		 font-size: 2.3vw;
+	    		font-size: 2.3vw;
 			    text-transform: uppercase;
 			    margin: 0;
+			    @media @largeDesktop{
+				    font-size: 2.8em;
+				}
 	    	}
 		}
 		.issue-form-container{

@@ -62,7 +62,7 @@ section#events .events .event-container h4 {
   margin: 0;
   font-family: Geometos;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (min-width: 1300px) {
   section#events .events .event-container h4 {
     font-size: 1.4em;
   }
@@ -71,6 +71,11 @@ section#events .events .event-container p {
   margin: 0;
   font-size: 1.3vw;
   font-family: OpenSans_Regular;
+}
+@media only screen and (min-width: 1300px) {
+  section#events .events .event-container p {
+    font-size: 1.52em;
+  }
 }
 @media only screen and (max-width: 769px) {
   section#events .events .event-container p {
@@ -84,6 +89,7 @@ section#events .events .event-container a {
   font-family: OpenSans_Bold;
   margin-top: 5px;
   display: block;
+  font-size: 1.2em;
 }
 section#events .events .past {
   margin-top: 2em;
@@ -95,6 +101,11 @@ section#events .events h3 {
   margin-top: 0;
   margin-bottom: .42em;
   font-family: Geometos;
+}
+@media only screen and (min-width: 1300px) {
+  section#events .events h3 {
+    font-size: 4.8em;
+  }
 }
 .event-single .fp-tableCell {
   display: block;
@@ -112,6 +123,11 @@ section#events .events h3 {
   letter-spacing: 2px;
   text-align: center;
   padding-top: 66px;
+}
+@media only screen and (min-width: 1300px) {
+  .event-single .wrapper h2 {
+    font-size: 4.8em;
+  }
 }
 .event-single .wrapper .event-details {
   overflow: auto;
@@ -133,23 +149,27 @@ section#events .events h3 {
   margin: 0;
   font-family: Geometos;
 }
+@media only screen and (min-width: 1300px) {
+  .event-single .wrapper .event-details .event-content h3 {
+    font-size: 2.8em;
+  }
+}
 .event-single .wrapper .event-details h4 {
-  font-size: 3.4em;
+  font-size: 2.8em;
   text-transform: uppercase;
   margin: 0;
   font-family: Geometos;
 }
 .event-single .wrapper .event-details p {
-  font-size: 1.5em;
+  font-size: 1.875em;
   font-family: OpenSans_Light;
   margin: 0;
 }
-.event-single .wrapper .event-details p.time {
-  margin-top: -9px;
-}
+.event-single .wrapper .event-details p.time,
 .event-single .wrapper .event-details p.datetime,
 .event-single .wrapper .event-details p.loc {
   margin-top: -9px;
+  font-size: 1.5em;
 }
 .event-single .wrapper .event-details .date,
 .event-single .wrapper .event-details .location,
@@ -296,6 +316,7 @@ section#events .events h3 {
   font-family: OpenSans_Regular;
   text-align: center;
   padding: 0px 10px;
+  margin-top: 6px;
 }
 .form-single .wrapper {
   margin-top: 110px;
@@ -309,10 +330,20 @@ section#events .events h3 {
   font-size: 1.4vw;
   padding-right: 43px;
 }
+@media only screen and (min-width: 1300px) {
+  .form-single .wrapper .issue-details p {
+    font-size: 1.875em;
+  }
+}
 .form-single .wrapper .issue-details h3 {
   font-size: 2.3vw;
   text-transform: uppercase;
   margin: 0;
+}
+@media only screen and (min-width: 1300px) {
+  .form-single .wrapper .issue-details h3 {
+    font-size: 2.8em;
+  }
 }
 .form-single .wrapper .issue-form-container {
   width: 50%;
@@ -407,6 +438,11 @@ section .hero .wrapper h2 {
   text-transform: uppercase;
   font-family: Geometos;
 }
+@media only screen and (min-width: 1300px) {
+  section .hero .wrapper h2 {
+    font-size: 7em;
+  }
+}
 @media only screen and (max-width: 769px) {
   section .hero .wrapper h2 {
     color: #fff;
@@ -449,6 +485,11 @@ h2.title {
   line-height: 1em;
   letter-spacing: 2px;
   text-align: center;
+}
+@media only screen and (min-width: 1300px) {
+  h2.title {
+    font-size: 4.8em;
+  }
 }
 .redcaps {
   font-family: BacktoBlack;
@@ -497,6 +538,11 @@ section#landing .wrapper h2 {
   line-height: 1em;
   letter-spacing: 2px;
 }
+@media only screen and (min-width: 1300px) {
+  section#landing .wrapper h2 {
+    font-size: 4.7em;
+  }
+}
 section#landing .wrapper h3 {
   color: #fff;
   font-size: 2.2vw;
@@ -508,6 +554,11 @@ section#landing .wrapper h3 {
   letter-spacing: 1px;
   word-spacing: -3px;
   margin-left: 2px;
+}
+@media only screen and (min-width: 1300px) {
+  section#landing .wrapper h3 {
+    font-size: 2.6em;
+  }
 }
 section#landing .landing-hero {
   position: absolute;

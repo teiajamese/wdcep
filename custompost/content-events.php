@@ -2,6 +2,7 @@
 	$args = array(
 	'post_type'=>'event',
 	'order'=>'ASC',
+	'posts_per_page' => -1,
 	);
 	
 	$the_query = new WP_Query($args);
