@@ -1,13 +1,30 @@
 @import 'colors.less';
 @import 'fonts.less';
+@import 'media-queries.less';
 section#events{
 	.events{
 		
 		.event-container{
 			display: inline-block;
 		    width: 100%;
+		    height: 340px;
 		    //padding-right: 15px;
 		    vertical-align: top;
+		    @media @desktop{
+		    	height:375px;
+		    }
+		    @media @laptop{
+		    	height: 298px;
+		    }
+		    @media @minilaptop{
+		    	height: 262px;
+		    }
+		    @media @tablet{
+		    	height: 299px;
+		    }
+		    @media @mobile{
+		    	height: 267px;
+		    }
 		    h4{
 		    	font-size: 1.4vw;
 			    padding-top: .6em;
@@ -15,11 +32,17 @@ section#events{
 			    text-transform: uppercase;
 			    margin: 0;
 			    font-family: @Geometos;
+			    @media @tablet{
+			    	font-size: 1.4em;
+			    }
 		    }
 		    p{
 		    	margin:0;
 		    	font-size: 1.3vw;
 		    	font-family: @OpenSans_Regular;
+		    	@media @tablet{
+			    	font-size: 1.3em;
+			    }
 		    }
 		    a{
 		    	color: @red;
@@ -100,6 +123,14 @@ section#events{
 			.date, .location, .register{
 				width: 33%;
 				float: left;
+			}
+			a{
+				p{
+					color: @red;
+					text-decoration: underline;
+					font-family: @OpenSans_Regular;
+				}
+				
 			}
 		}
 		.inter-nav{

@@ -25,7 +25,7 @@
 ?>
 		<?php wp_reset_query(); ?>
 			<div class="wrapper">
-				<div class="forms issues-carousel">
+				<div id="owl-carousel" class="owl-carousel owl-theme">
 				<?php the_content(); ?>
 				<?php 
 					/*$paged = get_query_var('paged');
@@ -47,7 +47,7 @@
 					?>
 					<?php
 					?>
-					<a href="#whatdoyouthink/form-<?php echo get_the_ID(); ?>">
+					
 						<div class="form-container" style="background-image:url()">
 							
 								<?php the_post_thumbnail();?>
@@ -57,7 +57,7 @@
 								</div>
 							
 						</div>
-					</a>
+				
 				<?php endwhile; ?>
 			<?php endif; ?>
 				</div>

@@ -19,10 +19,40 @@
   font-family: 'Gotham_Black';
   src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'BacktoBlack';
+  src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
+}
 section#events .events .event-container {
   display: inline-block;
   width: 100%;
+  height: 340px;
   vertical-align: top;
+}
+@media only screen and (min-width: 1240px) {
+  section#events .events .event-container {
+    height: 375px;
+  }
+}
+@media only screen and (max-width: 1140px) {
+  section#events .events .event-container {
+    height: 298px;
+  }
+}
+@media only screen and (max-width: 1044px) {
+  section#events .events .event-container {
+    height: 262px;
+  }
+}
+@media only screen and (max-width: 769px) {
+  section#events .events .event-container {
+    height: 299px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  section#events .events .event-container {
+    height: 267px;
+  }
 }
 section#events .events .event-container h4 {
   font-size: 1.4vw;
@@ -32,10 +62,20 @@ section#events .events .event-container h4 {
   margin: 0;
   font-family: Geometos;
 }
+@media only screen and (max-width: 769px) {
+  section#events .events .event-container h4 {
+    font-size: 1.4em;
+  }
+}
 section#events .events .event-container p {
   margin: 0;
   font-size: 1.3vw;
   font-family: OpenSans_Regular;
+}
+@media only screen and (max-width: 769px) {
+  section#events .events .event-container p {
+    font-size: 1.3em;
+  }
 }
 section#events .events .event-container a {
   color: #CA272F;
@@ -117,6 +157,11 @@ section#events .events h3 {
   width: 33%;
   float: left;
 }
+.event-single .wrapper .event-details a p {
+  color: #CA272F;
+  text-decoration: underline;
+  font-family: OpenSans_Regular;
+}
 .event-single .wrapper .inter-nav {
   text-align: center;
 }
@@ -151,6 +196,10 @@ section#events .events h3 {
   font-family: 'Gotham_Black';
   src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'BacktoBlack';
+  src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
+}
 
 @font-face {
   font-family: 'Geometos';
@@ -171,6 +220,10 @@ section#events .events h3 {
 @font-face {
   font-family: 'Gotham_Black';
   src: url('../fonts/Gotham-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'BacktoBlack';
+  src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
 }
 .frm_style_formidable-style.with_frm_style input[type=text],
 .frm_style_formidable-style.with_frm_style input[type=password],
@@ -214,6 +267,10 @@ section#events .events h3 {
   font-family: 'Gotham_Black';
   src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'BacktoBlack';
+  src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
+}
 .form-container {
   display: inline-block;
   position: relative;
@@ -225,7 +282,7 @@ section#events .events h3 {
   top: 0;
 }
 .form-container .form-overlay h3 {
-  font-size: 2.5vw;
+  font-size: 2.3em;
   text-transform: uppercase;
   color: #fff;
   text-align: center;
@@ -235,7 +292,7 @@ section#events .events h3 {
 }
 .form-container .form-overlay p {
   color: #fff;
-  font-size: 1.4vw;
+  font-size: 1.8em;
   font-family: OpenSans_Regular;
   text-align: center;
   padding: 0px 10px;
@@ -315,6 +372,10 @@ section#events .events h3 {
   font-family: 'Gotham_Black';
   src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'BacktoBlack';
+  src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
+}
 html,
 body {
   margin: 0;
@@ -389,6 +450,13 @@ h2.title {
   letter-spacing: 2px;
   text-align: center;
 }
+.redcaps {
+  font-family: BacktoBlack;
+  color: #CA272F;
+  display: inline;
+  font-size: 1.6em;
+  line-height: 1;
+}
 
 @font-face {
   font-family: 'Geometos';
@@ -409,6 +477,10 @@ h2.title {
 @font-face {
   font-family: 'Gotham_Black';
   src: url('../fonts/Gotham-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'BacktoBlack';
+  src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
 }
 section#landing .wrapper {
   padding-top: 7.2%;
@@ -517,7 +589,7 @@ iframe {
   margin-left: 5.8em;
   margin-top: 4.5em;
   z-index: 1;
-  max-width: 704px;
+  max-width: 564px;
 }
 @media only screen and (max-width: 769px) {
   .logo {
@@ -554,6 +626,10 @@ iframe {
 @font-face {
   font-family: 'Gotham_Black';
   src: url('../fonts/Gotham-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'BacktoBlack';
+  src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
 }
 nav {
   transition: all 0.4s ease;
@@ -781,6 +857,10 @@ nav .whiteLogo {
   font-family: 'Gotham_Black';
   src: url('../fonts/Gotham-Black.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'BacktoBlack';
+  src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
+}
 section#reports .report-container {
   width: 33.333%;
   float: left;
@@ -826,4 +906,14 @@ section#reports .report-container .report-content a {
   section#reports .report-container {
     width: 100%;
   }
+}
+
+#social h3 {
+  font-size: 4vw;
+  color: #3399cc;
+  text-align: center;
+  margin-bottom: 0px;
+}
+#ff-stream-1 .ff-loadmore-wrapper .ff-btn {
+  display: none;
 }

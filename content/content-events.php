@@ -25,8 +25,8 @@
 			<div class="wrapper">
 				<div class="events">
 					<div class="upcoming">
-						<h3>Upcoming Events</h3><?php $datetime = date("F j, Y g:i a");?>
-						<div class="owl-carousel owl-theme">
+						<h3>Upcoming Discussions</h3><?php $datetime = date("F j, Y g:i a");?>
+						<div id="event-carousel">
 							<?php 
 							/*$paged = get_query_var('paged');
 							$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
@@ -40,15 +40,19 @@
 								'posts_per_page' => -1,
 								'paged' => $paged,
 								'meta_query' => array(
-									'relation' => 'AND',
+									'relation' => 'OR',
 									array(
 										'key' => 'datetime',
 										'value' => $datetime,
 										'compare' => '<=',
 										'type' => 'DATETIME',
-										)
-									)
-								);
+										),
+									array(
+										'key' => 'tbd',
+										'value' => 'tbd',
+									),	
+								)
+							);
 							$the_query = new WP_Query($args);
 							if($the_query->have_posts()):
 								
@@ -66,8 +70,9 @@
 									</div>
 									<div class="event-content">
 										<h4><?php the_title();?></h4>
-										<p><?php $day =the_field("datetime");?></p>
-
+										<p><?php the_field("datetime");?></p>
+										<p><?php the_field('tbd');?></p>
+										<p><?php the_field('registeration');?></p>
 										<p><?php //the_content();?></p>
 										<a href="#discussions/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
 									</div>
@@ -88,12 +93,12 @@
 							'meta_query' => array(
 								'relation' => 'AND',
 								array(
-									'key' => 'date',
-									'value' => date("m/d/Y"),
-									'compare' => '<'
-									)
-								)
-							);
+									'key' => 'datetime',
+									'value' => $datetime,
+									'compare' => '>'
+								), 
+							),
+						);
 						$the_query = new WP_Query($args);
 						if($the_query->have_posts()):
 							?>
@@ -107,7 +112,7 @@
 						?>
 							<div class="event-container">
 								<div class="event-image">
-								<a href="#eventsPage/event-<?php echo get_the_ID(); ?>">
+								<a href="#discussions/event-<?php echo get_the_ID(); ?>">
 									<?php the_post_thumbnail();?>
 								</a>
 								</div>
@@ -115,7 +120,7 @@
 									<h4><?php the_title();?></h4>
 									<p><?php the_field("date");?> - <?php the_field("time");?></p>
 									<p><?php the_content();?></p>
-									<a class="link" href="#eventsPage/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
+									<a class="link" href="#discussions/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
 								</div>
 							</div>
 						

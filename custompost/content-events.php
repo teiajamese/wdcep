@@ -34,7 +34,15 @@
 					<div class="event-details">
 						<div class="date">
 							<h4>Date & Time</h4>
-							<p class="time"><?php echo get_field('datetime');?> - <?php the_field('endtime')?></p>
+							<p class="time">
+								<?php if(!empty(get_field('datetime'))):
+										echo get_field('datetime');?> - <?php the_field('endtime');
+									else:
+										the_field('tbd');
+									endif; 
+								?>
+								
+							</p>
 						</div>
 						<div class="location">
 							<h4>Location</h4>
@@ -49,6 +57,15 @@
 						</div>
 						<div class="register">
 							<h4>Register</h4>
+							<?php $reg_link = get_field('registeration_link'); 
+								if( !empty($reg_link) ):
+								?>
+									<a class="reg_link" href="<?php the_field('registeration_link');?>" target="_blank">
+										<p><?php the_field('registeration');?></p>
+									</a>
+								<?php else: ?>
+									<p><?php the_field('registeration');?></p>
+								<?php endif;?>
 						</div>
 					</div>
 					<?php 

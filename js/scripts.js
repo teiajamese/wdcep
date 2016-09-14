@@ -33,7 +33,7 @@
 			$('.mobile-menu').show();
 			$('.mobile-menu-close').hide();
 		})
-		$('.mobile-menu-close').click(function(){
+		$('.mobile-menu-close').on('click touchstart', function(){
 			$('.mobile-menu').show();
 			$('.mobile-menu-container').hide();
 			$(this).hide();
@@ -104,19 +104,35 @@
 		$(document).on('click', '.next', function(){
 		  $.fn.fullpage.moveSlideRight();
 		});
-		$(".owl-carousel").owlCarousel({
+		
+		$("#owl-carousel").owlCarousel({
 		 	nav:true,
-		 	/*navText: [
-		      "<i class='icon-chevron-left icon-white'><</i>",
-		      "<i class='icon-chevron-right icon-white'>></i>"
-		      ],*/
 		 	margin:30,
 		 	dots: true,
 		 	pagination: true,
 		 	owl2row: true, // enable plugin
-            owl2rowTarget: 'event-container',    // class for items in carousel div
+            owl2rowTarget: 'form-container',    // class for items in carousel div
             owl2rowContainer: 'owl2row-item', // class for items container
-            owl2rowDirection: 'ltr', // utd : directions
+            owl2rowDirection: 'utd', // utd : directions
+		 	responsive : {
+		 		0:{
+		 			items: 2,
+		 		},
+		 		768:{
+		 			items: 3,
+		 		}
+		 		
+		 	}
+		});
+		$("#event-carousel").owlCarousel({
+		 	nav:true,
+		 	margin:30,
+		 	dots: true,
+		 	pagination: true,
+		 	owl2row: false, // enable plugin
+           // owl2rowTarget: 'event-container',    // class for items in carousel div
+            //owl2rowContainer: 'owlrow-item', // class for items container
+            //owl2rowDirection: 'utd', // utd : directions
 		 	responsive : {
 		 		0:{
 		 			items: 2,
@@ -126,31 +142,7 @@
 		 		}
 		 		
 		 	}
-		});
-		$(".issues-carousel").owlCarousel({
-				 	nav:true,
-				 	/*navText: [
-				      "<i class='icon-chevron-left icon-white'><</i>",
-				      "<i class='icon-chevron-right icon-white'>></i>"
-				      ],*/
-				 	margin:30,
-				 	dots: true,
-				 	pagination: true,
-				 	owl2row: false, // enable plugin
-		            owl2rowTarget: 'form-container',    // class for items in carousel div
-		            owl2rowContainer: 'formrow-item', // class for items container
-		            owl2rowDirection: 'ltr', // utd : directions
-				 	responsive : {
-				 		0:{
-				 			items: 2,
-				 		},
-				 		768:{
-				 			items: 3,
-				 		}
-				 		
-				 	}
-				});
-			 
+		});	
 	});
 
 
