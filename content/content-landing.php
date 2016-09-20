@@ -2,7 +2,7 @@
 	<?php 
 		$args = array(
 			'post_type' => 'page',
-			'pagename' => 'landing-page'); 
+			'pagename' => 'landing-page-2'); 
 		$the_query = new WP_Query($args);
 		if($the_query->have_posts()){
 			
@@ -20,6 +20,9 @@
 					<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
 				<img src="<?php echo get_template_directory_uri(); ?>/img/icons/logo.png" alt="Logo" class="logo-img">
 				</a>
+				<div class="logos">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/icons/logos.png" alt="Logo" >
+				</div>
 			</div>
 			<div class="wrapper">
 				<h2><?php echo get_field("headline_text");?></h2>

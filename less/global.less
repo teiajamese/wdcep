@@ -9,6 +9,13 @@ section{
 	width:100%;
 	min-height:100vh;
 	overflow: auto;
+	@media @height{
+		min-height: 706px;
+	}
+	@media @laptop{
+		min-height: 606px;
+	}
+
 	.hero{
 		height:390px;
 		@media @tablet{
@@ -56,6 +63,13 @@ section{
 		display: inline-block;
 		margin-right: 32px;
 		font-family: @Geometos;
+		@media @tablet{
+			font-size: 2.5em;
+		}
+		@media @mobile{
+			margin-right: 5px;
+    		font-size: 1.2em;
+		}
 	}
 	p{
 		text-decoration: none;
@@ -64,7 +78,7 @@ section{
 h2.title{
 
 	color: @blue;
-	font-size: 4vw;
+	font-size: 4.8em;
 	margin: 0;
 	text-transform: uppercase;
 	font-family: @Geometos;
@@ -73,6 +87,10 @@ h2.title{
 	text-align: center;
 	@media @largeDesktop{
 		font-size: 4.8em;
+	}
+	@media @mobile{
+		font-size: 2.4em;
+		
 	}
 
 }

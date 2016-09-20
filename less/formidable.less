@@ -1,13 +1,19 @@
 @import 'fonts.less';
+@import 'media-queries.less';
 .frm_style_formidable-style.with_frm_style input[type=text], .frm_style_formidable-style.with_frm_style input[type=password], .frm_style_formidable-style.with_frm_style input[type=email], .frm_style_formidable-style.with_frm_style input[type=number], .frm_style_formidable-style.with_frm_style input[type=url], .frm_style_formidable-style.with_frm_style input[type=tel], .frm_style_formidable-style.with_frm_style input[type=file], .frm_style_formidable-style.with_frm_style input[type=search], .frm_style_formidable-style.with_frm_style select{
 	background-color: #ebebeb;
 	font-size: 1.4vw;
     padding: 20px;
     font-family: @OpenSans_Light;
     @media @largeDesktop{
-		font-size: 4.8em;
+		font-size: 1.8em;
 	}
-
+	@media @tablet{
+		font-size: 1.875em;
+	}
+	@media @mobile{
+		font-size: 1.5em;
+	}
 }
 .frm_style_formidable-style.with_frm_style label.frm_primary_label, .frm_style_formidable-style.with_frm_style.frm_login_form label{
 	font-size: 1.4vw;
@@ -15,6 +21,12 @@
 	font-family: @Geometos;
 	font-weight: 200;
 	@media @largeDesktop{
-		font-size: 4.8em;
+		font-size: 1.8em;
+	}
+	@media @tablet{
+		font-size: 1.875em;
+	}
+	@media @mobile{
+		font-size: 1.5em;
 	}
 }

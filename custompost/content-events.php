@@ -16,12 +16,13 @@
 			<div class="slide event-single" data-anchor="event-<?php echo get_the_ID(); ?>">
 			
 				<div class="wrapper">
-					<a href="#discussions/all">
-						<div class="event-menu-close close">
+					
+					<div class="event-menu-close close">
+						<a href="#discussions/all">
 						  <div class="bar1"></div>
 						  <div class="bar2"></div>
-						</div>
-					</a>
+						</a>
+					</div>
 					<h2><?php the_title();?></h2>
 					<div class="event-details">
 						<div class="event-img">

@@ -6,25 +6,30 @@ section#events{
 		
 		.event-container{
 			display: inline-block;
-		    width: 100%;
-		    height: 340px;
+		   //width: 100%;
+		        width: 22%;
+    padding: 1%;
+		   // height: 340px;
 		    //padding-right: 15px;
 		    vertical-align: top;
-		    @media @desktop{
+		    /*@media @desktop{
 		    	height:375px;
 		    }
 		    @media @laptop{
 		    	height: 298px;
-		    }
+		    }*/
 		    @media @minilaptop{
-		    	height: 262px;
+		    	width:33%;
 		    }
 		    @media @tablet{
-		    	height: 299px;
+		    	width:48%;
 		    }
 		    @media @mobile{
-		    	height: 267px;
+		    	width: 98%;
 		    }
+		   /* @media @mobile{
+		    	height: 267px;
+		    }*/
 		    h4{
 		    	font-size: 1.4vw;
 			    padding-top: .6em;
@@ -35,6 +40,12 @@ section#events{
 			    @media @largeDesktop{
 			    	font-size: 1.4em;
 			    }
+			    @media @tablet{
+			    	font-size: 1.875em;
+			    }
+			    @media @mobile{
+			    	font-size: 1.5em;
+			    } 
 		    }
 		    p{
 		    	margin:0;
@@ -44,7 +55,7 @@ section#events{
 			    	font-size: 1.52em;
 			    }
 		    	@media @tablet{
-			    	font-size: 1.3em;
+			    	font-size: 1.5em;
 			    }
 		    }
 		    a{
@@ -55,6 +66,13 @@ section#events{
 		    	margin-top: 5px;
     			display: block;
     			font-size: 1.2em;
+		    }
+		    .event-img{
+		    	img{
+		    		@media @minilaptop{
+		    			width: 100%;
+		    		}
+		    	}
 		    }	
 	    }
 	    .past{
@@ -69,6 +87,9 @@ section#events{
     		font-family: @Geometos;
     		@media @largeDesktop{
     			font-size: 4.8em;
+    		}
+    		@media @mobile{
+    			font-size: 2.3em;
     		}
 	    }
 	}
@@ -92,19 +113,44 @@ section#events{
     		@media @largeDesktop{
 				font-size: 4.8em;
 			}
+			@media @tablet{
+				font-size: 4.8em;
+			}
+			@media @mobile{
+				font-size: 3em;
+			    text-align: left;
+			    line-height: 1.2em;
+			}
 		}
 		.event-details{
 			overflow: auto;
 			margin: 51px 0 58px 0px;
+			@media @tablet{
+				margin: 14px 0 34px 0px;
+			}
+			@media @mobile{
+				margin: 14px 0 19px 0px;
+			}
 			.event-img{
 				width: 30%;
 				float: left;
+				@media @tablet{
+					width: 100%;
+
+					img{
+						width: 100%;
+					}
+				}
 			}
 			.event-content{
 				width: 70%;
 				float: left;
 				padding-left: 38px;
     			padding-right: 118px;
+    			@media @tablet{
+    				width:100%;
+    				padding: 20px 0px 0px;
+    			}
 				h3{
 					font-size: 2vw;
 				    text-transform: uppercase;
@@ -113,6 +159,12 @@ section#events{
 				    @media @largeDesktop{
 				    	font-size: 2.8em;
 				    }
+				    @media @tablet{
+				    	font-size: 2.8em;
+				    }
+				    @media @mobile{
+				    	font-size: 2.3em;
+				    }
 				}	
 			}
 			h4{
@@ -120,19 +172,39 @@ section#events{
 			    text-transform: uppercase;
 			    margin: 0;
 			    font-family: @Geometos;
+			    @media @tablet{
+			    	font-size: 2.4em;
+			    }
+			    @media @mobile{
+			    	font-size: 1.875em;
+			    }
 			}
 			p{
 				font-size: 1.875em;
 				font-family: @OpenSans_Light;
 				margin:0;
+				@media @mobile{
+					font-size: 1.5em;
+				}
 				&.time,&.datetime, &.loc{
 					margin-top: -9px;
 					font-size: 1.5em;
+					@media @tablet{
+						margin-top: 0px;
+    					font-size: 1.875em;
+					}
+					@media @mobile{
+						font-size: 1.5em;
+					}
 				}
 			}
 			.date, .location, .register{
 				width: 33%;
 				float: left;
+				@media @tablet{
+					width: 100%;
+					margin-bottom: 20px;
+				}
 			}
 			a{
 				p{

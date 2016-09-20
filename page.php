@@ -17,5 +17,8 @@
 	<div class="section " id="section5">
 	<?php get_template_part('content/content','reports'); ?>
 	</div>
+	<div class="section fp-auto-height" id="section6">
+		<?php get_footer(); ?>
+	</div>
 </div>
-<?php //get_footer(); ?>
+

@@ -13,7 +13,7 @@
 		
 			<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
 				<div class="wrapper">
-					<h2>Past reports</h2>
+					<h2>resources</h2>
 				</div>
 			</div>
 		<?php }

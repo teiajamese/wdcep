@@ -1,0 +1,26 @@
+@import 'media-queries.less';
+#section6, footer{
+	background: #8C8C8A;
+}
+.footer{
+	padding: 10px;
+	.copyright{
+		float: left;
+		padding-left: 2%;
+	}
+	nav{
+		display:block;
+		margin-top: .7em;
+		ul{
+			vertical-align: middle;
+			li{
+				padding-top: 0;
+				padding-bottom: 0;
+				font-size: .875em;
+				@media @tablet{
+					display: inline-block;
+				}
+			}
+		}
+	}
+}

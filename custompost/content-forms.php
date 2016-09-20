@@ -15,15 +15,16 @@
 			<div class="slide form-single" data-anchor="form-<?php echo get_the_ID(); ?>">
 			
 				<div class="wrapper">
-					<a href="#whatdoyouthink/all">
+					
 						<div class="form-menu-close close">
+						<a href="#whatdoyouthink/all">
 						  <div class="bar1"></div>
 						  <div class="bar2"></div>
-						</div>
-					</a>
+						</a></div>
+					
 					<h2 class="title"><?php the_title();?></h2>
 					<div class="issue-details">
-						<h3>Issue Details</h3>
+						<h3>Question</h3>
 						<?php the_content(); ?>
 					</div>
 					<div class="issue-form-container">

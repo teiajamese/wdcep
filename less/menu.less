@@ -41,6 +41,9 @@ nav{
 		    padding-right: 2%;
 		    padding-top: 2%;
 		    padding-bottom: 2%;
+		    @media @tablet{
+		    	display: block;
+		    }
     		a{
     			color: @white;
     			text-transform: uppercase;
@@ -52,7 +55,8 @@ nav{
     	max-width: 15vw;
 	    float: left;
 	    padding-left: 2%;
-	    padding-top: 14px;
+	    padding-top: 5px;
+    	padding-bottom: 5px;
     }
     @media @tablet{
     	display: none;
@@ -74,10 +78,15 @@ nav{
 	    background-color: @red;
 	    margin: 7px 0;
 	    transition: 0.4s;
+	    @media @mobile{
+			width: 50px;
+	    	height: 7px;
+		}
 	}
 	@media @tablet{
 		display: block;
 	}
+	
 }
 .mobile-menu-container{
 	background: rgba(202,39,47,.9);

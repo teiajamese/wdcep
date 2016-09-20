@@ -5,6 +5,9 @@ section#reports{
 	.report-container{
 		width:33.333%;
 		float: left;
+		&:nth-of-type(3n+1){
+			clear: left;
+		}
 		.report-image{
 			padding: 14px 14px 0px 14px;
 		}
@@ -29,6 +32,9 @@ section#reports{
 			    margin-top: 5px;
 				display: block;
 			}	
+		}
+		a{
+			display: block;
 		}
 		@media @tablet{
 			width: 50%;

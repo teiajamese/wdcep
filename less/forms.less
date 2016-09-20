@@ -5,6 +5,15 @@
 
     display: inline-block;
     position: relative;
+    width: 33%;
+    padding: 3px;
+    @media @minilaptop{
+    	width: 48%;
+    }
+    @media @mobile{
+    	width: 100%;
+    	padding: 0;
+    }
     .form-overlay{
     	position: absolute;
 	    height: 100%;
@@ -18,6 +27,11 @@
     		font-family: @Gotham_Black;
     		margin: 0;
     		margin-top: 27px;
+    		@media @laptop{
+    			margin-top: 17px;
+    			line-height: 1.2;
+    			font-size: 2em;
+    		}
 	    }
 	    p{
 	    	color: @white;
@@ -26,6 +40,12 @@
 	    	text-align: center;
 	    	padding: 0px 10px;
 	    	margin-top: 6px;
+	    	@media @laptop{
+	    		font-size: 1.6em;
+	    	}
+	    	@media @mobile{
+	    		margin-top: -5px;
+	    	}
 	    }
     }
 }
@@ -37,19 +57,33 @@
 			width: 50%;
 	    	float: left;
 	    	margin-top: 56px;
+	    	@media @tablet{
+	    		width: 100%;
+	    	}
+	    	@media @mobile{
+	    		margin-top: 12px;
+	    	}
 	    	p{
-				font-size: 1.4vw;
+				font-size: 1.875em;
 	    		padding-right: 43px;
 	    		@media @largeDesktop{
 	    			font-size: 1.875em;
 	    		}
+	    		@media @mobile{
+	    			font-size: 1.375em;
+	    			padding-right: 0px;
+	    			margin-top:5px;
+	    		}
 	    	}
 	    	h3{
-	    		font-size: 2.3vw;
+	    		font-size: 2.8em;
 			    text-transform: uppercase;
 			    margin: 0;
 			    @media @largeDesktop{
 				    font-size: 2.8em;
+				}
+				@media @mobile{
+					font-size: 2.2em;
 				}
 	    	}
 		}
@@ -59,6 +93,12 @@
 	    	margin-top: 56px;
 	    	textarea, input{
 	    		background-color: #ebebeb;
+	    	}
+	    	@media @tablet{
+	    		width: 100%;
+	    	}
+	    	@media @mobile{
+	    		margin-top: 8px;
 	    	}
 		}
 	}

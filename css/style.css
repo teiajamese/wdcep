@@ -25,33 +25,32 @@
 }
 section#events .events .event-container {
   display: inline-block;
-  width: 100%;
-  height: 340px;
+  width: 22%;
+  padding: 1%;
   vertical-align: top;
-}
-@media only screen and (min-width: 1240px) {
-  section#events .events .event-container {
-    height: 375px;
-  }
-}
-@media only screen and (max-width: 1140px) {
-  section#events .events .event-container {
-    height: 298px;
-  }
+  /*@media @desktop{
+		    	height:375px;
+		    }
+		    @media @laptop{
+		    	height: 298px;
+		    }*/
+  /* @media @mobile{
+		    	height: 267px;
+		    }*/
 }
 @media only screen and (max-width: 1044px) {
   section#events .events .event-container {
-    height: 262px;
+    width: 33%;
   }
 }
 @media only screen and (max-width: 769px) {
   section#events .events .event-container {
-    height: 299px;
+    width: 48%;
   }
 }
 @media only screen and (max-width: 420px) {
   section#events .events .event-container {
-    height: 267px;
+    width: 98%;
   }
 }
 section#events .events .event-container h4 {
@@ -67,6 +66,16 @@ section#events .events .event-container h4 {
     font-size: 1.4em;
   }
 }
+@media only screen and (max-width: 769px) {
+  section#events .events .event-container h4 {
+    font-size: 1.875em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  section#events .events .event-container h4 {
+    font-size: 1.5em;
+  }
+}
 section#events .events .event-container p {
   margin: 0;
   font-size: 1.3vw;
@@ -79,7 +88,7 @@ section#events .events .event-container p {
 }
 @media only screen and (max-width: 769px) {
   section#events .events .event-container p {
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
 }
 section#events .events .event-container a {
@@ -90,6 +99,11 @@ section#events .events .event-container a {
   margin-top: 5px;
   display: block;
   font-size: 1.2em;
+}
+@media only screen and (max-width: 1044px) {
+  section#events .events .event-container .event-img img {
+    width: 100%;
+  }
 }
 section#events .events .past {
   margin-top: 2em;
@@ -105,6 +119,11 @@ section#events .events h3 {
 @media only screen and (min-width: 1300px) {
   section#events .events h3 {
     font-size: 4.8em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  section#events .events h3 {
+    font-size: 2.3em;
   }
 }
 .event-single .fp-tableCell {
@@ -129,19 +148,55 @@ section#events .events h3 {
     font-size: 4.8em;
   }
 }
+@media only screen and (max-width: 769px) {
+  .event-single .wrapper h2 {
+    font-size: 4.8em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .event-single .wrapper h2 {
+    font-size: 3em;
+    text-align: left;
+    line-height: 1.2em;
+  }
+}
 .event-single .wrapper .event-details {
   overflow: auto;
   margin: 51px 0 58px 0px;
 }
+@media only screen and (max-width: 769px) {
+  .event-single .wrapper .event-details {
+    margin: 14px 0 34px 0px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .event-single .wrapper .event-details {
+    margin: 14px 0 19px 0px;
+  }
+}
 .event-single .wrapper .event-details .event-img {
   width: 30%;
   float: left;
+}
+@media only screen and (max-width: 769px) {
+  .event-single .wrapper .event-details .event-img {
+    width: 100%;
+  }
+  .event-single .wrapper .event-details .event-img img {
+    width: 100%;
+  }
 }
 .event-single .wrapper .event-details .event-content {
   width: 70%;
   float: left;
   padding-left: 38px;
   padding-right: 118px;
+}
+@media only screen and (max-width: 769px) {
+  .event-single .wrapper .event-details .event-content {
+    width: 100%;
+    padding: 20px 0px 0px;
+  }
 }
 .event-single .wrapper .event-details .event-content h3 {
   font-size: 2vw;
@@ -154,16 +209,41 @@ section#events .events h3 {
     font-size: 2.8em;
   }
 }
+@media only screen and (max-width: 769px) {
+  .event-single .wrapper .event-details .event-content h3 {
+    font-size: 2.8em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .event-single .wrapper .event-details .event-content h3 {
+    font-size: 2.3em;
+  }
+}
 .event-single .wrapper .event-details h4 {
   font-size: 2.8em;
   text-transform: uppercase;
   margin: 0;
   font-family: Geometos;
 }
+@media only screen and (max-width: 769px) {
+  .event-single .wrapper .event-details h4 {
+    font-size: 2.4em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .event-single .wrapper .event-details h4 {
+    font-size: 1.875em;
+  }
+}
 .event-single .wrapper .event-details p {
   font-size: 1.875em;
   font-family: OpenSans_Light;
   margin: 0;
+}
+@media only screen and (max-width: 420px) {
+  .event-single .wrapper .event-details p {
+    font-size: 1.5em;
+  }
 }
 .event-single .wrapper .event-details p.time,
 .event-single .wrapper .event-details p.datetime,
@@ -171,11 +251,34 @@ section#events .events h3 {
   margin-top: -9px;
   font-size: 1.5em;
 }
+@media only screen and (max-width: 769px) {
+  .event-single .wrapper .event-details p.time,
+  .event-single .wrapper .event-details p.datetime,
+  .event-single .wrapper .event-details p.loc {
+    margin-top: 0px;
+    font-size: 1.875em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .event-single .wrapper .event-details p.time,
+  .event-single .wrapper .event-details p.datetime,
+  .event-single .wrapper .event-details p.loc {
+    font-size: 1.5em;
+  }
+}
 .event-single .wrapper .event-details .date,
 .event-single .wrapper .event-details .location,
 .event-single .wrapper .event-details .register {
   width: 33%;
   float: left;
+}
+@media only screen and (max-width: 769px) {
+  .event-single .wrapper .event-details .date,
+  .event-single .wrapper .event-details .location,
+  .event-single .wrapper .event-details .register {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 .event-single .wrapper .event-details a p {
   color: #CA272F;
@@ -221,6 +324,35 @@ section#events .events h3 {
   src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
 }
 
+#section6,
+footer {
+  background: #8C8C8A;
+}
+.footer {
+  padding: 10px;
+}
+.footer .copyright {
+  float: left;
+  padding-left: 2%;
+}
+.footer nav {
+  display: block;
+  margin-top: .7em;
+}
+.footer nav ul {
+  vertical-align: middle;
+}
+.footer nav ul li {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: .875em;
+}
+@media only screen and (max-width: 769px) {
+  .footer nav ul li {
+    display: inline-block;
+  }
+}
+
 @font-face {
   font-family: 'Geometos';
   src: url('../fonts/Geometos-Rounded.ttf') format('truetype');
@@ -259,12 +391,69 @@ section#events .events h3 {
   padding: 20px;
   font-family: OpenSans_Light;
 }
+@media only screen and (min-width: 1300px) {
+  .frm_style_formidable-style.with_frm_style input[type=text],
+  .frm_style_formidable-style.with_frm_style input[type=password],
+  .frm_style_formidable-style.with_frm_style input[type=email],
+  .frm_style_formidable-style.with_frm_style input[type=number],
+  .frm_style_formidable-style.with_frm_style input[type=url],
+  .frm_style_formidable-style.with_frm_style input[type=tel],
+  .frm_style_formidable-style.with_frm_style input[type=file],
+  .frm_style_formidable-style.with_frm_style input[type=search],
+  .frm_style_formidable-style.with_frm_style select {
+    font-size: 1.8em;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .frm_style_formidable-style.with_frm_style input[type=text],
+  .frm_style_formidable-style.with_frm_style input[type=password],
+  .frm_style_formidable-style.with_frm_style input[type=email],
+  .frm_style_formidable-style.with_frm_style input[type=number],
+  .frm_style_formidable-style.with_frm_style input[type=url],
+  .frm_style_formidable-style.with_frm_style input[type=tel],
+  .frm_style_formidable-style.with_frm_style input[type=file],
+  .frm_style_formidable-style.with_frm_style input[type=search],
+  .frm_style_formidable-style.with_frm_style select {
+    font-size: 1.875em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .frm_style_formidable-style.with_frm_style input[type=text],
+  .frm_style_formidable-style.with_frm_style input[type=password],
+  .frm_style_formidable-style.with_frm_style input[type=email],
+  .frm_style_formidable-style.with_frm_style input[type=number],
+  .frm_style_formidable-style.with_frm_style input[type=url],
+  .frm_style_formidable-style.with_frm_style input[type=tel],
+  .frm_style_formidable-style.with_frm_style input[type=file],
+  .frm_style_formidable-style.with_frm_style input[type=search],
+  .frm_style_formidable-style.with_frm_style select {
+    font-size: 1.5em;
+  }
+}
 .frm_style_formidable-style.with_frm_style label.frm_primary_label,
 .frm_style_formidable-style.with_frm_style.frm_login_form label {
   font-size: 1.4vw;
   text-transform: uppercase;
   font-family: Geometos;
   font-weight: 200;
+}
+@media only screen and (min-width: 1300px) {
+  .frm_style_formidable-style.with_frm_style label.frm_primary_label,
+  .frm_style_formidable-style.with_frm_style.frm_login_form label {
+    font-size: 1.8em;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .frm_style_formidable-style.with_frm_style label.frm_primary_label,
+  .frm_style_formidable-style.with_frm_style.frm_login_form label {
+    font-size: 1.875em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .frm_style_formidable-style.with_frm_style label.frm_primary_label,
+  .frm_style_formidable-style.with_frm_style.frm_login_form label {
+    font-size: 1.5em;
+  }
 }
 
 @font-face {
@@ -294,6 +483,19 @@ section#events .events h3 {
 .form-container {
   display: inline-block;
   position: relative;
+  width: 33%;
+  padding: 3px;
+}
+@media only screen and (max-width: 1044px) {
+  .form-container {
+    width: 48%;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .form-container {
+    width: 100%;
+    padding: 0;
+  }
 }
 .form-container .form-overlay {
   position: absolute;
@@ -310,6 +512,13 @@ section#events .events h3 {
   margin: 0;
   margin-top: 27px;
 }
+@media only screen and (max-width: 1261px) {
+  .form-container .form-overlay h3 {
+    margin-top: 17px;
+    line-height: 1.2;
+    font-size: 2em;
+  }
+}
 .form-container .form-overlay p {
   color: #fff;
   font-size: 1.8em;
@@ -317,6 +526,16 @@ section#events .events h3 {
   text-align: center;
   padding: 0px 10px;
   margin-top: 6px;
+}
+@media only screen and (max-width: 1261px) {
+  .form-container .form-overlay p {
+    font-size: 1.6em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .form-container .form-overlay p {
+    margin-top: -5px;
+  }
 }
 .form-single .wrapper {
   margin-top: 110px;
@@ -326,8 +545,18 @@ section#events .events h3 {
   float: left;
   margin-top: 56px;
 }
+@media only screen and (max-width: 769px) {
+  .form-single .wrapper .issue-details {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .form-single .wrapper .issue-details {
+    margin-top: 12px;
+  }
+}
 .form-single .wrapper .issue-details p {
-  font-size: 1.4vw;
+  font-size: 1.875em;
   padding-right: 43px;
 }
 @media only screen and (min-width: 1300px) {
@@ -335,14 +564,26 @@ section#events .events h3 {
     font-size: 1.875em;
   }
 }
+@media only screen and (max-width: 420px) {
+  .form-single .wrapper .issue-details p {
+    font-size: 1.375em;
+    padding-right: 0px;
+    margin-top: 5px;
+  }
+}
 .form-single .wrapper .issue-details h3 {
-  font-size: 2.3vw;
+  font-size: 2.8em;
   text-transform: uppercase;
   margin: 0;
 }
 @media only screen and (min-width: 1300px) {
   .form-single .wrapper .issue-details h3 {
     font-size: 2.8em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .form-single .wrapper .issue-details h3 {
+    font-size: 2.2em;
   }
 }
 .form-single .wrapper .issue-form-container {
@@ -353,6 +594,16 @@ section#events .events h3 {
 .form-single .wrapper .issue-form-container textarea,
 .form-single .wrapper .issue-form-container input {
   background-color: #ebebeb;
+}
+@media only screen and (max-width: 769px) {
+  .form-single .wrapper .issue-form-container {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .form-single .wrapper .issue-form-container {
+    margin-top: 8px;
+  }
 }
 #whatdoyouthink .close {
   top: 0;
@@ -379,6 +630,7 @@ section#events .events h3 {
 }
 @media only screen and (max-width: 769px) {
   .fp-tableCell {
+    vertical-align: top;
     height: auto !important;
   }
 }
@@ -416,6 +668,16 @@ section {
   width: 100%;
   min-height: 100vh;
   overflow: auto;
+}
+@media only screen and (max-height: 520px) and (min-width: 1044px) {
+  section {
+    min-height: 706px;
+  }
+}
+@media only screen and (max-width: 1261px) {
+  section {
+    min-height: 606px;
+  }
 }
 section .hero {
   height: 390px;
@@ -473,12 +735,27 @@ section .wrapper {
   margin-right: 32px;
   font-family: Geometos;
 }
+@media only screen and (max-width: 769px) {
+  .inter-nav p,
+  .inter-nav .prev,
+  .inter-nav .next {
+    font-size: 2.5em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .inter-nav p,
+  .inter-nav .prev,
+  .inter-nav .next {
+    margin-right: 5px;
+    font-size: 1.2em;
+  }
+}
 .inter-nav p {
   text-decoration: none;
 }
 h2.title {
   color: #3399cc;
-  font-size: 4vw;
+  font-size: 4.8em;
   margin: 0;
   text-transform: uppercase;
   font-family: Geometos;
@@ -489,6 +766,11 @@ h2.title {
 @media only screen and (min-width: 1300px) {
   h2.title {
     font-size: 4.8em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  h2.title {
+    font-size: 2.4em;
   }
 }
 .redcaps {
@@ -528,10 +810,16 @@ section#landing .wrapper {
   margin-left: 12%;
   width: auto;
   overflow: hidden;
+  clear: both;
+}
+@media only screen and (max-width: 1261px) {
+  section#landing .wrapper {
+    padding-top: 5.2%;
+  }
 }
 section#landing .wrapper h2 {
   color: #3399cc;
-  font-size: 4vw;
+  font-size: 4.7em;
   margin: 0;
   text-transform: uppercase;
   font-family: Geometos;
@@ -543,9 +831,14 @@ section#landing .wrapper h2 {
     font-size: 4.7em;
   }
 }
+@media only screen and (max-width: 1261px) {
+  section#landing .wrapper h2 {
+    font-size: 4em;
+  }
+}
 section#landing .wrapper h3 {
   color: #fff;
-  font-size: 2.2vw;
+  font-size: 2.6em;
   font-weight: 300;
   margin: 0;
   font-family: OpenSans_Light;
@@ -560,11 +853,18 @@ section#landing .wrapper h3 {
     font-size: 2.6em;
   }
 }
+@media only screen and (max-width: 1261px) {
+  section#landing .wrapper h3 {
+    font-size: 2.2em;
+  }
+}
 section#landing .landing-hero {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 section#landing .play {
   position: absolute;
@@ -640,7 +940,7 @@ iframe {
   margin-left: 5.8em;
   margin-top: 4.5em;
   z-index: 1;
-  max-width: 564px;
+  width: 100%;
 }
 @media only screen and (max-width: 769px) {
   .logo {
@@ -654,6 +954,31 @@ iframe {
   .logo {
     margin-left: 7.5%;
     width: 85%;
+  }
+}
+.logo a {
+  float: left;
+  max-width: 564px;
+  width: 50%;
+}
+@media only screen and (max-width: 769px) {
+  .logo a {
+    margin-left: -20px;
+    width: 100%;
+    float: none;
+  }
+}
+.logos {
+  float: right;
+  margin-right: 94px;
+  margin-top: 21px;
+  width: 30%;
+}
+@media only screen and (max-width: 769px) {
+  .logos {
+    margin-right: 0px;
+    width: 100%;
+    float: none;
   }
 }
 
@@ -721,6 +1046,11 @@ nav ul li {
   padding-top: 2%;
   padding-bottom: 2%;
 }
+@media only screen and (max-width: 769px) {
+  nav ul li {
+    display: block;
+  }
+}
 nav ul li a {
   color: #fff;
   text-transform: uppercase;
@@ -730,7 +1060,8 @@ nav .whiteLogo {
   max-width: 15vw;
   float: left;
   padding-left: 2%;
-  padding-top: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 @media only screen and (max-width: 769px) {
   nav {
@@ -756,6 +1087,14 @@ nav .whiteLogo {
   background-color: #CA272F;
   margin: 7px 0;
   transition: 0.4s;
+}
+@media only screen and (max-width: 420px) {
+  .mobile-menu .bar1,
+  .mobile-menu .bar2,
+  .mobile-menu .bar3 {
+    width: 50px;
+    height: 7px;
+  }
 }
 @media only screen and (max-width: 769px) {
   .mobile-menu {
@@ -888,6 +1227,12 @@ nav .whiteLogo {
   background: #CA272F;
 }
 
+#partners p {
+  font-size: 1.875em;
+  line-height: 1.7;
+  text-align: center;
+}
+
 @font-face {
   font-family: 'Geometos';
   src: url('../fonts/Geometos-Rounded.ttf') format('truetype');
@@ -916,6 +1261,9 @@ section#reports .report-container {
   width: 33.333%;
   float: left;
 }
+section#reports .report-container:nth-of-type(3n+1) {
+  clear: left;
+}
 section#reports .report-container .report-image {
   padding: 14px 14px 0px 14px;
 }
@@ -939,6 +1287,9 @@ section#reports .report-container .report-content a {
   font-size: 1vw;
   font-weight: bold;
   margin-top: 5px;
+  display: block;
+}
+section#reports .report-container a {
   display: block;
 }
 @media only screen and (max-width: 769px) {
