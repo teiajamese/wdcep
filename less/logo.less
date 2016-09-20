@@ -17,7 +17,7 @@
     }
     a{
         float: left;
-        max-width: 564px;
+        max-width: 552px;
         width:50%;
         @media @tablet{
             margin-left: -20px;
@@ -28,12 +28,25 @@
 }
 .logos{
         float: right;
-        margin-right: 94px;
-        margin-top: 21px;
-        width:30%;
+        margin-right: 14.5%;
+        margin-top: 115px;
+        width: 20%;
+        max-width: 293px;
+        &.bottom{
+                position: absolute;
+                right: 0;
+                margin-top: 0;
+                margin-right: 10.5%;
+        }
         @media @tablet{
             margin-right:0px; 
             width: 100%;
             float: none;
+            &.bottom{
+                    position: relative;
+                    margin-top: 0;
+                    margin-left: 4em;
+                    margin-bottom: 5em;
+            }
         }
 }    

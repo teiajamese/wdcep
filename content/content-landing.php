@@ -2,7 +2,7 @@
 	<?php 
 		$args = array(
 			'post_type' => 'page',
-			'pagename' => 'landing-page-2'); 
+			'pagename' => 'landing-page'); 
 		$the_query = new WP_Query($args);
 		if($the_query->have_posts()){
 			
@@ -15,25 +15,29 @@
 				<div class="landing-hero" data-video="<?php echo get_field('video');?>" style="background-image:url('<?php echo get_field('hero_image')?>')">
 				</div>
 			
-			<div class="logo">
-				<a href="<?php echo home_url(); ?>">
-					<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-				<img src="<?php echo get_template_directory_uri(); ?>/img/icons/logo.png" alt="Logo" class="logo-img">
-				</a>
-				<div class="logos">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/icons/logos.png" alt="Logo" >
+				<div class="logo">
+					<a href="<?php echo home_url(); ?>">
+						<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
+					<img src="<?php echo get_template_directory_uri(); ?>/img/icons/logo.png" alt="Logo" class="logo-img">
+					</a>
+					<div class="logos">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/icons/WDCEP-Mayor-Bowser-Logo-Landing.png" alt="Logo" >
+					</div>
 				</div>
-			</div>
-			<div class="wrapper">
-				<h2><?php echo get_field("headline_text");?></h2>
-				<h3><?php echo get_field("sub_headline_text");?></h3>
-			</div>
-			<?php if(get_field('video')):?>
+				<div class="wrapper">
+					<h2><?php echo get_field("headline_text");?></h2>
+					<h3><?php echo get_field("sub_headline_text");?></h3>
 
-			<div class="play">
-			<img src="<?php echo get_template_directory_uri() ?>/img/playButton.png" alt="play button">
-			</div>
-			<?php endif; ?>
+				</div>
+				<?php if(get_field('video')):?>
+
+				<div class="play">
+				<img src="<?php echo get_template_directory_uri() ?>/img/playButton.png" alt="play button">
+				</div>
+				<?php endif; ?>
+				<div class="logos bottom">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/icons/WDCEP-DC-Gov-Logos-Landing.png" alt="Logo" >
+				</div>
 			</section>
 			<?php }
 		}

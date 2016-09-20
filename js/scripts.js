@@ -23,20 +23,21 @@
 		  stickyNav();
 		});*/
 		$('.mobile-menu').click(function(){
-			//$(this).addClass('change');
-			$(this).hide();
+			$(this).addClass('hidden');
+			//$(this).hide();
 			$('.mobile-menu-container').show();
-			$('.mobile-menu-close').show();
+			$('.mobile-menu-close').addClass('hidden');
 		});
 		$('.mobile-menu-container li').click(function(){
 			$('.mobile-menu-container').hide();
-			$('.mobile-menu').show();
-			$('.mobile-menu-close').hide();
+			$('.mobile-menu').removeClass('hidden');
+			$('.mobile-menu-close').removeClass('hidden');
 		})
 		$('.mobile-menu-close').on('click touchstart', function(){
-			$('.mobile-menu').show();
+			$('.mobile-menu').removeClass('hidden');
+			$('.mobile-menu-close').removeClass('hidden');
 			$('.mobile-menu-container').hide();
-			$(this).hide();
+			//$(this).hide();
 		});
 
 		$('.play').click(function(){
@@ -58,27 +59,7 @@
 						  	}
 						]
 					});
-		/*$("#event-carousel").owlCarousel({
-			 	nav:true,
-			 	margin:30,
-			 	dots: true,
-			 	pagination: true,
-			 	owl2row: false, // enable plugin
-	           // owl2rowTarget: 'event-container',    // class for items in carousel div
-	            //owl2rowContainer: 'owlrow-item', // class for items container
-	            //owl2rowDirection: 'utd', // utd : directions
-			 	responsive : {
-			 		0:{
-			 			items: 1,
-			 		},
-			 		421:{
-			 			items: 2,
-			 		},
-			 		769:{
-			 			items: 4,
-			 		}
-			 	}
-			});	*/
+		/*	*/
 		$('#fullpage').fullpage({
 			scrollOverflow: true,
 			/*scrollOverflowOptions: {
@@ -153,6 +134,30 @@
 		$(document).on('click', '.next', function(){
 		  $.fn.fullpage.moveSlideRight();
 		});
+
+		$("#event-carousel").owlCarousel({
+			 	nav:true,
+			 	margin:30,
+			 	dots: true,
+			 	pagination: true,
+			 	//owl2row: false, // enable plugin
+	           // owl2rowTarget: 'event-container',    // class for items in carousel div
+	            //owl2rowContainer: 'owlrow-item', // class for items container
+	            //owl2rowDirection: 'utd', // utd : directions
+			 	responsive : {
+			 		0:{
+			 			items: 1,
+			 		},
+			 		421:{
+			 			items: 2,
+			 		},
+			 		769:{
+			 			items: 4,
+			 		}
+			 	}
+			});
+
+
 		/*var isMobile = window.matchMedia("only screen and (max-width: 760px)");
 
 	    if (isMobile.matches) {

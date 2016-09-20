@@ -25,8 +25,7 @@
 }
 section#events .events .event-container {
   display: inline-block;
-  width: 22%;
-  padding: 1%;
+  width: 100%;
   vertical-align: top;
   /*@media @desktop{
 		    	height:375px;
@@ -39,19 +38,10 @@ section#events .events .event-container {
 		    }*/
 }
 @media only screen and (max-width: 1044px) {
-  section#events .events .event-container {
-    width: 33%;
-  }
 }
 @media only screen and (max-width: 769px) {
-  section#events .events .event-container {
-    width: 48%;
-  }
 }
 @media only screen and (max-width: 420px) {
-  section#events .events .event-container {
-    width: 98%;
-  }
 }
 section#events .events .event-container h4 {
   font-size: 1.4vw;
@@ -155,7 +145,7 @@ section#events .events h3 {
 }
 @media only screen and (max-width: 420px) {
   .event-single .wrapper h2 {
-    font-size: 3em;
+    font-size: 2em;
     text-align: left;
     line-height: 1.2em;
   }
@@ -216,7 +206,7 @@ section#events .events h3 {
 }
 @media only screen and (max-width: 420px) {
   .event-single .wrapper .event-details .event-content h3 {
-    font-size: 2.3em;
+    font-size: 2em;
   }
 }
 .event-single .wrapper .event-details h4 {
@@ -495,6 +485,7 @@ footer {
   .form-container {
     width: 100%;
     padding: 0;
+    margin-top: 6px;
   }
 }
 .form-container .form-overlay {
@@ -584,6 +575,20 @@ footer {
 @media only screen and (max-width: 420px) {
   .form-single .wrapper .issue-details h3 {
     font-size: 2.2em;
+  }
+}
+.form-single .wrapper h2 {
+  color: #3399cc;
+  font-size: 4.8em;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: Geometos;
+  line-height: 1em;
+  letter-spacing: 2px;
+}
+@media only screen and (max-width: 420px) {
+  .form-single .wrapper h2 {
+    font-size: 2.4em;
   }
 }
 .form-single .wrapper .issue-form-container {
@@ -958,7 +963,7 @@ iframe {
 }
 .logo a {
   float: left;
-  max-width: 564px;
+  max-width: 552px;
   width: 50%;
 }
 @media only screen and (max-width: 769px) {
@@ -970,15 +975,28 @@ iframe {
 }
 .logos {
   float: right;
-  margin-right: 94px;
-  margin-top: 21px;
-  width: 30%;
+  margin-right: 14.5%;
+  margin-top: 115px;
+  width: 20%;
+  max-width: 293px;
+}
+.logos.bottom {
+  position: absolute;
+  right: 0;
+  margin-top: 0;
+  margin-right: 10.5%;
 }
 @media only screen and (max-width: 769px) {
   .logos {
     margin-right: 0px;
     width: 100%;
     float: none;
+  }
+  .logos.bottom {
+    position: relative;
+    margin-top: 0;
+    margin-left: 4em;
+    margin-bottom: 5em;
   }
 }
 
@@ -1073,11 +1091,14 @@ nav .whiteLogo {
 }
 .mobile-menu {
   display: none;
+  visibility: visible;
   cursor: pointer;
   position: absolute;
   z-index: 1;
   right: 22px;
   top: 32px;
+  height: auto;
+  transition: visibility 2s;
 }
 .mobile-menu .bar1,
 .mobile-menu .bar2,
@@ -1099,6 +1120,10 @@ nav .whiteLogo {
 @media only screen and (max-width: 769px) {
   .mobile-menu {
     display: block;
+  }
+  .mobile-menu.hidden {
+    visibility: hidden;
+    height: 0;
   }
 }
 .mobile-menu-container {
@@ -1135,7 +1160,10 @@ nav .whiteLogo {
   right: 22px;
   top: 32px;
   z-index: 2;
-  display: none;
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  transition: 0.2s;
 }
 .mobile-menu-close .bar1 {
   transform: rotate(-45deg) translate(-6px, 6px);
@@ -1151,6 +1179,12 @@ nav .whiteLogo {
   height: 11px;
   background-color: #fff;
   margin: 7px 0;
+  transition: 0.4s;
+}
+.mobile-menu-close.hidden {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
   transition: 0.4s;
 }
 .close {
@@ -1302,6 +1336,12 @@ section#reports .report-container a {
   section#reports .report-container .report-content p,
   section#reports .report-container .report-content a {
     font-size: 1em;
+  }
+  section#reports .report-container:nth-of-type(3n+1) {
+    clear: none;
+  }
+  section#reports .report-container:nth-of-type(2n+1) {
+    clear: left;
   }
 }
 @media only screen and (max-width: 420px) {

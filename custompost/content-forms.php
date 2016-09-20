@@ -22,7 +22,7 @@
 						  <div class="bar2"></div>
 						</a></div>
 					
-					<h2 class="title"><?php the_title();?></h2>
+					<h2><?php the_title();?></h2>
 					<div class="issue-details">
 						<h3>Question</h3>
 						<?php the_content(); ?>
