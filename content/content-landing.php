@@ -42,16 +42,16 @@
 			<?php }
 		}
 	?>
-	
-<nav class="nav">
+
+	<nav class="nav">
 		<?php 
 		$args = array(
 			'menu' => "main"
 			);
 		wp_nav_menu($args);?>
 	</nav>
-</div> 
-<div class="section fp-auto-height" id="section1">
+</div>
+<div class="section fp-auto-height" id="section1">	
 	<div class="wrapper">
 		<div class="desc">
 			<?php the_content()?>

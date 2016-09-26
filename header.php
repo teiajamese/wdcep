@@ -27,17 +27,19 @@
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 		
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/css/jquery.fullpage.css" />
-		<!--<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/slick/slick.css"/>
 
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/slick/slick-theme.css"/>-->
-
+		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/slick/slick-theme.css"/>
+		<link href="<?php echo get_template_directory_uri();?>/lightbox2-master/dist/css/lightbox.css" rel="stylesheet">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV2Udu3PiIjH-mkg98Iid-DwOh4KollJY"></script>
 
+		
+
 
 		<?php wp_head(); ?>
-
+<script src="<?php echo get_template_directory_uri();?>/lightbox2-master/dist/js/lightbox.js"></script>
 
 		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>

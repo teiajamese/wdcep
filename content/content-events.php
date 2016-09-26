@@ -25,7 +25,7 @@
 			<div class="wrapper">
 				<div class="events">
 					<div class="upcoming">
-						<h3>Upcoming Discussions</h3><?php $datetime = date("F j, Y g:i a");?>
+						<h3>Upcoming Discussions</h3><?php $datetime = date("Y-m-d g:i a");?>
 						<div id="event-carousel">
 							<?php 
 							/*$paged = get_query_var('paged');
@@ -44,7 +44,7 @@
 									array(
 										'key' => 'datetime',
 										'value' => $datetime,
-										'compare' => '<=',
+										'compare' => '>=',
 										'type' => 'DATETIME',
 										),
 									array(
@@ -86,31 +86,29 @@
 							<?php endif;?>
 						</div>
 					</div><!-- End upcoming -->
-					
+					<?php wp_reset_query(); ?>
+					<?php $datetime = date("Y-m-d g:i a");?>
 						<?php $args = array(
 							'post_type'=>'event',
-							'order'=>'ASC',
-							'meta_query' => array(
-								'relation' => 'AND',
-								array(
-									'key' => 'datetime',
-									'value' => $datetime,
-									'compare' => '>'
-								), 
-							),
+							'order'	=> 'ASC',
+							'orderby' => 'meta_value',
+							'meta_key' => 'datetime',
 						);
 						$the_query = new WP_Query($args);
 						if($the_query->have_posts()):
 							?>
 						<div class="past">
-						<h3>Past Events</h3>	
+						<h3>Past Discussions</h3>	
 						<?php while ( $the_query->have_posts() ) :
 								$the_query->the_post();	
-
+								$postdate = get_field("datetime", false, false);
+								//$postdate = strtotime($postdate);
+								//$datetime = strtotime($datetime);
+								//echo $postdate;
 						?>
-						<?php
-						?>
-							<div class="event-container">
+						<?php if($datetime > $postdate): ?>
+							<?php if(empty(get_field("tbd"))){ ?>
+								<div class="event-container">
 								<div class="event-image">
 								<a href="#discussions/event-<?php echo get_the_ID(); ?>">
 									<?php the_post_thumbnail();?>
@@ -118,12 +116,15 @@
 								</div>
 								<div class="event-content">
 									<h4><?php the_title();?></h4>
-									<p><?php the_field("date");?> - <?php the_field("time");?></p>
+									<p><?php the_field("datetime");?></p>
 									<p><?php the_content();?></p>
 									<a class="link" href="#discussions/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
 								</div>
 							</div>
-						
+							<?php }?>
+
+							
+						<?php endif; ?>
 							<?php endwhile;?>
 							</div><!--- End Past Events-->
 						<?php endif;?>
@@ -132,4 +133,5 @@
 			</div><!--- End of Wrapper -->
 		</section>
 </div>
+<?php get_template_part('custompost/content','eventspast'); ?>
 <?php get_template_part('custompost/content','events'); ?>

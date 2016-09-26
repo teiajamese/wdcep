@@ -23,6 +23,10 @@
   font-family: 'BacktoBlack';
   src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
 }
+section#events .events .past .event-container {
+  width: 23%;
+  margin-right: 30px;
+}
 section#events .events .event-container {
   display: inline-block;
   width: 100%;
@@ -324,6 +328,7 @@ footer {
 .footer .copyright {
   float: left;
   padding-left: 2%;
+  color: #fff;
 }
 .footer nav {
   display: block;
@@ -810,6 +815,9 @@ h2.title {
   font-family: 'BacktoBlack';
   src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
 }
+section#landing {
+  min-height: 90vh;
+}
 section#landing .wrapper {
   padding-top: 7.2%;
   margin-left: 12%;
@@ -981,10 +989,11 @@ iframe {
   max-width: 293px;
 }
 .logos.bottom {
-  position: absolute;
-  right: 0;
-  margin-top: 0;
+  position: relative;
+  /* right: 0; */
+  margin-top: -30px;
   margin-right: 10.5%;
+  float: right;
 }
 @media only screen and (max-width: 769px) {
   .logos {
@@ -1031,22 +1040,29 @@ nav {
 nav#nav2nd.nav.sticky {
   display: block;
   opacity: 1;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: #CA272F;
+  bottom: inherit;
+  transition: all 4.4s;
+  visibility: visible;
 }
 nav#nav2nd.nav {
   display: none;
   opacity: 0;
+  visibility: hidden;
 }
 nav.nav {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   background: #CA272F;
 }
 nav.sticky {
-  position: fixed;
   width: 100%;
-  left: 0;
-  top: 0;
   z-index: 100;
   background: #CA272F;
   bottom: inherit;

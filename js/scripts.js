@@ -45,31 +45,34 @@
 		    $('#landing').replaceWith(video);
 		    console.log('clicked');
 		});
-		/*$(".carousel").slick({
-						arrows: true,
-						dots: true,
-						slidesToShow: 3,
-						//rows: 2,
-						responsive: [
-						    {
-						      breakpoint: 768,
-						      settings: {
-						      	slidesToShow: 1,
-						      }
-						  	}
-						]
-					});
+		$(".image-gallery").slick({
+			arrows: true,
+			dots: true,
+			slidesToShow: 3,
+			//rows: 2,
+			responsive: [
+			    {
+			      breakpoint: 768,
+			      settings: {
+			      	slidesToShow: 2,
+			      }
+			  	}
+			]
+		});
 		/*	*/
 		$('#fullpage').fullpage({
 			scrollOverflow: true,
 			/*scrollOverflowOptions: {
 				click: false
 			},*/
-
+			//paddingTop:'30px',
+			//paddingBottom: '30px',
+			//autoScrolling: false,
+			//fitToSection: false,
 			bigSectionsDestination: 'top',
 			controlArrows: false,
 			lockAnchors: false,
-			anchors:['landingPage', 'landing-blurb', 'whatdoyouthink','join-the-conversation','discussions',  'resources', 'footer'],
+			anchors:['landingPage', 'landingBlurb','whatdoyouthink','join-the-conversation','discussions',  'resources', 'footer'],
 			animateAnchor: false,
 			afterLoad: function(anchorLink, index){
             	var loadedSection = $(this);
@@ -92,13 +95,14 @@
 			onLeave: function(index, nextIndex, direction){
 				var leavingSection = $(this);
 				if(index == 1){
-					$('.nav').removeClass('sticky');
+					//$('.nav').removeClass('sticky');
 				}
 				else if(index == 2 && direction == 'up'){
 					$('.nav').removeClass('sticky');
+					
 				}
-				else{
-					$('.nav').addClass('sticky');
+				else if(index == 1 && direction == 'down'){
+					//$('.nav').addClass('sticky');
 					//stickyNav(); 
 				}
 			},

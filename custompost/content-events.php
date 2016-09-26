@@ -1,18 +1,23 @@
+<?php $datetime = date("Y-m-d g:i a");?>
 <?php 
 	$args = array(
 	'post_type'=>'event',
 	'order'=>'ASC',
 	'posts_per_page' => -1,
-	);
+);
 	
 	$the_query = new WP_Query($args);
 	if($the_query->have_posts()):
-		$i = 1;
 		while ( $the_query->have_posts() ) :
 			$the_query->the_post();	
-		
-
-?>
+			$postdate = get_field("datetime", false, false);
+			//$postdate = strtotime($postdate);
+			//$datetime = strtotime($datetime);
+			//echo 'postdate'.$postdate.'today'.$datetime;
+	?>
+	<?php if(empty(get_field('tbd'))):
+		else:
+	?>
 			<div class="slide event-single" data-anchor="event-<?php echo get_the_ID(); ?>">
 			
 				<div class="wrapper">
@@ -95,6 +100,6 @@
 					<br/>
 				</div>
 			</div>
-		<?php $i = $i+1;?>
+		<?php endif;?>
 		<?php endwhile; ?>
 	<?php endif; ?>

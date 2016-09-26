@@ -17,7 +17,7 @@
 			<!-- /footer -->
 
 		</div>
-		<!-- /wrapper -->		<?php wp_footer(); ?>
+		<!-- /wrapper -->		<script src="<?php echo get_template_directory_uri();?>/lightbox2-master/dist/js/lightbox.js"></script><?php wp_footer(); ?>
 
 	</body>
 </html>
