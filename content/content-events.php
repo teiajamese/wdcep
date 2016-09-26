@@ -97,35 +97,39 @@
 						$the_query = new WP_Query($args);
 						if($the_query->have_posts()):
 							?>
-						<div class="past">
-						<h3>Past Discussions</h3>	
-						<?php while ( $the_query->have_posts() ) :
-								$the_query->the_post();	
-								$postdate = get_field("datetime", false, false);
-								//$postdate = strtotime($postdate);
-								//$datetime = strtotime($datetime);
-								//echo $postdate;
-						?>
-						<?php if($datetime > $postdate): ?>
-							<?php if(empty(get_field("tbd"))){ ?>
-								<div class="event-container">
-								<div class="event-image">
-								<a href="#discussions/event-<?php echo get_the_ID(); ?>">
-									<?php the_post_thumbnail();?>
-								</a>
-								</div>
-								<div class="event-content">
-									<h4><?php the_title();?></h4>
-									<p><?php the_field("datetime");?></p>
-									<p><?php the_content();?></p>
-									<a class="link" href="#discussions/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
-								</div>
-							</div>
-							<?php }?>
+							<div class="past">
+								<h3>Past Discussions</h3>
+								<div id="pastevent-carousel">	
+								<?php while ( $the_query->have_posts() ) :
+										$the_query->the_post();	
+										$postdate = get_field("datetime", false, false);
+										//$postdate = strtotime($postdate);
+										//$datetime = strtotime($datetime);
+										//echo $postdate;
+								?>
+									<?php if($datetime > $postdate): ?>
+										<?php if(empty(get_field("tbd"))){ ?>
+										
+											<div class="event-container">
+												<div class="event-image">
+												<a href="#discussions/event-<?php echo get_the_ID(); ?>">
+													<?php the_post_thumbnail();?>
+												</a>
+												</div>
+												<div class="event-content">
+													<h4><?php the_title();?></h4>
+													<p><?php the_field("datetime");?></p>
+													<p><?php the_content();?></p>
+													<a class="link" href="#discussions/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
+												</div>
+											</div>
+										
+										<?php }?>
 
-							
-						<?php endif; ?>
-							<?php endwhile;?>
+									
+									<?php endif; ?>
+								<?php endwhile;?>
+								</div>
 							</div><!--- End Past Events-->
 						<?php endif;?>
 					

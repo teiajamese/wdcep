@@ -10,7 +10,8 @@
 							);
 						wp_nav_menu($args);?>
 					</nav>
-					<nav class="hide"><?php 
+					<nav class="hide">
+					<?php 
 						$args = array(
 							'menu' => "footer-mobile"
 							);

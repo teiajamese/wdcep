@@ -23,10 +23,6 @@
   font-family: 'BacktoBlack';
   src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
 }
-section#events .events .past .event-container {
-  width: 23%;
-  margin-right: 30px;
-}
 section#events .events .event-container {
   display: inline-block;
   width: 100%;
@@ -1244,6 +1240,30 @@ nav .whiteLogo {
   transition: 0.4s;
 }
 
+@font-face {
+  font-family: 'Geometos';
+  src: url('../fonts/Geometos-Rounded.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans_Bold';
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans_Light';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans_Regular';
+  src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Gotham_Black';
+  src: url('../fonts/Gotham-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'BacktoBlack';
+  src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
+}
 .owl-theme .owl-controls {
   margin-top: 10px;
   text-align: center;
@@ -1251,7 +1271,7 @@ nav .whiteLogo {
 }
 .owl-theme .owl-controls .owl-nav [class*=owl-] {
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
   margin: 5px;
   padding: 4px 7px;
   background: #cdcdcd;
@@ -1260,6 +1280,8 @@ nav .whiteLogo {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  text-transform: uppercase;
+  font-family: OpenSans_Regular;
 }
 .owl-theme .owl-controls .owl-nav [class*=owl-]:hover {
   background: #CA272F;

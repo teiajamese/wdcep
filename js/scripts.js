@@ -161,6 +161,27 @@
 			 	}
 			});
 
+		$("#pastevent-carousel").owlCarousel({
+			 	nav:true,
+			 	margin:30,
+			 	dots: true,
+			 	pagination: true,
+			 	//owl2row: false, // enable plugin
+	           // owl2rowTarget: 'event-container',    // class for items in carousel div
+	            //owl2rowContainer: 'owlrow-item', // class for items container
+	            //owl2rowDirection: 'utd', // utd : directions
+			 	responsive : {
+			 		0:{
+			 			items: 1,
+			 		},
+			 		421:{
+			 			items: 2,
+			 		},
+			 		769:{
+			 			items: 4,
+			 		}
+			 	}
+			});
 
 		/*var isMobile = window.matchMedia("only screen and (max-width: 760px)");
 
