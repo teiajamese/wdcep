@@ -8,6 +8,10 @@
 		float: left;
 		padding-left: 2%;
 		color:#fff;
+		@media @tablet{
+			font-size: .7em;
+    		font-family: Geometos;
+		}
 	}
 	nav{
 		display:block;
@@ -18,7 +22,24 @@
 				padding-top: 0;
 				padding-bottom: 0;
 				font-size: .875em;
-				@media @tablet{
+			}
+		}
+		&.show{
+			display: block;
+		}
+		&.hide{
+			display: none;
+		}
+		@media @tablet{
+			&.show{
+				display: none;
+			}
+			&.hide{
+				display: block;
+			}
+			ul{
+				li{
+					font-size: 2em;
 					display: inline-block;
 				}
 			}

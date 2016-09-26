@@ -35,7 +35,7 @@
 							<?php the_post_thumbnail();?>
 						</div>
 						<div class="event-content">
-							<h3>Event Recap</h3>
+							<h3>Discussion Recap</h3>
 							<p><?php echo get_field('recap');?></p>
 						</div>
 					</div>

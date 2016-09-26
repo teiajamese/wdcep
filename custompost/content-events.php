@@ -34,7 +34,7 @@
 							<?php the_post_thumbnail();?>
 						</div>
 						<div class="event-content">
-							<h3>Event Details</h3>
+							<h3>Discussion Details</h3>
 							<p><?php echo the_content();?></p>
 						</div>
 					</div>

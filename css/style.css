@@ -330,6 +330,12 @@ footer {
   padding-left: 2%;
   color: #fff;
 }
+@media only screen and (max-width: 769px) {
+  .footer .copyright {
+    font-size: .7em;
+    font-family: Geometos;
+  }
+}
 .footer nav {
   display: block;
   margin-top: .7em;
@@ -342,8 +348,21 @@ footer {
   padding-bottom: 0;
   font-size: .875em;
 }
+.footer nav.show {
+  display: block;
+}
+.footer nav.hide {
+  display: none;
+}
 @media only screen and (max-width: 769px) {
+  .footer nav.show {
+    display: none;
+  }
+  .footer nav.hide {
+    display: block;
+  }
   .footer nav ul li {
+    font-size: 2em;
     display: inline-block;
   }
 }
