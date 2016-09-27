@@ -73,15 +73,8 @@
 						<p class="next">Next Event<span></span></p>
 						<p>&#62;</p>
 					</div>
-					<!-- Br needed to create white space padding/margin breaks plugin -->
-					<br/>
-					<br/>
-					<br/>
-					<br/>
-					<br/>
-					<br/>
-					<br/>
-					<br/>
+					<!-- needed to create white space padding/margin breaks plugin -->
+					<div class="whitespace"></div>
 				</div> <!-- end of wrapper -->
 			</div><!-- end of slide -->
 		<?php } endif;?>

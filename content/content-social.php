@@ -20,6 +20,8 @@
 			<div class="wrapper">
 				<?php the_content() ?>
 			</div>
+			<!-- needed to create white space padding/margin breaks plugin -->
+					<div class="whitespace"></div>
 		</section>
 		<?php }
 	}

@@ -40,7 +40,7 @@
 		});
 
 		$('.play').click(function(){
-		    var video = '<iframe src="'+ $('.landing-hero').attr('data-video') +'"></iframe>';
+		    var video = '<div id="player"></div>';
 		    $('#landing').replaceWith(video);
 		    console.log('clicked');
 		});

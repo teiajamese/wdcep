@@ -64,5 +64,7 @@
 				</div>
 			</div>
 		</section>
+		<!-- needed to create white space padding/margin breaks plugin -->
+					<div class="whitespace"></div>
 </div>
 <?php get_template_part('custompost/content','forms'); ?>

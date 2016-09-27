@@ -19,7 +19,9 @@ if (!isset($content_width))
 {
     $content_width = 900;
 }
-
+function empty_content($str) {
+    return trim(str_replace('&nbsp;','',strip_tags($str))) == '';
+}
 if (function_exists('add_theme_support'))
 {
     // Add Menu Support

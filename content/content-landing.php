@@ -1,8 +1,9 @@
+
 <div class="section" id="section0">
 	<?php 
 		$args = array(
 			'post_type' => 'page',
-			'pagename' => 'landing-page'); 
+			'pagename' => 'landing-page-2'); 
 		$the_query = new WP_Query($args);
 		if($the_query->have_posts()){
 			
@@ -13,6 +14,7 @@
 			<section id="landing" style="background-image:url();">
 			
 				<div class="landing-hero" data-video="<?php echo get_field('video');?>" style="background-image:url('<?php echo get_field('hero_image')?>')">
+				<!--<div id="player"></div>-->
 				</div>
 			
 				<div class="logo">
@@ -24,7 +26,7 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/img/icons/WDCEP-Mayor-Bowser-Logo-Landing.png" alt="Logo" >
 					</div>
 				</div>
-				<div class="wrapper">
+				<div class="head-wrapper wrapper">
 					<h2><?php echo get_field("headline_text");?></h2>
 					<h3><?php echo get_field("sub_headline_text");?></h3>
 
@@ -58,3 +60,9 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+     
+ 	
+		
+  
+</script>

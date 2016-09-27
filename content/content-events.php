@@ -64,9 +64,15 @@
 							?>
 								<div class="event-container">
 									<div class="event-image">
+									<?php if(!empty_content($post->post_content)):?>
 										<a href="#discussions/event-<?php echo get_the_ID(); ?>">
 											<?php the_post_thumbnail();?>
 										</a>
+									<?php else:?>
+										<a href="#">
+										<?php the_post_thumbnail();?>
+										</a>
+									<?php endif;?>
 									</div>
 									<div class="event-content">
 										<h4><?php the_title();?></h4>
@@ -74,7 +80,11 @@
 										<p><?php the_field('tbd');?></p>
 										<p><?php the_field('registeration');?></p>
 										<p><?php //the_content();?></p>
-										<a href="#discussions/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
+										<?php if(!empty_content($post->post_content)):?>
+											<a href="#discussions/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
+										<?php else:?>
+											<p>Coming Soon</p> 
+										<?php endif;?>
 									</div>
 								</div>
 							
@@ -136,6 +146,8 @@
 				</div><!--- End of Events -->
 			</div><!--- End of Wrapper -->
 		</section>
+		<!-- needed to create white space padding/margin breaks plugin -->
+					<div class="whitespace"></div>
 </div>
 <?php get_template_part('custompost/content','eventspast'); ?>
 <?php get_template_part('custompost/content','events'); ?>
