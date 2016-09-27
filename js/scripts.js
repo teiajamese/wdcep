@@ -73,7 +73,7 @@
 			//paddingBottom: '90px',
 			//autoScrolling: false,
 			//fitToSection: false,
-			bigSectionsDestination: 'top',
+			bigSectionsDestination: 'bottom',
 			controlArrows: false,
 			lockAnchors: false,
 			anchors:['landingPage', 'landingBlurb','whatdoyouthink','join-the-conversation','discussions',  'resources', 'footer'],

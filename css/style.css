@@ -122,6 +122,9 @@ section#events .events h3 {
 .event-single .wrapper {
   margin-top: 120px;
 }
+@mobile {
+  margin-top: 40px;
+}
 .event-single .wrapper h2 {
   color: #3399cc;
   font-size: 4vw;
@@ -229,6 +232,7 @@ section#events .events h3 {
   font-size: 1.875em;
   font-family: OpenSans_Light;
   margin: 0;
+  padding-bottom: 15px;
 }
 @media only screen and (max-width: 420px) {
   .event-single .wrapper .event-details p {
@@ -1184,6 +1188,7 @@ nav .whiteLogo {
   display: table;
   opacity: 1;
   height: 92%;
+  visibility: visible;
 }
 .mobile-menu-container nav#nav2nd.nav ul {
   display: table-cell;

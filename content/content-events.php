@@ -100,7 +100,7 @@
 					<?php $datetime = date("Y-m-d g:i a");?>
 						<?php $args = array(
 							'post_type'=>'event',
-							'order'	=> 'ASC',
+							'order'	=> 'DESC',
 							'orderby' => 'meta_value',
 							'meta_key' => 'datetime',
 						);
