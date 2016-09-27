@@ -60,7 +60,16 @@ section#landing{
 	    left: 5%;
 	    bottom: 14%;
 	    cursor:pointer;
+	    display: block;
+	    width:75px;
+	    height: 75px;
+	    background-image: url('../img/playButton.png');
+	    background-size: contain;
+	    &:hover{
+	    	background-image: url('../img/redPlayButton.png');
+	    }
 	}
+	
 	@media @tablet{
 		.wrapper{
 			padding-top: 10em;
@@ -81,7 +90,7 @@ section#landing{
     		}
 		}
 		.play{
-			display: none;
+			position: relative;
 		}
 	}
 	@media @mobile{

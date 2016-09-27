@@ -14,7 +14,7 @@
 			<section id="landing" style="background-image:url();">
 			
 				<div class="landing-hero" data-video="<?php echo get_field('video');?>" style="background-image:url('<?php echo get_field('hero_image')?>')">
-				<!--<div id="player"></div>-->
+				<div id="player"></div>
 				</div>
 			
 				<div class="logo">
@@ -34,8 +34,9 @@
 				<?php if(get_field('video')):?>
 
 				<div class="play">
-				<img src="<?php echo get_template_directory_uri() ?>/img/playButton.png" alt="play button">
+				<!--<img src="<?php echo get_template_directory_uri() ?>/img/playButton.png" alt="play button">-->
 				</div>
+
 				<?php endif; ?>
 				<div class="logos bottom">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/icons/WDCEP-DC-Gov-Logos-Landing.png" alt="Logo" >
@@ -60,9 +61,4 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-     
- 	
-		
-  
-</script>
+

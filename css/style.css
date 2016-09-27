@@ -905,6 +905,14 @@ section#landing .play {
   left: 5%;
   bottom: 14%;
   cursor: pointer;
+  display: block;
+  width: 75px;
+  height: 75px;
+  background-image: url('../img/playButton.png');
+  background-size: contain;
+}
+section#landing .play:hover {
+  background-image: url('../img/redPlayButton.png');
 }
 @media only screen and (max-width: 769px) {
   section#landing .wrapper {
@@ -926,7 +934,7 @@ section#landing .play {
     display: none;
   }
   section#landing .play {
-    display: none;
+    position: relative;
   }
 }
 @media only screen and (max-width: 420px) {
@@ -979,7 +987,6 @@ iframe {
 @media only screen and (max-width: 769px) {
   .logo {
     margin-left: 4em;
-    margin-top: 12.4em;
     max-width: 684px;
     width: 80%;
   }
@@ -1005,7 +1012,7 @@ iframe {
 .logos {
   float: right;
   margin-right: 14.5%;
-  margin-top: 115px;
+  margin-top: 11px;
   width: 20%;
   max-width: 293px;
 }
@@ -1025,7 +1032,7 @@ iframe {
   .logos.bottom {
     position: relative;
     margin-top: 0;
-    margin-left: 4em;
+    margin-right: 0;
     margin-bottom: 5em;
   }
 }
@@ -1077,7 +1084,7 @@ nav#nav2nd.nav {
   visibility: hidden;
 }
 nav.nav {
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
   background: #CA272F;
@@ -1133,7 +1140,7 @@ nav .whiteLogo {
   position: absolute;
   z-index: 1;
   right: 22px;
-  top: 32px;
+  top: 11px;
   height: auto;
   transition: visibility 2s;
 }
@@ -1150,8 +1157,8 @@ nav .whiteLogo {
   .mobile-menu .bar1,
   .mobile-menu .bar2,
   .mobile-menu .bar3 {
-    width: 50px;
-    height: 7px;
+    width: 41px;
+    height: 4px;
   }
 }
 @media only screen and (max-width: 769px) {
