@@ -12,15 +12,15 @@
 		
 
 ?>
-			<div class="slide form-single" data-anchor="form-<?php echo get_the_ID(); ?>">
+			<div class="slide form-single" data-anchor="form-<?php echo get_the_ID(); ?>" id="form-<?php echo get_the_ID(); ?>">
 			
 				<div class="wrapper">
 					
 						<div class="form-menu-close close">
-						<a href="#whatdoyouthink/all">
+						
 						  <div class="bar1"></div>
 						  <div class="bar2"></div>
-						</a></div>
+						</div>
 					
 					<h2><?php the_title();?></h2>
 					<div class="issue-details">
@@ -31,10 +31,10 @@
 						<?php echo do_shortcode(get_field('formidable'));?>
 					</div>
 					<div class="inter-nav">
-						<p>&#60;</p>
-						<p class="prev">Previous Issue</p><p> | </p>
+						<p class="prevArrow">&#60;</p>
+						<p class="prev">Previous Issue</p><p class="vertbar"> | </p>
 						<p class="next">Next Issue<span></span></p>
-						<p>&#62;</p>
+						<p class="nextArrow">&#62;</p>
 					</div>
 					<!-- needed to create white space padding/margin breaks plugin -->
 					<div class="whitespace"></div>

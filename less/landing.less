@@ -72,8 +72,11 @@ section#landing{
 	
 	@media @tablet{
 		.wrapper{
-			padding-top: 10em;
-    		margin-left: 4.4em;
+				padding-top: 1em;
+			    margin-left: 6%;
+			    position: relative;
+			    padding-bottom: .2em;
+			    font-size: .4em;
     		h2{
     			font-size: 6em;
     			br{
@@ -91,21 +94,36 @@ section#landing{
 		}
 		.play{
 			position: relative;
+			display: inline-block;
+			width: 55px;
+			height: 55px;
+		}
+		.logos.bottom{
+			display: inline-block;
+   		 	right: 6%;
+   		 	width:183px;
 		}
 	}
 	@media @mobile{
 		.wrapper{
-			padding-top: 6em;
+			padding-top: 1.5em;
 		    margin-left: 0; 
 		    width: 85%;
 		    margin: auto;
+		    padding-bottom:2em;
+		    font-size: 1.2em;
 		    h2{
-		    	font-size: 3em;
+		    	font-size: 2em;
 		    }
 		    h3{
-		    	font-size: 2.3em;
+		    	font-size: 1.5em;
 		    	padding-right: 0;
 		    }
+		}
+		.play{
+			display: inline-block;
+			width: 55px;
+			height: 55px;
 		}
 	}
 }
@@ -136,4 +154,7 @@ section#landing{
 iframe{
 	width: 100%;
 	height: 100%;
+}
+#section1 .wrapper{
+	margin-top: 70px;
 }

@@ -119,9 +119,6 @@ section#events .events h3 {
 .event-single .fp-tableCell {
   display: block;
 }
-.event-single .wrapper {
-  margin-top: 120px;
-}
 @mobile {
   margin-top: 40px;
 }
@@ -498,6 +495,7 @@ footer {
   src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
 }
 .form-container {
+  cursor: pointer;
   display: inline-block;
   position: relative;
   width: 33%;
@@ -554,9 +552,6 @@ footer {
   .form-container .form-overlay p {
     margin-top: -5px;
   }
-}
-.form-single .wrapper {
-  margin-top: 110px;
 }
 .form-single .wrapper .issue-details {
   width: 50%;
@@ -701,7 +696,7 @@ section {
   min-height: 100vh;
   overflow: auto;
 }
-@media only screen and (max-height: 520px) and (min-width: 1044px) {
+@media only screen and (max-height: 600px) and (min-width: 1044px) {
   section {
     min-height: 706px;
   }
@@ -812,8 +807,71 @@ h2.title {
   font-size: 1.6em;
   line-height: 1;
 }
-.whitespace {
-  height: 90px;
+.slide:not([data-anchor='all']) {
+  display: none;
+  -webkit-animation: fadeOut 0.7s ease-in-out;
+  animation: fadeOut 0.7s ease-in-out;
+}
+.slide.active {
+  display: block;
+  -webkit-animation: fadeIn 0.7s ease-in-out;
+  animation: fadeIn 0.7s ease-in-out;
+  z-index: 12;
+  background: white;
+  padding-top: 150px;
+}
+@media only screen and (max-width: 420px) {
+  .slide.active {
+    padding-top: 61px;
+  }
+}
+.slide:nth-child(2) .prev,
+.slide:nth-child(2) .prevArrow,
+.slide:nth-child(2) .vertbar,
+.slide:last-child .next,
+.slide:last-child .nextArrow,
+.slide:last-child .vertbar {
+  display: none;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @font-face {
@@ -920,8 +978,11 @@ section#landing .play:hover {
 }
 @media only screen and (max-width: 769px) {
   section#landing .wrapper {
-    padding-top: 10em;
-    margin-left: 4.4em;
+    padding-top: 1em;
+    margin-left: 6%;
+    position: relative;
+    padding-bottom: .2em;
+    font-size: .4em;
   }
   section#landing .wrapper h2 {
     font-size: 6em;
@@ -939,21 +1000,36 @@ section#landing .play:hover {
   }
   section#landing .play {
     position: relative;
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+  }
+  section#landing .logos.bottom {
+    display: inline-block;
+    right: 6%;
+    width: 183px;
   }
 }
 @media only screen and (max-width: 420px) {
   section#landing .wrapper {
-    padding-top: 6em;
+    padding-top: 1.5em;
     margin-left: 0;
     width: 85%;
     margin: auto;
+    padding-bottom: 2em;
+    font-size: 1.2em;
   }
   section#landing .wrapper h2 {
-    font-size: 3em;
+    font-size: 2em;
   }
   section#landing .wrapper h3 {
-    font-size: 2.3em;
+    font-size: 1.5em;
     padding-right: 0;
+  }
+  section#landing .play {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
   }
 }
 .wrapper .desc {
@@ -980,6 +1056,9 @@ iframe {
   width: 100%;
   height: 100%;
 }
+#section1 .wrapper {
+  margin-top: 70px;
+}
 
 .logo {
   position: relative;
@@ -991,7 +1070,8 @@ iframe {
 @media only screen and (max-width: 769px) {
   .logo {
     margin-left: 4em;
-    max-width: 684px;
+    margin-top: 0em;
+    max-width: 206px;
     width: 80%;
   }
 }
@@ -1032,6 +1112,10 @@ iframe {
     margin-right: 0px;
     width: 100%;
     float: none;
+    margin-bottom: 8px;
+    margin-left: -2%;
+    max-width: 191px;
+    margin-top: 5px;
   }
   .logos.bottom {
     position: relative;
@@ -1092,12 +1176,22 @@ nav.nav {
   bottom: 0;
   width: 100%;
   background: #CA272F;
+  z-index: 999;
+}
+nav.nav img {
+  display: none;
 }
 nav.sticky {
+  position: fixed;
   width: 100%;
+  left: 0;
+  top: 0;
   z-index: 100;
   background: #CA272F;
   bottom: inherit;
+}
+nav.sticky img {
+  display: block;
 }
 nav ul {
   list-style: none;
@@ -1156,6 +1250,14 @@ nav .whiteLogo {
   background-color: #CA272F;
   margin: 7px 0;
   transition: 0.4s;
+}
+@media only screen and (max-width: 769px) {
+  .mobile-menu .bar1,
+  .mobile-menu .bar2,
+  .mobile-menu .bar3 {
+    width: 50px;
+    height: 6px;
+  }
 }
 @media only screen and (max-width: 420px) {
   .mobile-menu .bar1,
@@ -1240,6 +1342,7 @@ nav .whiteLogo {
   position: absolute;
   top: 22px;
   right: 0px;
+  cursor: pointer;
 }
 .close .bar1 {
   transform: rotate(-50deg) translate(-4px, 4px);

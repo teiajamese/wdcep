@@ -1,4 +1,4 @@
-<div class="slide" id="form0" data-anchor="all">
+<div class="slide all" id="form0" data-anchor="all">
 <?php 
 	$args = array(
 		'post_type' => 'page',
@@ -49,7 +49,7 @@
 					?>
 						
 						<div class="form-container">
-							<a href="#whatdoyouthink/form-<?php echo get_the_ID(); ?>">
+							<a href="#form-<?php echo get_the_ID(); ?>">
 								<?php the_post_thumbnail();?>
 								<div class=form-overlay>
 									<h3><?php the_title();?></h3>

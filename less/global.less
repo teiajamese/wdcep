@@ -101,6 +101,49 @@ h2.title{
     font-size: 1.6em;
     line-height: 1;
 }
-.whitespace{
-	height:90px;
+
+.slide:not([data-anchor='all']){
+	display: none;
+	-webkit-animation: fadeOut 0.7s ease-in-out;
+    animation: fadeOut 0.7s ease-in-out;
+}
+.slide.active{
+    display: block;
+    -webkit-animation: fadeIn 0.7s ease-in-out;
+    animation: fadeIn 0.7s ease-in-out;
+    z-index: 12;
+    background: white;
+    padding-top: 150px;
+    @media @mobile{
+    	padding-top: 61px;
+    }
+}
+.slide:nth-child(2) .prev, .slide:nth-child(2) .prevArrow, .slide:nth-child(2) .vertbar,.slide:last-child .next, .slide:last-child .nextArrow, .slide:last-child .vertbar{
+	display: none;
+}
+@-webkit-keyframes fadeIn {
+    from { opacity: 0;
+    visibility: hidden; }
+      to { opacity: 1;
+      visibility: visible; }
+}  
+@keyframes fadeIn {
+    from { opacity: 0;
+    visibility: hidden; }
+      to { opacity: 1;
+      visibility: visible; }
+}
+@-webkit-keyframes fadeOut {
+    from { opacity: 1;
+      visibility: visible; }
+      to { opacity: 0;
+    visibility: hidden; }
+      
+}  
+@keyframes fadeOut {
+    from { opacity: 1;
+      visibility: visible; }
+      to { opacity: 0;
+    visibility: hidden; }
+      
 }
