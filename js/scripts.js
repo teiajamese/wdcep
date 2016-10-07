@@ -46,6 +46,7 @@
 		    console.log('clicked');
 		 });
 */
+		
 		$(window).load(function() {
 		    var hash = window.location.hash; // would be "#div1" or something
 		    if(hash != "") {
@@ -55,10 +56,25 @@
 		       var classes = $('#'+id).attr('class');
 		       $(classes).siblings('.all').removeClass('.active');
 		        console.log(classes);*/
-		        $(document).scrollTop( $('#'+id).addClass('active').offset().top );
-		        $('#'+id).parent().find('.all').hide();  
+		        var backgroundAnchor = $('#'+id).data('anchor');
+		        if(backgroundAnchor == null){
+		        	//$('#'+backgroundAnchor).offset().top;
+		        	$('html, body').animate({ scrollTop: $('#'+id).addClass('active').offset().top}, 1000);
+		        	console.log('null');
+		        }
+		        else{
+		        	$('#'+id).addClass('active');
+		        	$('html, body').scrollTop($('#'+backgroundAnchor).position().top);
+		        	console.log(backgroundAnchor);
+		        }
+		        
+
+		        //$(document).scrollTop( $('#'+id).addClass('active').offset().top );
+		        $('#'+id).parent().find('.all').removeClass('active');
+		        //$('body').addClass('noscroll');
+		       // $('nav').addClass('sticky');
 		    }
-		    
+
 		});
 
 		$(".image-gallery").slick({
@@ -77,48 +93,48 @@
 		});
 
 
-					$(".play").click(function(){
-						var video = $('.landing-hero').attr('data-video');
-					    player = new YT.Player('player', {
-					      height: '390',
-					      width: '640',
-					      videoId: video,
-					      events: {
-					        'onReady': onPlayerReady,
-					        'onStateChange': onPlayerStateChange
-					      }
-					    });
+		$(".play").click(function(){
+			var video = $('.landing-hero').attr('data-video');
+		    player = new YT.Player('player', {
+		      height: '390',
+		      width: '640',
+		      videoId: video,
+		      events: {
+		        'onReady': onPlayerReady,
+		        'onStateChange': onPlayerStateChange
+		      }
+		    });
 
-					    $('.head-wrapper').hide();
-					    $('.logos').hide();
-					    $('.play').hide();
-					    $('.logo').hide();
+		    $('.head-wrapper').hide();
+		    $('.logos').hide();
+		    $('.play').hide();
+		    $('.logo').hide();
 
-					});
-				 	var tag = document.createElement('script');
-				    tag.src = "https://www.youtube.com/iframe_api";
-				    var firstScriptTag = document.getElementsByTagName('script')[0];
-				    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-					var player;
+		});
+	 	var tag = document.createElement('script');
+	    tag.src = "https://www.youtube.com/iframe_api";
+	    var firstScriptTag = document.getElementsByTagName('script')[0];
+	    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		var player;
 
-					// 4. The API will call this function when the video player is ready.
-					function onPlayerReady(event) {
-						event.target.playVideo();
-					}
+		// 4. The API will call this function when the video player is ready.
+		function onPlayerReady(event) {
+			event.target.playVideo();
+		}
 
-					// 5. The API calls this function when the player's state changes.
-					//    The function indicates that when playing a video (state=1),
-					//    the player should play for six seconds and then stop.
-					//var done = false;
-					function onPlayerStateChange(event) {
-						if(event.data == YT.PlayerState.ENDED) {
-							player.destroy();
-							$('.wrapper').show();
-						    $('.logos').show();
-						    $('.play').show();
-						    $('.logo').show();
-						}
-					}
+		// 5. The API calls this function when the player's state changes.
+		//    The function indicates that when playing a video (state=1),
+		//    the player should play for six seconds and then stop.
+		//var done = false;
+		function onPlayerStateChange(event) {
+			if(event.data == YT.PlayerState.ENDED) {
+				player.destroy();
+				$('.wrapper').show();
+			    $('.logos').show();
+			    $('.play').show();
+			    $('.logo').show();
+			}
+		}
 		
 		/*	*/
 /*		$('#fullpage').fullpage({
@@ -195,13 +211,15 @@
 			
 			//fixedElements: '#prev, #next',
 //		});
-		$('a').on('click',(function(){
+		$('.section .slide a').on('click',(function(){
 			var destination = $(this).attr("href");
 			$(destination).addClass('active');
 			var activeSection = $(destination).parent();
 			$(destination).parent().find('.all').hide();
 			//var sectionTop = $(destination).parent().position().top;
 			//console.log(sectionTop);
+			resizeCenter();
+			$('body').addClass('noscroll');
 		}));
 		$('.close').on('click',(function(){
 			//$(this).closest('.slide').hide();
@@ -211,6 +229,7 @@
 			var parent = $(this).parent().parent().parent().find(".all");
 			parent.show();
 			console.log(parent);
+			$('body').removeClass('noscroll');
 		}));
 		$('.acf-map').each(function(){
 
@@ -230,14 +249,14 @@
 		  var next = $(this).parent().parent().parent().prev();
 		  var current = $(this).parent().parent().parent();
 		  var test = $(this).parent().parent().parent().find('.slide');
-		  console.log(test);
+		  
 		  if(next.length>0){
 		  	$(next).addClass('active');
 		  	console.log(next.length);
 		  }
 
 		  $(current).removeClass('active');
-		  
+		  resizeCenter();
 		});
 
 		$(document).on('click', '.next', function(){
@@ -247,6 +266,7 @@
 		  	$(next).addClass('active');
 		  }
 		  $(current).removeClass('active');
+		  resizeCenter();
 		});
 
 		var nextButton = $('.slide.active').parent().parent().parent().next();
@@ -257,7 +277,12 @@
 		if(prevButton.length<0){
 			$('.slide.active .prev').hide();
 		}
-
+		$('nav a').on('click',function(){
+			$('body').removeClass('noscroll');
+			var destination = $(this).attr("href");
+			$(destination + ' .all').show();
+			$('html, body').animate({ scrollTop: $(destination).offset().top}, 1000);
+		});
 		$("#event-carousel").owlCarousel({
 			 	nav:true,
 			 	margin:30,
@@ -323,12 +348,14 @@
 		
 	});
 
+function resizeCenter(){
+	var currCenter = map.getCenter();
+	google.maps.event.trigger(map, 'resize');
+	map.setCenter(currCenter);
+}
 
 
-
-
-
-	function new_map( $el ) {
+function new_map( $el ) {
 	
 	// var
 	var $markers = $el.find('.marker');
@@ -469,6 +496,7 @@ function center_map( map ) {
 */
 // global var
 var map = null;
+
 
 })(jQuery, this);
 

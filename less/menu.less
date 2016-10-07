@@ -33,6 +33,9 @@ nav{
 	    img{
 			display: none;
 		}
+		@media @height{
+			position: relative;
+		}
 	}
     &.sticky{
     	position: fixed;
@@ -85,7 +88,7 @@ nav{
 	display: none;
 	visibility: visible;
 	cursor: pointer;
-    position: absolute;
+    position: fixed;
     z-index: 1;
     right: 22px;
     top: 11px;
@@ -122,19 +125,19 @@ nav{
 	bottom: 0;
 	right: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 14;
 	display: none;
 	nav#nav2nd.nav{
 		display: table;
 	    opacity: 1;
-	    height: 92%;
+	    height: 100%;
 	    visibility: visible;
 	    ul{
 	    	display: table-cell;
 	    	vertical-align: middle;
 	    	font-size: 4vh;
 	    	li{
-	    		padding-bottom: 13%;
+	    		padding-bottom: 7%;
 	    	}
 	    }
 	}
@@ -145,12 +148,12 @@ nav{
 }
 .mobile-menu-close{
 	cursor: pointer;
-    position: absolute;
+    position: fixed;
     width: 70px;
 	height: 70px;
     right: 22px;
     top: 32px;
-    z-index: 2;
+    z-index: 15;
     visibility: hidden;
     height:0;
     opacity: 0;
@@ -200,3 +203,8 @@ nav{
 	    transition: 0.4s;
 	}
 }
+@media @height{
+		nav{
+			position: relative;
+		}
+	}

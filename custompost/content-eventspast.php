@@ -19,7 +19,7 @@
 	?>
 <?php if(empty(get_field("tbd"))){ ?>
 
-			<div class="slide event-single" data-anchor="event-<?php echo get_the_ID(); ?>" id="event-<?php echo get_the_ID(); ?>">
+			<div class="slide event-single" data-anchor="discussions" id="event-<?php echo get_the_ID(); ?>">
 			
 				<div class="wrapper">
 					

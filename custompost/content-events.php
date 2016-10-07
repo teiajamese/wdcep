@@ -23,7 +23,7 @@
 		else: 
 
 	?>
-			<div class="slide event-single" data-anchor="event-<?php echo get_the_ID(); ?>" id="event-<?php echo get_the_ID(); ?>">
+			<div class="slide event-single" data-anchor="discussions" id="event-<?php echo get_the_ID(); ?>">
 			
 				<div class="wrapper">
 					
@@ -60,8 +60,8 @@
 							<p class="loc"><?php $location = get_field('location');
 								if( !empty($location) ):
 									$address = explode( "," , $location['address']);
-									echo $address[1].'<br/>'; // street address
-									echo $address[2].','.$address[3]; // city, state zip
+									echo $address[0].'<br/>'; // street address
+									echo $address[1].",".$address[2].$address[3]; // city, state zip
 								endif;
 							?>
 							</p>
@@ -99,7 +99,7 @@
 			</div>
 		<?php endif;?>
 	<?php else: ?>
-	<div class="slide event-single" data-anchor="event-<?php echo get_the_ID(); ?>" id="event-<?php echo get_the_ID(); ?>">
+	<div class="slide event-single" data-anchor="discussions" id="event-<?php echo get_the_ID(); ?>">
 			
 				<div class="wrapper">
 					
@@ -136,8 +136,8 @@
 							<p class="loc"><?php $location = get_field('location');
 								if( !empty($location) ):
 									$address = explode( "," , $location['address']);
-									echo $address[1].'<br/>'; // street address
-									echo $address[2].','.$address[3]; // city, state zip
+									echo $address[0].'<br/>'; // street address
+									echo $address[1].",".$address[2].$address[3]; // city, state zip
 								endif;
 							?>
 							</p>

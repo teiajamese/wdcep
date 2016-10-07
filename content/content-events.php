@@ -69,7 +69,7 @@
 											<?php the_post_thumbnail();?>
 										</a>
 									<?php else:?>
-										<a href="#">
+										<a href="javascript:void(0)">
 										<?php the_post_thumbnail();?>
 										</a>
 									<?php endif;?>
@@ -116,7 +116,9 @@
 										//$postdate = strtotime($postdate);
 										//$datetime = strtotime($datetime);
 										//echo $postdate;
+
 								?>
+
 									<?php if($datetime > $postdate): ?>
 										<?php if(empty(get_field("tbd"))){ ?>
 										
@@ -129,7 +131,6 @@
 												<div class="event-content">
 													<h4><?php the_title();?></h4>
 													<p><?php the_field("datetime");?></p>
-													<p><?php the_content();?></p>
 													<a class="link" href="#event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
 												</div>
 											</div>
