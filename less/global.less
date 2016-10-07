@@ -9,6 +9,7 @@ section{
 	width:100%;
 	min-height:100vh;
 	overflow: auto;
+
 	@media @height{
 		min-height: 706px;
 	}
@@ -101,6 +102,79 @@ h2.title{
     font-size: 1.6em;
     line-height: 1;
 }
-.whitespace{
-	height:90px;
+.section{
+	position: relative;
+}
+.slide:not([data-anchor='all']){
+	//display: none;
+	visibility: hidden;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	right: 0;
+    left: 0;
+    overflow: scroll;
+    height: 100vh;
+	//-webkit-animation: fadeOut 0.7s ease-in-out;
+    //animation: fadeOut 0.7s ease-in-out;
+}
+.slide.active{
+    //display: block;
+    opacity: 1;
+	position: absolute;
+	top: 0;
+	right: 0;
+    left: 0;
+    visibility: visible;
+    //-webkit-animation: fadeIn 0.7s ease-in-out;
+    //animation: fadeIn 0.7s ease-in-out;
+    z-index: 12;
+    background: white;
+    padding-top: 150px;
+    @media @mobile{
+    	padding-top: 61px;
+    }
+}
+.slide.all{
+
+}
+.slide.active:not([data-anchor='all']){
+position: fixed;
+}
+.slide:nth-child(2) .prev, .slide:nth-child(2) .prevArrow, .slide:nth-child(2) .vertbar,.slide:last-child .next, .slide:last-child .nextArrow, .slide:last-child .vertbar{
+	display: none;
+}
+.noscroll{
+	overflow: hidden;
+}
+@-webkit-keyframes fadeIn {
+    from { //opacity: 0;
+    //visibility: hidden;
+
+	}
+      to { //opacity: 1;
+      //visibility: visible; 
+  	}
+}  
+@keyframes fadeIn {
+    from { //opacity: 0;
+    //visibility: hidden; 
+}
+      to { //opacity: 1;
+     // visibility: visible; 
+ }
+}
+@-webkit-keyframes fadeOut {
+    from { opacity: 1;
+      visibility: visible; }
+      to { opacity: 0;
+    visibility: hidden; }
+      
+}  
+@keyframes fadeOut {
+    from { opacity: 1;
+      visibility: visible; }
+      to { opacity: 0;
+    visibility: hidden; }
+      
 }

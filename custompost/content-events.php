@@ -23,15 +23,13 @@
 		else: 
 
 	?>
-			<div class="slide event-single" data-anchor="event-<?php echo get_the_ID(); ?>">
+			<div class="slide event-single" data-anchor="discussions" id="event-<?php echo get_the_ID(); ?>">
 			
 				<div class="wrapper">
 					
 					<div class="event-menu-close close">
-						<a href="#discussions/all">
 						  <div class="bar1"></div>
 						  <div class="bar2"></div>
-						</a>
 					</div>
 					<h2><?php the_title();?></h2>
 					<div class="event-details">
@@ -62,8 +60,8 @@
 							<p class="loc"><?php $location = get_field('location');
 								if( !empty($location) ):
 									$address = explode( "," , $location['address']);
-									echo $address[1].'<br/>'; // street address
-									echo $address[2].','.$address[3]; // city, state zip
+									echo $address[0].'<br/>'; // street address
+									echo $address[1].",".$address[2].$address[3]; // city, state zip
 								endif;
 							?>
 							</p>
@@ -101,15 +99,13 @@
 			</div>
 		<?php endif;?>
 	<?php else: ?>
-	<div class="slide event-single" data-anchor="event-<?php echo get_the_ID(); ?>">
+	<div class="slide event-single" data-anchor="discussions" id="event-<?php echo get_the_ID(); ?>">
 			
 				<div class="wrapper">
 					
 					<div class="event-menu-close close">
-						<a href="#discussions/all">
 						  <div class="bar1"></div>
 						  <div class="bar2"></div>
-						</a>
 					</div>
 					<h2><?php the_title();?></h2>
 					<div class="event-details">
@@ -140,8 +136,8 @@
 							<p class="loc"><?php $location = get_field('location');
 								if( !empty($location) ):
 									$address = explode( "," , $location['address']);
-									echo $address[1].'<br/>'; // street address
-									echo $address[2].','.$address[3]; // city, state zip
+									echo $address[0].'<br/>'; // street address
+									echo $address[1].",".$address[2].$address[3]; // city, state zip
 								endif;
 							?>
 							</p>
@@ -168,13 +164,12 @@
 						</div>
 					<?php endif; ?>
 					<div class="inter-nav">
-						<p>&#60;</p>
-						<p class="prev">Previous Event</p><p> | </p>
+						<p class="prevArrow">&#60;</p>
+						<p class="prev">Previous Event</p><p class="vertbar"> | </p>
 						<p class="next">Next Event<span></span></p>
-						<p>&#62;</p>
+						<p class="nextArrow">&#62;</p>
 					</div>
-					<!-- needed to create white space padding/margin breaks plugin -->
-					<div class="whitespace"></div>
+
 				</div>
 			</div>
 		<?php endif;?>

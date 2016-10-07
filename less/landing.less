@@ -2,7 +2,18 @@
 @import 'fonts.less';
 @import 'media-queries.less';
 section#landing{
-	min-height:90vh;
+	//min-height:90vh;
+	@media @height{
+		min-height:700px;
+		height: 100vh;
+	}
+	@media @laptop{
+		height:100vh;
+	}
+	@media @mobile{
+		overflow: auto;
+		height: 100vh;
+	}
 	.wrapper{
 		padding-top: 7.2%;
     	margin-left: 12%;
@@ -54,6 +65,12 @@ section#landing{
     	background-size: cover;
     	background-repeat: no-repeat;
 	    //z-index: -1;
+	    @media @height{
+			min-height:700px;
+		}
+		@media @mobile{
+			height: 100vh;
+		}
 	}
 	.play{
 		position: absolute;
@@ -92,21 +109,70 @@ section#landing{
 		.play{
 			position: relative;
 		}
+		.logos.bottom{
+			display: inline-block;
+   		 	right: 6%;
+   		 	width:183px;
+		}
 	}
 	@media @mobile{
 		.wrapper{
-			padding-top: 6em;
+			padding-top: 4.4em;
 		    margin-left: 0; 
 		    width: 85%;
 		    margin: auto;
 		    h2{
-		    	font-size: 3em;
+		    	font-size: 2.7em;
 		    }
 		    h3{
-		    	font-size: 2.3em;
+		    	font-size: 1.5em;
 		    	padding-right: 0;
 		    }
 		}
+		.play{
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+		}
+	}
+	@media @mobileLandscape{
+		.wrapper{
+			padding: 1.5em 0;
+			margin-left: 5%;
+			margin-right: 22px;
+			h2{
+				font-size: 3em;
+			}
+			h3{
+				font-size: 1.3em;
+			}
+		}
+		.play{
+			width:50px;
+			height:50px;
+			display: inline-block;
+		}
+	}
+	@media @smallmobileLandscape {
+		.wrapper{
+			padding: .2em 0;
+			h2{
+				font-size: 1.9em;
+			}
+		}
+
+	}
+	@media @mobilePortrait {
+		.wrapper{
+			padding-top: 4.4em;
+			h2{
+			font-size: 2.7em;
+			}
+			h3{
+				font-size: 1.9em;
+			}
+		}
+		
 	}
 }
 
@@ -137,3 +203,14 @@ iframe{
 	width: 100%;
 	height: 100%;
 }
+#section1 .wrapper{
+	@media @laptop{
+		//margin-top: 102px;
+	}
+	
+	@media @tablet{
+		margin-top: 0;
+	}
+}
+
+	

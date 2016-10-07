@@ -1,4 +1,4 @@
-<div class="slide" data-anchor="all">
+<div class="slide all" data-anchor="all" >
 	<section id="events">
 
 <?php 
@@ -65,11 +65,11 @@
 								<div class="event-container">
 									<div class="event-image">
 									<?php if(!empty_content($post->post_content)):?>
-										<a href="#discussions/event-<?php echo get_the_ID(); ?>">
+										<a href="#event-<?php echo get_the_ID(); ?>">
 											<?php the_post_thumbnail();?>
 										</a>
 									<?php else:?>
-										<a href="#">
+										<a href="javascript:void(0)">
 										<?php the_post_thumbnail();?>
 										</a>
 									<?php endif;?>
@@ -81,7 +81,7 @@
 										<p><?php the_field('registeration');?></p>
 										<p><?php //the_content();?></p>
 										<?php if(!empty_content($post->post_content)):?>
-											<a href="#discussions/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
+											<a href="#event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
 										<?php else:?>
 											<p>Coming Soon</p> 
 										<?php endif;?>
@@ -116,21 +116,22 @@
 										//$postdate = strtotime($postdate);
 										//$datetime = strtotime($datetime);
 										//echo $postdate;
+
 								?>
+
 									<?php if($datetime > $postdate): ?>
 										<?php if(empty(get_field("tbd"))){ ?>
 										
 											<div class="event-container">
 												<div class="event-image">
-												<a href="#discussions/event-<?php echo get_the_ID(); ?>">
+												<a href="#event-<?php echo get_the_ID(); ?>">
 													<?php the_post_thumbnail();?>
 												</a>
 												</div>
 												<div class="event-content">
 													<h4><?php the_title();?></h4>
 													<p><?php the_field("datetime");?></p>
-													<p><?php the_content();?></p>
-													<a class="link" href="#discussions/event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
+													<a class="link" href="#event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
 												</div>
 											</div>
 										
@@ -146,8 +147,7 @@
 				</div><!--- End of Events -->
 			</div><!--- End of Wrapper -->
 		</section>
-		<!-- needed to create white space padding/margin breaks plugin -->
-					<div class="whitespace"></div>
+
 </div>
 <?php get_template_part('custompost/content','eventspast'); ?>
 <?php get_template_part('custompost/content','events'); ?>
