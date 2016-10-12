@@ -49,7 +49,7 @@
 					?>
 						
 						<div class="form-container">
-							<a href="#form-<?php echo get_the_ID(); ?>">
+							<a href="<?php echo get_permalink()?>">
 								<?php the_post_thumbnail();?>
 								<div class=form-overlay>
 									<h3><?php the_title();?></h3>
@@ -64,7 +64,4 @@
 				</div>
 			</div>
 		</section>
-		<!-- needed to create white space padding/margin breaks plugin -->
-					<div class="whitespace"></div>
 </div>
-<?php get_template_part('custompost/content','forms'); ?>

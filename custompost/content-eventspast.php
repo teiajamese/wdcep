@@ -1,32 +1,18 @@
+<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 <?php $datetime = date("Y-m-d g:i a");?>
-<?php 
-	$args = array(
-	'post_type'=>'event',
-	'order'=>'ASC',
-	'posts_per_page' => -1,
-);
-	
-	$the_query = new WP_Query($args);
-	if($the_query->have_posts()):
-		while ( $the_query->have_posts() ) :
-			$the_query->the_post();	
-			$postdate = get_field("datetime", false, false);
-			//$postdate = strtotime($postdate);
-			//$datetime = strtotime($datetime);
-			//echo 'postdate'.$postdate.'today'.$datetime;
-	?>
-	<?php if($datetime > $postdate):
-	?>
+<?php $postdate = get_field("datetime", false, false);?>
+	<?php if($datetime > $postdate):?>
 <?php if(empty(get_field("tbd"))){ ?>
 
 			<div class="slide event-single" data-anchor="discussions" id="event-<?php echo get_the_ID(); ?>">
 			
 				<div class="wrapper">
-					
+					<a href="<?php echo get_site_url()?>/#discussions">
 					<div class="event-menu-close close">
 						  <div class="bar1"></div>
 						  <div class="bar2"></div>
 					</div>
+					</a>
 					<h2><?php the_title();?></h2>
 					<div class="event-details">
 						<div class="event-img">
@@ -66,10 +52,19 @@
 					</div>
 					
 					<div class="inter-nav">
-						<p class="prevArrow">&#60;</p>
-						<p class="prev">Previous Event</p><p class="vertbar"> | </p>
-						<p class="next">Next Event<span></span></p>
-						<p class="nextArrow">&#62;</p>
+						<?php if (strlen(get_previous_post()->post_title) > 0) { ?>
+							<p class="prevArrow">&#60;</p>
+							<p class="prev"><?php previous_post_link( '%link', 'Previous Issue' ) ?></p>
+						<?php } ?>
+						<?php if ( (strlen(get_previous_post()->post_title) == 0) || (strlen(get_next_post()->post_title) == 0)) { ?>
+							
+						<?php }else{?>
+							<p class="vertbar"> | </p>
+						<?php	}	?>
+						<?php if (strlen(get_next_post()->post_title) > 0) { ?>
+							<p class="next"><?php next_post_link( '%link', 'Next Issue' ) ?><span></span></p>
+							<p class="nextArrow">&#62;</p>
+						<?php } ?>
 					</div>
 
 				</div> <!-- end of wrapper -->

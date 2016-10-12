@@ -41,22 +41,6 @@
 		<?php wp_head(); ?>
 	<?php date_default_timezone_set('America/New_York'); ?>
 
-		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-		
-
-		<script type="text/javascript" src="js/vendors/scrolloverflow.js"></script>
-
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				scrollOverflow: true,
-				scrollOverflowOptions: {
-					click: true
-				}
-			});
-		});
-	</script>-->
 		<script>
         // conditionizr.com
         // configure environment tests
@@ -69,45 +53,41 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-		<!-- wrapper 
-		<div class="wrapper">-->
+	<!-- wrapper 
+	<div class="wrapper">-->
 
-			<!-- header -->
-			<header class="header clear" role="banner">
+		<!-- header -->
+		<header class="header clear" role="banner">
 
-				<div class="mobile-menu">
+			<div class="mobile-menu">
+			  <div class="bar1"></div>
+			  <div class="bar2"></div>
+			  <div class="bar3"></div>
+			</div>	
+			<div class="mobile-menu-close">
 				  <div class="bar1"></div>
 				  <div class="bar2"></div>
-				  <div class="bar3"></div>
-				</div>	
-				<div class="mobile-menu-close">
-					  <div class="bar1"></div>
-					  <div class="bar2"></div>
-				</div>
-				<div class="mobile-menu-container">
-					<nav class="nav" id="nav2nd">
-					
-						<?php 
-						$args = array(
-							'menu' => "main"
-							);
-						wp_nav_menu($args);?>
-					</nav>
-				</div>
-					<!-- logo 
-					<div class="logo">
-						<a href="<?php //echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-						<!--<img src="<?php //echo get_template_directory_uri(); ?>/img/icons/logo.png" alt="Logo" class="logo-img">
-						</a>
-					</div>-->
-					<!-- /logo -->
+			</div>
+			<div class="mobile-menu-container">
+				<nav class="nav" id="nav2nd">
+				
+					<?php 
+					$args = array(
+						'menu' => "main"
+						);
+					wp_nav_menu($args);?>
+				</nav>
+			</div>
 
-					<!-- nav 
-					<nav class="nav" role="navigation">
-						<?php //html5blank_nav(); ?>
-					</nav>-->
-					<!-- /nav -->
-
-			</header>
-			<!-- /header -->
+			<nav class="nav-top">
+				<div class="whiteLogo">
+					<a href="<?php echo get_site_url()?>"><img src="<?php echo get_template_directory_uri()?>/img/icons/whiteLogo.png"></a>
+				</div>
+				<?php 
+				$args = array(
+					'menu' => "custom-posts"
+					);
+				wp_nav_menu($args);?>
+			</nav>
+		</header>
+		<!-- /header -->

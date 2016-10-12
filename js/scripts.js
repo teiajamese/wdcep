@@ -73,8 +73,9 @@
 		        $('#'+id).parent().find('.all').removeClass('active');
 		        //$('body').addClass('noscroll');
 		       // $('nav').addClass('sticky');
-		    }
-
+		    var description = $('#'+id).data('description');
+		    $('head').append('<meta property="og:description" content="'+description+'" />');
+			}
 		});
 
 		$(".image-gallery").slick({
@@ -211,7 +212,7 @@
 			
 			//fixedElements: '#prev, #next',
 //		});
-		$('.section .slide a').on('click',(function(){
+		/*$('.section .slide a').on('click',(function(){
 			var destination = $(this).attr("href");
 			$(destination).addClass('active');
 			var activeSection = $(destination).parent();
@@ -230,7 +231,7 @@
 			parent.show();
 			console.log(parent);
 			$('body').removeClass('noscroll');
-		}));
+		}));*/
 		$('.acf-map').each(function(){
 
 			// create map
@@ -245,7 +246,7 @@
 			$('.form-single').removeClass('active');
 			$('#form0').addClass('active');
 		});*/
-		$(document).on('click', '.prev', function(){
+		/*$(document).on('click', '.prev', function(){
 		  var next = $(this).parent().parent().parent().prev();
 		  var current = $(this).parent().parent().parent();
 		  var test = $(this).parent().parent().parent().find('.slide');
@@ -276,7 +277,7 @@
 		}
 		if(prevButton.length<0){
 			$('.slide.active .prev').hide();
-		}
+		}*/
 		$('nav a').on('click',function(){
 			$('body').removeClass('noscroll');
 			var destination = $(this).attr("href");

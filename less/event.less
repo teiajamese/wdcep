@@ -10,7 +10,36 @@ section#events{
 				//margin-right: 30px;
 			}
 		}
-		
+		.partner{
+			.event-container{
+				.event-image{
+					width:23%;
+					display: inline-block;
+				}
+				.event-content{
+					width:70%;
+					display: inline-block;
+					margin-left: 2%;
+					vertical-align: top;
+				}
+				@media @tablet{
+					width:47%;
+					display: inline-block;
+					margin-left: 2%;
+					.event-image{
+						width:100%;
+					}
+					.event-content{
+						width: 100%;
+						margin-left: 0;
+					}
+				}
+				@media @mobile{
+					width: 100%;
+					margin-left: 0;
+				}
+			}
+		}
 		.event-container{
 			display: inline-block;
 		   	width: 100%;
@@ -106,6 +135,7 @@ section#events{
 		display: block;
 	}
 	.wrapper{
+		margin-top: 150px;
 		@mobile{
 			margin-top: 40px;
 		}
