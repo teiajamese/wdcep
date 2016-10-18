@@ -26,6 +26,9 @@
 section#events {
   position: relative;
 }
+section#events .events .partner .event-container:not(:first-child) {
+  margin-top: 40px;
+}
 section#events .events .partner .event-container .event-image {
   width: 23%;
   display: inline-block;

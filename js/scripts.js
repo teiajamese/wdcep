@@ -1,7 +1,5 @@
 (function ($, root, undefined) {
 
-
-	
 	$(function () {
 		var stickyNavTop = $('#landing').outerHeight(true);
 		var stickyNav = function(){
@@ -36,26 +34,24 @@
 		});
 
 		
-		$(window).load(function() {
+		/*$(window).load(function() {
 		    var hash = window.location.hash; // would be "#div1" or something
 		    if(hash != "") {
 		        var id = hash.substr(1); // get rid of #
 		        var backgroundAnchor = $('#'+id).data('anchor');
 		        if(backgroundAnchor == null){
 		        	//$('#'+backgroundAnchor).offset().top;
-		        	$('html, body').animate({ scrollTop: $('#'+id).addClass('active').offset().top}, 1000);
+		        	$('html, body').animate({ scrollTop: $('#'+id).offset().top}, 1000);
 		        	console.log('null');
 		        }
 		        else{
-		        	$('#'+id).addClass('active');
+		        	//$('#'+id).addClass('active');
 		        	$('html, body').scrollTop($('#'+backgroundAnchor).position().top);
-		        	console.log(backgroundAnchor);
+		        	//console.log(backgroundAnchor);
 		        }
-		        $('#'+id).parent().find('.all').removeClass('active');
-		    	var description = $('#'+id).data('description');
-		    	$('head').append('<meta property="og:description" content="'+description+'" />');
+		      //  $('#'+id).parent().find('.all').removeClass('active');
 			}
-		});
+		});*/
 
 		$(".image-gallery").slick({
 			arrows: true,
@@ -123,11 +119,13 @@
 
 		});
 
-		$('nav a').on('click',function(){
+		$('nav.nav a').on('click',function(e){
 			$('body').removeClass('noscroll');
 			var destination = $(this).attr("href");
-			$(destination + ' .all').show();
-			$('html, body').animate({ scrollTop: $(destination).offset().top}, 1000);
+			//$(destination + ' .all').show();
+			e.preventDefault();
+			e.stopPropagation();
+			$('html, body').animate({ scrollTop: $(destination).offset().top}, 900);
 		});
 		$("#event-carousel").owlCarousel({
 			 	nav:true,
