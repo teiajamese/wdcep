@@ -1354,6 +1354,24 @@ nav .whiteLogo {
     display: none;
   }
 }
+nav.mobile-nav {
+  display: none;
+}
+@media only screen and (max-width: 420px) {
+  nav.mobile-nav {
+    display: block;
+    background-color: #CA272F;
+    text-align: center;
+    width: 100%;
+  }
+  nav.mobile-nav .newsletter {
+    position: relative;
+    padding: 4.2% 0;
+  }
+  nav.mobile-nav .newsletter a {
+    font-size: 11px;
+  }
+}
 .mobile-menu {
   display: none;
   visibility: visible;
@@ -1482,6 +1500,28 @@ nav .whiteLogo {
   background-color: #CA272F;
   margin: 7px 0;
   transition: 0.4s;
+}
+.newsletter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 2%;
+  padding-top: 2.2%;
+  padding-bottom: 2%;
+}
+.newsletter a {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Geometos;
+  border: #fff solid 2px;
+  padding: 10px;
+  font-size: .8vw;
+}
+.newsletter a:hover {
+  border: #fff solid 2px;
+  color: #444;
+  border: #444 solid 2px;
+  cursor: pointer;
 }
 @media only screen and (max-height: 770px) and (min-width: 954px) {
   nav {

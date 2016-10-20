@@ -119,7 +119,7 @@
 
 		});
 
-		$('nav.nav a').on('click',function(e){
+		$('nav.nav ul a').on('click',function(e){
 			$('body').removeClass('noscroll');
 			var destination = $(this).attr("href");
 			//$(destination + ' .all').show();
