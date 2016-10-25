@@ -1,14 +1,14 @@
-<?php /* Template Name: Partners Page Template */ get_header(); ?>
+<?php /* Template Name: Partners Page Template */ get_header('custom'); ?>
   
 <!-- header -->
 			<header class="header clear" role="banner">
-				<nav class="nav sticky" id="nav2nd">
+				<nav class="partnernav sticky" id="nav2nd">
 					<div class="whiteLogo">
 						<a href="#landingPage"><img src="<?php echo get_template_directory_uri()?>/img/icons/whiteLogo.png"></a>
 					</div>
 						<?php 
 						$args = array(
-							'menu' => "main"
+							'menu' => "custom-posts"
 							);
 						wp_nav_menu($args);?>
 				</nav>
@@ -25,7 +25,7 @@
 					<nav class="nav" id="nav2nd">
 						<?php 
 						$args = array(
-							'menu' => "main"
+							'menu' => "custom-posts"
 							);
 						wp_nav_menu($args);?>
 					</nav>

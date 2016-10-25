@@ -1,26 +1,26 @@
 <div class="slide all" data-anchor="all" >
 	<section id="events">
 
-<?php 
-	$args = array(
-		'post_type' => 'page',
-		'pagename' => 'events'); 
-	$the_query = new WP_Query($args);
-	if($the_query->have_posts()){
-		
-		while ( $the_query->have_posts() ) {
-			$the_query->the_post();
+	<?php 
+		$args = array(
+			'post_type' => 'page',
+			'pagename' => 'events'); 
+		$the_query = new WP_Query($args);
+		if($the_query->have_posts()){
+			
+			while ( $the_query->have_posts() ) {
+				$the_query->the_post();
 
-	?>
-		
-			<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
-				<div class="wrapper">
-					<h2>Discussions</h2>
+		?>
+			
+				<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
+					<div class="wrapper">
+						<h2>Discussions</h2>
+					</div>
 				</div>
-			</div>
-		<?php }
-	}
-?>
+			<?php }
+		}
+	?>
 	<?php wp_reset_query(); ?>
 			<div class="wrapper">
 				<div class="events">
@@ -65,7 +65,7 @@
 								<div class="event-container">
 									<div class="event-image">
 									<?php if(!empty_content($post->post_content)):?>
-										<a href="#event-<?php echo get_the_ID(); ?>">
+										<a href="<?php echo get_permalink(); ?>">
 											<?php the_post_thumbnail();?>
 										</a>
 									<?php else:?>
@@ -79,9 +79,12 @@
 										<p><?php the_field("datetime");?></p>
 										<p><?php the_field('tbd');?></p>
 										<p><?php the_field('registeration');?></p>
-										<p><?php //the_content();?></p>
+										<?php $organized = get_field('organized');
+										if($organized):?>
+											<p class="red"><?php echo 'Organized By: '; the_field('organized');?></p>
+										<?php endif;?>
 										<?php if(!empty_content($post->post_content)):?>
-											<a href="#event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
+											<a href="<?php echo get_permalink(); ?>" alt="read more">Read More</a>
 										<?php else:?>
 											<p>Coming Soon</p> 
 										<?php endif;?>
@@ -120,34 +123,74 @@
 								?>
 
 									<?php if($datetime > $postdate): ?>
-										<?php if(empty(get_field("tbd"))){ ?>
+										<?php if(empty(get_field("tbd")) && empty(get_field("partner_link"))){ ?>
 										
 											<div class="event-container">
 												<div class="event-image">
-												<a href="#event-<?php echo get_the_ID(); ?>">
+												<a href="<?php echo get_permalink(); ?>">
 													<?php the_post_thumbnail();?>
 												</a>
 												</div>
 												<div class="event-content">
 													<h4><?php the_title();?></h4>
 													<p><?php the_field("datetime");?></p>
-													<a class="link" href="#event-<?php echo get_the_ID(); ?>" alt="read more">Read More</a>
+													<?php $organized = get_field('organized');
+													if($organized):?>
+														<p class="red"><?php echo 'Organized By: '; the_field('organized');?></p>
+													<?php endif;?>
+													<a class="link" href="<?php echo get_permalink(); ?>" alt="read more">Read More</a>
 												</div>
 											</div>
 										
-										<?php }?>
+										<?php } ?>
 
-									
+
 									<?php endif; ?>
+
 								<?php endwhile;?>
 								</div>
 							</div><!--- End Past Events-->
 						<?php endif;?>
-					
+						<?php wp_reset_query(); ?>
+
+						<?php $args = array(
+							'post_type'=>'event',
+							'meta_query' => array(
+							    array(
+							        'key' => 'partner_link',
+							        'value'   => array(''),
+							        'compare' => 'NOT IN'
+							    )
+							)
+						);
+						$the_query = new WP_Query($args);
+						if($the_query->have_posts()):?>
+							<div class="past partner">
+								<h3>Partner Discussions</h3>
+								<div class="partner-container">
+								<?php while ( $the_query->have_posts() ) :
+										$the_query->the_post();	
+								?>
+								<div class="event-container">
+									<div class="event-image">
+									<a href="<?php the_field('partner_link') ?>" target="_blank">
+										<?php the_post_thumbnail();?>
+									</a>
+									</div>
+									<div class="event-content">
+										<h4><?php the_title();?></h4>
+										<p><?php the_content();?></p>
+										<div class="partner-button">
+										<a class="link" href="<?php the_field('partner_link') ?>" alt="read more" target="_blank">Read More</a>
+										</div>
+									</div>
+									
+								</div>
+								<?php endwhile;?>
+								</div>
+							</div>
+						<?php endif; ?>
 				</div><!--- End of Events -->
 			</div><!--- End of Wrapper -->
 		</section>
-
 </div>
-<?php get_template_part('custompost/content','eventspast'); ?>
-<?php get_template_part('custompost/content','events'); ?>
