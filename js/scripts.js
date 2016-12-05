@@ -33,7 +33,10 @@
 			$('.mobile-menu-container').hide();
 		});
 
-		
+		$(".title").click(function(){
+        	$(this).next(".title-desc").slideToggle();
+        	$(this).toggleClass('active');
+    	});
 		/*$(window).load(function() {
 		    var hash = window.location.hash; // would be "#div1" or something
 		    if(hash != "") {
@@ -172,6 +175,9 @@
 			});
 
 	});
+
+ 	
+
 
 function resizeCenter(){
 	var currCenter = map.getCenter();

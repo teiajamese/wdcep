@@ -24,9 +24,7 @@
 	<?php wp_reset_query(); ?>
 			<div class="wrapper">
 				<div class="events">
-					<div class="upcoming">
-						<h3>Upcoming Discussions</h3><?php $datetime = date("Y-m-d g:i a");?>
-						<div id="event-carousel">
+					<?php $datetime = date("Y-m-d g:i a");?>
 							<?php 
 							/*$paged = get_query_var('paged');
 							$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
@@ -55,13 +53,16 @@
 							);
 							$the_query = new WP_Query($args);
 							if($the_query->have_posts()):
-								
+								?>
+							<div class="upcoming">
+								<h3>Upcoming Discussions</h3>
+								<div id="event-carousel">
+							<?php 
 								while ( $the_query->have_posts() ) :
 									$the_query->the_post();	
 
 							?>
-							<?php
-							?>
+
 								<div class="event-container">
 									<div class="event-image">
 									<?php if(!empty_content($post->post_content)):?>
@@ -96,9 +97,10 @@
 							    </div>
 							    <div id="arrowR">
 							    </div>-->
+							    </div>
+							</div><!-- End upcoming -->
 							<?php endif;?>
-						</div>
-					</div><!-- End upcoming -->
+						
 					<?php wp_reset_query(); ?>
 					<?php $datetime = date("Y-m-d g:i a");?>
 						<?php $args = array(
