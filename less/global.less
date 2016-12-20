@@ -18,6 +18,7 @@ font-size: 1.875em;
 li{
 	.li1{
 		font-size: 1em;
+		font-family: @OpenSans_Light;
 	}
 }
 section{
@@ -55,12 +56,27 @@ section{
 					color: #fff;
 	    		}
 			}
+
 		}
 		
 	}
 	.wrapper{
 		overflow: auto;
 		padding: 4.4em 0;
+		h3{
+		    	font-size: 4vw;
+	    		text-transform: uppercase;
+	    		color: @blue;
+	    		margin-top: 0;
+	    		margin-bottom: .42em;
+	    		font-family: @Geometos;
+	    		@media @largeDesktop{
+	    			font-size: 4.8em;
+	    		}
+	    		@media @mobile{
+	    			font-size: 2.3em;
+	    		}
+		    }
 	}
 	@media @tablet{
 		min-height: auto;

@@ -21,10 +21,6 @@ module.exports = function(grunt) {
         files: ['less/*.less'],
         tasks: ['less']
       },
-      js: {
-        files: ['js/*.js'],
-        tasks: ['uglify']
-      }
     }
   });
   // Load the plugin that provides the "uglify" task.

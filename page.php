@@ -6,6 +6,9 @@
 	<div class="section " id="whatdoyouthink">
 		<?php get_template_part('content/content','think'); ?>
 	</div>
+	<div class="section " id="heard">
+		<?php get_template_part('content/content','heard'); ?>
+	</div>
 	<div class="section " id="join-the-conversation">
 	<?php get_template_part('content/content','social'); ?>
 	</div>
