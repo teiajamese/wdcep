@@ -1,4 +1,6 @@
+<?php /* Template Name: What we've heard Template */ ?>
 <?php get_header('custom'); ?>
+
 <!-- header -->
 			<header class="header clear" role="banner">
 				<nav class="partnernav sticky" id="nav2nd">
@@ -45,28 +47,45 @@
 					<!-- /nav -->
 
 			</header>
-			<section>
-				<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
-					<div class="wrapper">
-						<h2><?php the_title(); ?></h2>
-					</div>
-				</div>
-				<div class="wrapper">
-				<?php
+	<?php
 			    // TO SHOW THE PAGE CONTENTS
-			    while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
-			        <div class="entry-content-page">
-			            <?php the_content(); ?> <!-- Page Content -->
-			            <?php if(get_field('video')):
-			            	echo get_field('video');
-			            	endif; ?>
-			        </div><!-- .entry-content-page -->
-				<?php echo do_shortcode('[wpb_childpages]')?>
-			    <?php
-			    endwhile; //resetting the page loop
-			    wp_reset_query(); //resetting the page query
-			    ?>
-			    </div>
-			</section>
+			    while ( have_posts() ) : the_post(); ?>	
+	<section>	
+	<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
+		<div class="wrapper">
+			<h2>What we've heard</h2>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="container">
+			<div class="content"><?php the_content(); ?></div>
+			<?php
 
-<?php get_footer(); ?>
+			// check if the repeater field has rows of data
+			if( have_rows('section_repeat') ):
+
+			 	// loop through the rows of data
+			    while ( have_rows('section_repeat') ) : the_row();
+			?>
+			<h3 class="topic-head"><?php the_sub_field("title"); ?></h3>
+			<?php the_sub_field("description"); ?>
+				<div class="table">
+					<?php // check if the repeater field has rows of data
+					if( have_rows('item_repeat') ):
+
+					 	// loop through the rows of data
+					    while ( have_rows('item_repeat') ) : the_row();
+					?>
+						
+							<div class="title"><p><?php the_sub_field("item_title"); ?></p></div>
+							<div class="title-desc"><?php the_sub_field("item_description"); ?></div>
+				
+					<?php endwhile; endif;?>
+
+				</div>
+			<?php endwhile; endif;?>
+		</div>
+	</div>
+</section>	
+<?php endwhile;
+?>
