@@ -1,35 +1,75 @@
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+<section>	
+	<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
+		<div class="wrapper">
+			<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php //the_title(); ?>
+				<?php $categories = get_the_category();
+				if ( ! empty( $categories ) ) {
+				    echo esc_html( $categories[0]->name );
+				  //  echo esc_url( get_category_link( $categories[0]->term_id ) ) ;
+				}?>
+			</a></h2>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="container">
+		<!-- article <?php edit_post_link(); ?>-->
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<!-- article -->
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<?php
+			foreach( $categories as $category ) {
+			     $cat_id = $category->term_id;
+			}
+			echo '<ul>';
+			$query = new WP_Query( array( 'cat' => $cat_id) );
+			if ($query -> have_posts()): while($query -> have_posts() ): $query -> the_post();
+				?>
+				<li><a href="<?php the_permalink()?>"><?php the_title();?></a></li>
+				<?php endwhile;
+				 wp_reset_query(); 
+			endif;
+			echo '</ul>';
+		?>
+		<?php 
+			$args= array('type'=> 'post');
+			echo '<ul>';
+			$categories = get_categories( $args );
+			foreach($categories as $cat ){
+				?>
+				<li><a href="<?php echo get_category_link($cat->term_id)?>"><?php echo $cat->name; ?></a></li>
+			<?php	}
+			echo '</ul>';
+		?>
 
-		<!-- post thumbnail -->
-		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-			</a>
-		<?php endif; ?>
-		<!-- /post thumbnail -->
+		<?php if(get_field('icon')):?>
+			<img src="<?php the_field('icon')?>"/>
+		<?php endif;?>
+		<img src="<?php the_field('icon_gray')?>"/>
+		<?php the_content();?>
+		<?php
 
-		<!-- post title -->
-		<h2>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-		</h2>
-		<!-- /post title -->
+			// check if the repeater field has rows of data
+			if( have_rows('charts_repeater') ):
 
-		<!-- post details -->
-		<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-		<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-		<!-- /post details -->
+			 	// loop through the rows of data
+			    while ( have_rows('charts_repeater') ) : the_row();
 
-		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+			        // display a sub field value
+			        
+			        the_sub_field('chart_title');
+					echo do_shortcode(get_sub_field('chart_shortcode'));
 
-		<?php edit_post_link(); ?>
+			    endwhile;
 
-	</article>
-	<!-- /article -->
 
+			endif;
+
+		?>
+		</article>
+		<!-- /article -->
+		</div>
+	</div>
+</section>
 <?php endwhile; ?>
 
 <?php else: ?>
