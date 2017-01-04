@@ -186,7 +186,7 @@
 			 	}
 			});
 
-	});
+	})(jQuery, this);
 
  	
 
@@ -341,7 +341,7 @@ function center_map( map ) {
 var map = null;
 
 
-})(jQuery, this);
+});
 
 /*
 
