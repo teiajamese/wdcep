@@ -83,7 +83,7 @@
 			]
 		});
 
-
+/*
 		$(".play").click(function(){
 			var video = $('.landing-hero').attr('data-video');
 		    player = new YT.Player('player', {
@@ -125,7 +125,7 @@
 			    $('.play').show();
 			    $('.logo').show();
 			}
-		}
+		}*/
 	
 		$('.acf-map').each(function(){
 

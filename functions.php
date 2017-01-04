@@ -143,7 +143,7 @@ function html5blank_styles()
     wp_register_style('owl', get_template_directory_uri() . '/css/owl.carousel.css', array(), '1.0', 'all');
     wp_enqueue_style('owl'); 
 
-    wp_register_style('wdcep', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
+    wp_register_style('wdcep', get_template_directory_uri() . '/css/style.css', array());
     wp_enqueue_style('wdcep'); // Enqueue it!
 }
 
@@ -546,6 +546,24 @@ function wpb_list_child_pages() {
 
 }
 
-add_shortcode('wpb_childpages', 'wpb_list_child_pages');
+function wpb_list_child_pages_icons() { 
 
+    global $post; 
+
+    if ( is_page() && $post->post_parent )
+
+        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=<h2>stuff</h2>&child_of=' . $post->post_parent . '&echo=0' );
+    else
+        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=<h2>stuff</h2>&child_of=' . $post->ID . '&echo=0' );
+
+    if ( $childpages ) {
+
+        $string = '<ul>' . $childpages . '</ul>';
+    }
+
+    return $string;
+
+}
+add_shortcode('wpb_childpages', 'wpb_list_child_pages');
+add_shortcode('wpb_childpages_icons', 'wpb_list_child_pages_icons');
 ?>
