@@ -527,16 +527,25 @@ function create_post_type_form()
 	ShortCode Functions
 \*------------------------------------*/
 
-// Shortcode Demo with Nested Capability
-function html5_shortcode_demo($atts, $content = null)
-{
-    return '<div class="shortcode-demo">' . do_shortcode($content) . '</div>'; // do_shortcode allows for nested Shortcodes
+function wpb_list_child_pages() { 
+
+    global $post; 
+
+    if ( is_page() && $post->post_parent )
+
+        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
+    else
+        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
+
+    if ( $childpages ) {
+
+        $string = '<ul>' . $childpages . '</ul>';
+    }
+
+    return $string;
+
 }
 
-// Shortcode Demo with simple <h2> tag
-function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
-{
-    return '<h2>' . $content . '</h2>';
-}
+add_shortcode('wpb_childpages', 'wpb_list_child_pages');
 
 ?>

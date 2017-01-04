@@ -55,12 +55,12 @@
 			'menu' => "main"
 			);
 		wp_nav_menu($args);?>
-	<div class="newsletter"><a href="<?php get_template_directory_uri()?>/join">Join Our Newsletter</a></div>
+	<!--<div class="newsletter"><a href="<?php get_template_directory_uri()?>/join">Join Our Newsletter</a></div>-->
 	</nav>
 </div>
-<nav class="mobile-nav">
+<!--<nav class="mobile-nav">
 <div class="newsletter"><a href="<?php get_template_directory_uri()?>/join">Join Our Newsletter</a></div>
-</nav>
+</nav>-->
 <div class="section fp-auto-height" id="section1">	
 	<div class="wrapper">
 		<div class="desc">
