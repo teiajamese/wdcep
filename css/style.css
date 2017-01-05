@@ -22,16 +22,76 @@
   font-family: 'BacktoBlack';
   src: url('../fonts/Back-to-Black-Demo.ttf') format('truetype');
 }
-.charts-half {
+.top-nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  border-bottom: 1px solid #c2c2c2;
+  padding-bottom: 20px;
+}
+.top-nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.top-nav ul li.active {
+  filter: none;
+  -webkit-filter: none;
+}
+.top-nav ul li:hover {
+  transition: filter .3s;
+  filter: none;
+  -webkit-filter: none;
+}
+.top-nav ul li a {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  font-family: Geometos;
+  display: block;
+  text-align: center;
+}
+@media only screen and (max-width: 1261px) {
+  .top-nav ul li img {
+    max-width: 130px;
+  }
+  .top-nav ul li a {
+    font-size: 1.3em;
+  }
+}
+.charts-content {
+  width: 75%;
+}
+.charts-content .wrapper {
+  width: 90%;
+  margin: auto;
+  float: none;
+  padding: 4.4em 0 0em;
+}
+.charts-content p {
+  font-family: OpenSans_Light;
+  color: #3399cc;
+  font-size: 2.3em;
+  text-align: center;
+}
+.charts-content .charts-container {
+  background: #f2f2f2;
+}
+.charts-content .charts-container .space {
+  width: 90%;
+  margin: auto;
+}
+.charts-content .charts-half {
   width: 47%;
   display: inline-block;
   margin: 0 1%;
 }
-.charts-half p.title {
+.charts-content .charts-half p.title {
   font-size: 2.3em;
   text-transform: uppercase;
   font-family: Geometos;
   border-bottom: 1px solid #c2c2c2;
+  color: #444;
 }
 
 
@@ -856,12 +916,13 @@ section .wrapper h3 {
   }
 }
 section .side-nav {
-  width: 20%;
+  width: 25%;
   background-color: #CA272F;
   float: left;
 }
 section .side-nav ul {
   list-style: none;
+  margin-top: 4.4em;
 }
 section .side-nav ul li {
   text-align: right;
@@ -872,6 +933,7 @@ section .side-nav ul li a {
   font-size: 2.3em;
   font-family: Geometos;
   text-transform: uppercase;
+  padding-right: 7%;
 }
 section .content-container {
   display: -webkit-box;
