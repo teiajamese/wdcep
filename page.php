@@ -2,20 +2,19 @@
 	
 
 			<section>
-				<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
-					<div class="wrapper">
-						<h2><?php the_title(); ?></h2>
-					</div>
-				</div>
+				<?php get_template_part('parts/hero'); ?>
 				<div class="content-container">
+				<div class="side-nav-container">
 					<div class="side-nav">
 						<?php echo do_shortcode('[wpb_childpages]')?>
 					</div>
+				</div>
+
 					<div class="wrapper">
 					<?php
 				    // TO SHOW THE PAGE CONTENTS
 				    while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
-				        
+				    <!--    
 					<?php if( count(get_post_ancestors($post->ID)) == 2 ): ?>
 					<div class="top-nav">
 						<?php echo do_shortcode('[wpb_childpages]')?>
@@ -24,13 +23,20 @@
 						
 					</div>
 				<?php endif; ?>
+				-->
 				        <div class="entry-content-page">
-				            <?php the_content(); ?> <!-- Page Content -->
 				            <?php if(get_field('video')):?>
-				            	<div class="embed-container">
-								<?php echo get_field('video')?>
+				            	<div class= "two-column">
+				            	<?php the_content(); ?> <!-- Page Content -->
+				            	</div>
+				            	<div class= "two-column">
+					            	<div class="embed-container">
+									<?php echo get_field('video')?>
+									</div>
 								</div>
-				            	<? endif; ?>
+							<?php else: ?>
+								<?php the_content(); ?> <!-- Page Content -->
+				            <? endif; ?>
 				        </div><!-- .entry-content-page -->
 				        <div class="charts-container">
 				        	<?php

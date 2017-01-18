@@ -47,11 +47,7 @@
 
 			</header>
 			<section id="partners">
-				<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
-					<div class="wrapper">
-						<h2><?php the_title(); ?></h2>
-					</div>
-				</div>
+				<?php get_template_part('parts/hero'); ?>
 				<div class="wrapper">
 				<?php
 			    // TO SHOW THE PAGE CONTENTS

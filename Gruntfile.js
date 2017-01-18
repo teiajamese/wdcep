@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     less:{
       build:{
-        src: 'less/*.less',
+        src: 'less/compile.less',
         dest: 'css/style.css'
       },
       

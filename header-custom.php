@@ -98,7 +98,7 @@
 			<header class="header clear" role="banner">
 				<nav class="partnernav sticky" id="nav2nd">
 					<div class="whiteLogo">
-						<a href="#landingPage"><img src="<?php echo get_template_directory_uri()?>/img/icons/whiteLogo.png"></a>
+						<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri()?>/img/icons/whiteLogo.png"></a>
 					</div>
 						<?php 
 						$args = array(

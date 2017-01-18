@@ -143,7 +143,7 @@ function html5blank_styles()
     wp_register_style('owl', get_template_directory_uri() . '/css/owl.carousel.css', array(), '1.0', 'all');
     wp_enqueue_style('owl'); 
 
-    wp_register_style('wdcep', get_template_directory_uri() . '/css/style.css', array(), '2.0', 'all');
+    wp_register_style('wdcep', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
     wp_enqueue_style('wdcep'); // Enqueue it!
 }
 
@@ -366,7 +366,7 @@ function html5blankcomments($comment, $args, $depth)
 
 // Add Actions
 add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
-//add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
+add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
@@ -527,43 +527,16 @@ function create_post_type_form()
 	ShortCode Functions
 \*------------------------------------*/
 
-function wpb_list_child_pages() { 
-
-    global $post; 
-
-    if ( is_page() && $post->post_parent )
-
-        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
-    else
-        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
-
-    if ( $childpages ) {
-
-        $string = '<ul><li><a href="/dc-economic-strategy/">Overview</a></li>' . $childpages . '</ul>';
-    }
-
-    return $string;
-
+// Shortcode Demo with Nested Capability
+function html5_shortcode_demo($atts, $content = null)
+{
+    return '<div class="shortcode-demo">' . do_shortcode($content) . '</div>'; // do_shortcode allows for nested Shortcodes
 }
 
-function wpb_list_child_pages_icons() { 
-
-    global $post; 
-
-    if ( is_page() && $post->post_parent )
-
-        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=<h2>stuff</h2>&child_of=' . $post->post_parent . '&echo=0' );
-    else
-        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=<h2>stuff</h2>&child_of=' . $post->ID . '&echo=0' );
-
-    if ( $childpages ) {
-
-        $string = '<ul>' . $childpages . '</ul>';
-    }
-
-    return $string;
-
+// Shortcode Demo with simple <h2> tag
+function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
+{
+    return '<h2>' . $content . '</h2>';
 }
-add_shortcode('wpb_childpages', 'wpb_list_child_pages');
-add_shortcode('wpb_childpages_icons', 'wpb_list_child_pages_icons');
+
 ?>

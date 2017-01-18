@@ -2,14 +2,12 @@
   
 
 			<section id="partners">
-				<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
-					<div class="wrapper">
-						<h2><?php the_title(); ?></h2>
-					</div>
-				</div>
+				<?php get_template_part('parts/hero'); ?>
 				<div class="content-container">
-					<div class="side-nav">
-						<?php echo do_shortcode('[wpb_childpages]')?>
+					<div class="side-nav-container">
+						<div class="side-nav">
+							<?php echo do_shortcode('[wpb_childpages]')?>
+						</div>
 					</div>
 					<div class="wrapper">
 					<?php
@@ -62,10 +60,13 @@
 									<div class="content" data-attr="<?php the_sub_field('label');?>">
 									    <div class="info-header">
 									    	<h3><?php the_sub_field('label');?></h3>
-									    </div>	
-								        <div class="span-7"><?php the_sub_field('info_description');?></div>
-								        <div class="span-3"><img src="<?php the_sub_field('img');?>"/></div>
-								        	
+									    </div>
+									    <?php if(the_sub_field('img')): ?>	
+									        <div class="span-7"><?php the_sub_field('info_description');?></div>
+									        <div class="span-3"><img src="<?php the_sub_field('img');?>"/></div>
+								    	<?php else: ?>
+								        	<div><?php the_sub_field('info_description');?></div>
+								        <?php endif; ?>
 								    </div>
 											      <?php 
 								    endwhile;

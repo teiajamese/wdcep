@@ -1,6 +1,7 @@
-@import 'colors.less';
-@import 'fonts.less';
-@import 'media-queries.less';
+.entry-content-page{
+	padding-bottom: 40px;
+	overflow: auto;
+}
 .red{
 	color: @red;
 }
@@ -16,14 +17,29 @@ ol{
 font-size: 1.875em;
 }
 li{
+
 	.li1{
 		font-size: 1em;
 		font-family: @OpenSans_Light;
 	}
 }
+h3{
+	font-size: 4.8em;
+	text-transform: uppercase;
+	color: @blue;
+	margin-top: 0;
+	margin-bottom: .42em;
+	font-family: @Geometos;
+	@media @largeDesktop{
+		font-size: 4.8em;
+	}
+	@media @mobile{
+		font-size: 2.3em;
+	}
+}
 section{
 	width:100%;
-	min-height:100vh;
+	//min-height:100vh;
 	overflow: auto;
 
 	@media @height{
@@ -43,7 +59,8 @@ section{
 			height:100%;
 			width: 100%;
 			float: none;
-			h2{
+			margin-top: 78px;
+			h1{
 				color: #fff;
 			    font-size: 6vw;
 			    text-align: center;
@@ -51,6 +68,8 @@ section{
 	    		display: table-cell;
 	    		text-transform: uppercase;
 	    		font-family: @Geometos;
+	    		line-height: 1em;
+    			padding: 0 32px;
 	    		@media @largeDesktop{
 	    			font-size: 7em;
 	    		}
@@ -65,43 +84,148 @@ section{
 	.wrapper{
 		overflow: auto;
 		padding: 4.4em 0;
-		width:75%;
-		float:left;
+		width:95%;
+
 		h3{
-		    	font-size: 4vw;
-	    		text-transform: uppercase;
-	    		color: @blue;
-	    		margin-top: 0;
-	    		margin-bottom: .42em;
-	    		font-family: @Geometos;
-	    		@media @largeDesktop{
-	    			font-size: 4.8em;
-	    		}
-	    		@media @mobile{
-	    			font-size: 2.3em;
-	    		}
-		    }
+	    	font-size: 4.8em;
+    		text-transform: uppercase;
+    		color: @blue;
+    		margin-top: 0;
+    		margin-bottom: .42em;
+    		font-family: @Geometos;
+    		@media @largeDesktop{
+    			font-size: 4.8em;
+    		}
+    		@media @mobile{
+    			font-size: 2.3em;
+    		}
+	    }
+	}
+	.content-container{
+		.wrapper{
+			padding: 4.4em 6.5em 0em;
+			p{
+				font-size: 16px;
+				font-family: @OpenSans_Regular;
+			}
+			//float:left;
+		}
 	}
 	.side-nav{
-		width:25%;
-		background-color:@red;
+		width:100%;
+		height:100%;
+		background-color:@blue;
 		float:left;
+		//padding: 0 31px;
 		ul{
 			list-style: none;
 			margin-top:4.4em;
+			padding: 0;
 			li{
 				text-align: right;
-				padding-bottom: 20px;
+				padding: 20px 31px;
+				&.current_page_item{
+					background: @darkBlue;
+				}
+				&:hover{
+					background: @darkBlue;
+				}
+				//margin-right: 7%;
+				.side-sub-nav{
+					//display: none;
+				}
 				a{
 					color: @white;
-					font-size: 2.3em;
+					font-size: 1.5em;
 					font-family: @Geometos;
 					text-transform: uppercase;
-					padding-right: 7%;
-					
+					line-height: 1.2em;
 				}
 			}
 		}
+		&.open{
+			width:75vw;
+			padding: 0 31px;
+			ul{
+				li{
+					text-align: right;
+				    padding-bottom: 12px;
+				    border-bottom: 1px solid #e7a1a5;
+				    padding-top: 20px;
+				    visibility: visible;
+				    &.active-cat{
+				    	a{
+				    		color: @blue;
+				    	}
+				    	.side-sub-nav{
+				    		margin-top: 0;
+				    		display: block;
+				    		li{
+				    			padding:6px 0px 0px;
+							    margin-right: 0;
+							    border: none;
+							    a{
+							    	color: @white;
+							    	font-size: 1.3em;
+							    }
+				    		}
+				    	}
+				    }
+				}
+			}
+			.more-side{
+				left:91.8%;
+				@media @mobile{
+					left:83.8%;
+				}
+			}
+			
+		}
+		@media @laptop{
+			//
+			ul{
+				li{
+					a{
+						font-size: 1.7em;
+					}
+				}
+			}
+		}
+		@media @tablet{
+		    width: 7px;
+		    padding:0;
+		    bottom: 0;
+		    position: fixed;
+		    top: 0px;
+		    /* left: 2%; */
+		    z-index: 2;
+			li{
+				visibility: hidden;
+			}
+		}
+	}
+	.side-nav-container{
+		max-width:25%;
+		@media @tablet{
+			position: relative;
+		    display: inline-block;
+		    float: left;
+		    &.open{
+		    	 +.charts-content{
+					//width: 50%;
+					.overlay{
+						height: 100%;
+						width: 100vw;
+					    position: absolute;
+					    background: rgb(0, 0, 0);
+					    background: rgba(0, 0, 0, 0.5);
+					    z-index: 1;
+					    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+					    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+					}
+				}
+		    }
+	   	}
 	}
 	.content-container{
 		display: -webkit-box;
@@ -146,7 +270,7 @@ section{
 		text-decoration: none;
 	} 
 }
-h2.title{
+h1.title{
 
 	color: @blue;
 	font-size: 4.8em;
@@ -232,6 +356,17 @@ position: fixed;
 	}
 .noscroll{
 	overflow: hidden;
+}
+.two-column{
+	width: 50%;
+	float: left;
+	p{
+		padding-right: 56px;
+	}
+	@media @tablet{
+		width: 100%;
+		float: none;
+	}
 }
 @-webkit-keyframes fadeIn {
     from { //opacity: 0;

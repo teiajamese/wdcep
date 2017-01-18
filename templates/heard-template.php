@@ -1,19 +1,16 @@
 <?php /* Template Name: What we've heard Template */ ?>
 <?php get_header('custom'); ?>
 
-
 	<?php
 			    // TO SHOW THE PAGE CONTENTS
 			    while ( have_posts() ) : the_post(); ?>	
 	<section>	
-	<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
-		<div class="wrapper">
-			<h2>What we've heard</h2>
-		</div>
-	</div>
+	<?php get_template_part('parts/hero'); ?>
 	<div class="content-container">
-		<div class="side-nav">
-			<?php echo do_shortcode('[wpb_childpages]')?>
+		<div class="side-nav-container">
+			<div class="side-nav">
+				<?php echo do_shortcode('[wpb_childpages]')?>
+			</div>
 		</div>
 		<div class="wrapper">
 			<div class="container">

@@ -1,0 +1,154 @@
+
+.top-nav{
+	ul{
+		list-style: none;
+		text-align: center;
+		padding: 0;
+		border-bottom: 1px solid #c2c2c2;
+	    padding-bottom: 20px;
+		li{
+			display: inline-block;
+			margin: 0 20px;
+			-webkit-filter: grayscale(100%);
+    		filter: grayscale(100%);
+    		&.active{
+    			filter: none;
+    			-webkit-filter:none;
+    			a{
+    				color: @red;
+    			}
+    		}
+    		&:hover{
+    			transition: filter .3s;
+    			filter: none;
+    			-webkit-filter:none;
+    			a{
+    				color: @red;
+    			}
+    		}
+			a{
+				font-size: 1.8em;
+    			text-transform: uppercase;
+    			font-family: Geometos;
+    			display: block;
+    			text-align: center;
+			}
+			
+			@media @laptop{
+				img{
+					max-width: 130px;
+				}
+				a{
+					font-size: 1.3em;
+				}
+			}
+		}
+		&.slick-slider{
+	    	border: none;
+		}
+	}
+	p{
+		padding-top: 12px;
+	}
+}
+.charts-content{
+	width: 75%;
+	.wrapper{
+		width: 90%;
+		margin:auto;
+		float: none;
+		padding: 4.4em 2.5em 0em;
+	}
+	p{
+		font-family: OpenSans_Light;
+		color: @blue;
+		font-size: 2.3em;
+		text-align: center;
+	}
+	.charts-container{
+		background: #f2f2f2;
+		.space{
+			width: 90%;
+			margin:auto;
+			padding-bottom: 40px;
+		}
+	}
+	.charts-half{
+		width:47%;
+		display:inline-block;
+		margin: 0 1%;
+		vertical-align: text-top;
+		p.title{
+			font-size: 2.3em;
+	    	text-transform: uppercase;
+	    	font-family: @Geometos;
+	    	border-bottom: 1px solid #c2c2c2; 
+	    	color: #444;
+		}
+	}
+	.charts-full{
+		width: 100%;
+		p.title{
+			font-size: 2.3em;
+	    	text-transform: uppercase;
+	    	font-family: @Geometos;
+	    	border-bottom: 1px solid #c2c2c2; 
+	    	color: #444;
+	    	padding: 25px 0;
+		}
+	}
+	@media @tablet{
+		width:98%;
+		.charts-half{
+			width: 100%;
+		}
+	}
+}
+.more-side{
+	//right: -5px; 
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: @blue;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: 700;
+ 
+    line-height: .2;
+    padding: .95em .5em .95em .5em;
+    position: absolute;
+    left: -29px;
+    text-align: center;
+    top: 50%;
+    /* -webkit-transform: rotate(-90deg) translateY(100%) translateX(50%); */
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+    z-index: 10;
+    font-family: @Geometos;
+    display: none;
+    @media @tablet{
+    	display: block;
+    }
+}
+.slick-prev:before, .slick-next:before{
+	color: #c2c2c2;
+}
+.slick-dots{
+	padding-bottom: 14px;
+}
+.slick-slide img{
+	margin:auto;
+}
+.slick-track{
+	margin: auto;
+}
+.content{
+	//width:75%;
+	.wrapper{
+		width: 90%;
+	    margin: auto;
+	    float: none;
+	    padding: 4.4em 2.5em 0em;
+	}
+}

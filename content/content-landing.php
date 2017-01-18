@@ -52,10 +52,10 @@
 	</div>
 		<?php 
 		$args = array(
-			'menu' => "main"
+			'menu' => "custom-posts"
 			);
 		wp_nav_menu($args);?>
-	<!--<div class="newsletter"><a href="<?php get_template_directory_uri()?>/join">Join Our Newsletter</a></div>-->
+	<div class="newsletter"><a href="<?php get_template_directory_uri()?>/join">Join Our Newsletter</a></div>
 	</nav>
 </div>
 <!--<nav class="mobile-nav">
