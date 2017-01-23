@@ -61,7 +61,7 @@
 									    <div class="info-header">
 									    	<h3><?php the_sub_field('label');?></h3>
 									    </div>
-									    <?php if(the_sub_field('img')): ?>	
+									    <?php if(get_sub_field('img')): ?>	
 									        <div class="span-7"><?php the_sub_field('info_description');?></div>
 									        <div class="span-3"><img src="<?php the_sub_field('img');?>"/></div>
 								    	<?php else: ?>

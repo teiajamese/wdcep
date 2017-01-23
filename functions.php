@@ -373,6 +373,7 @@ add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('init', 'create_post_type_pastreport'); //Add Reports Cutom Post Type
 add_action('init', 'create_post_type_form'); //Add Reports Cutom Post Type
+add_action('init', 'create_post_type_initiatives'); //Add initiatives Cutom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -522,7 +523,68 @@ function create_post_type_form()
 
     ));
 }
+//initiatives Custom Post Type 
+function create_post_type_initiatives()
+{
 
+    register_post_type('initiatives', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Initiatives', 'wdcep'), // Rename these to suit
+            'singular_name' => __('Initiatives', 'wdcep'),
+            'add_new' => __('Add New', 'wdcep'),
+            'add_new_item' => __('Add New Initiative', 'wdcep'),
+            'edit' => __('Edit', 'wdcep'),
+            'edit_item' => __('Edit Initiative', 'wdcep'),
+            'new_item' => __('New Initiative', 'wdcep'),
+            'view' => __('View Initiative', 'wdcep'),
+            'view_item' => __('View Initiative', 'wdcep'),
+            'search_items' => __('Search Initiatives', 'wdcep'),
+            'not_found' => __('No Initiatives found', 'wdcep'),
+            'not_found_in_trash' => __('No Initiatives found in Trash', 'wdcep')
+        ),
+        'taxonomies'  => array( 'topics' ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+
+    ));
+}
+function create_taxonomy_topic() {
+    $labels = array(
+    'name' => _x( 'Topics', 'taxonomy general name' ),
+    'singular_name' => _x( 'Topic', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Topics' ),
+    'all_items' => __( 'All Topics' ),
+    'parent_item' => __( 'Parent Topic' ),
+    'parent_item_colon' => __( 'Parent Topic:' ),
+    'edit_item' => __( 'Edit Topic' ), 
+    'update_item' => __( 'Update Topic' ),
+    'add_new_item' => __( 'Add New Topic' ),
+    'new_item_name' => __( 'New Topic Name' ),
+    'menu_name' => __( 'Topics' ),
+  );    
+
+// Now register the taxonomy
+
+  register_taxonomy('topics',array('initiatives'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'topic' ),
+  ));
+
+}
+add_action( 'init', 'create_taxonomy_topic' );
 /*------------------------------------*\
 	ShortCode Functions
 \*------------------------------------*/
@@ -538,8 +600,8 @@ function wpb_list_child_pages() {
         $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
 
     if ( $childpages ) {
-
-        $string = '<ul><li><a href="/dc-economic-strategy/">Overview</a></li>' . $childpages . '</ul>';
+        $link = get_permalink( $post->post_parent );
+        $string = '<ul><li><a href="'.$link.'">Overview</a></li>' . $childpages . '</ul>';
     }
 
     return $string;

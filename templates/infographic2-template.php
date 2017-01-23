@@ -9,7 +9,7 @@
 							<?php echo do_shortcode('[wpb_childpages]')?>
 						</div>
 					</div>
-					<div class="wrapper">
+					
 					<?php
 				    // TO SHOW THE PAGE CONTENTS
 				    while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
@@ -27,32 +27,57 @@
 								       ?>
 
 									<div class="content section" data-attr="<?php the_sub_field('section_name');?>">
+									<div class="wrapper">
 									    <div class="section-title">
 									    	<h3><?php the_sub_field('section_name');?></h3>
 									    </div>
 									   <div class="section-desc">
 									   		<?php the_sub_field('section_description')?>
 									   </div>
-								    
-									<?php 
-									// check if the repeater field has rows of data
-									if( have_rows('sectors_repeater') ):
+									    <div class="two-column sector-full">
 
-									 	// loop through the rows of data
-									    while ( have_rows('sectors_repeater') ) : the_row();
-										?>
-										<div>
-											<div>
-												<?php the_sub_field('sector_title')?>
-												<?php the_sub_field('sector_description')?>
-											</div>
-										</div>
-										
-										
 										<?php 
-										endwhile;
-										endif;
-										echo '</div>';
+										// check if the repeater field has rows of data
+										if( have_rows('sectors_repeater') ):
+
+										 	// loop through the rows of data
+										    while ( have_rows('sectors_repeater') ) : the_row();
+											?>
+											<div class="sector-text hide-item" data-name= "<?php the_sub_field('sector_title');?>">
+												<div >
+													<h4><img src="<?php the_sub_field('sector_icon');?>"><?php the_sub_field('sector_title')?></h4>
+													<?php the_sub_field('sector_description')?>
+												</div>
+											</div>
+											
+											
+											<?php 
+											endwhile;
+											endif;?>
+										</div>
+										<div class="two-column">
+											<ul class="sector-list">
+											<?php 
+											// check if the repeater field has rows of data
+											if( have_rows('sectors_repeater') ):
+
+											 	// loop through the rows of data
+											    while ( have_rows('sectors_repeater') ) : the_row();
+											?>
+											
+												
+													<li class="sector-list" data-name= "<?php the_sub_field('sector_title');?>" style="background: <?php the_sub_field('sector_color');?>">
+														<img src="<?php the_sub_field('sector_icon');?>">
+														<?php the_sub_field('sector_title');?>
+													</li>
+												
+											
+											<?php endwhile; endif; ?> 
+											</ul>
+										</div>
+									</div>
+									</div>
+									<?php 
 								    endwhile;
 
 								else :
@@ -62,13 +87,14 @@
 								endif;
 
 								?>
+
 				        </div><!-- .entry-content-page -->
 
 				    <?php
 				    endwhile; //resetting the page loop
 				    wp_reset_query(); //resetting the page query
 				    ?>
-				    </div>
+				    
 				</div>
 			</section>
 

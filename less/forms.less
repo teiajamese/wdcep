@@ -13,6 +13,9 @@
     	padding: 0;
     	margin-top:6px;
     }
+    img{
+    	width: 100%;
+    }
     .form-overlay{
     	position: absolute;
 	    height: 100%;
@@ -25,9 +28,13 @@
     		text-align: center;
     		font-family: @Gotham_Black;
     		margin: 0;
-    		margin-top: 27px;
+    		margin-top: 0px;
+    		position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    transform: translate(-50%, -50%);
     		@media @laptop{
-    			margin-top: 17px;
+    			
     			line-height: 1;
     			font-size: 2em;
     		}

@@ -83,7 +83,26 @@
 			]
 		});
 
+		$('li.sector-list').click(function(){
+			var listName = $(this).attr('data-name');
+			$('div[data-name="'+listName+'"]').siblings().removeClass('show-item');
+			$('div[data-name="'+listName+'"]').siblings().addClass('hide-item');
+			$('div[data-name="'+listName+'"]').addClass('show-item');
+			$('div[data-name="'+listName+'"]').removeClass('hide-item');
+			//console.log('clicked');
+		});
+		$('div.sector-full > div:first-child').addClass('show-item');
 
+		$('.form-container').click(function(){
+			var sectorName = $(this).attr('data-sector');
+			$('div.sector-overlay[data-sector="'+sectorName+'"]').show();
+			$('.carousel-overlay').show();
+		});
+		$('p.close').click(function(){
+			var sectorName = $(this).attr('data-sector');
+			$('div.sector-overlay[data-sector="'+sectorName+'"]').hide();
+			$('.carousel-overlay').hide();
+		});
 		$(".play").click(function(){
 			var video = $('.landing-hero').attr('data-video');
 		    player = new YT.Player('player', {
