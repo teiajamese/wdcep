@@ -1,59 +1,113 @@
-.carousel{
-	position: relative;
-}
-.sector-overlay{
-	display: none;
-    position: absolute;
-    top: 50%;
-  //left: 50%;
-  	transform: translateY(-50%);
-  	background: @white;
-  	z-index: 10;
-  	    margin: 0 30px;
-  	border-top-left-radius: 7px;
-  	border-top-right-radius: 7px;
-  	p{
-  		padding: 2% 4%;
-  	}
-    .sector-title{
-    	background: @purple;
-    	color: @white;
-    	text-align: center;
-    	padding: 14px;
-    	font-family: @Geometos;
-    	font-size: 18px;
-    	border-top-left-radius: 7px;
-  	border-top-right-radius: 7px;
-    }
-}
-p.close{
-	font-size: 25px;
-    margin: 0;
-    top:0;
-    right: 15px;
-    font-family: @Geometos;
-}
-.carousel-overlay{
-	background: rgba(0, 0, 0, 0.5);
-	position: absolute;
-	z-index: 5;
-	display: none;
-	top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-.init{
-	
-	p{
-		text-align: left;
+section{
+	.carousel{
+		position: relative;
 	}
-	.title{
-		color: @red;
-		text-transform: uppercase;
-		font-size: 20px;
+	.sector-overlay{
+		display: none;
+	    position: absolute;
+	    top: 50%;
+	  //left: 50%;
+	  	transform: translateY(-50%);
+	  	background: @white;
+	  	z-index: 10;
+	  	margin: 0 30px;
+	  	border-top-left-radius: 7px;
+	  	border-top-right-radius: 7px;
+	  	p{
+	  		padding: 2% 4%;
+	  	}
+	    .sector-title{
+	    	background: @purple;
+	    	color: @white;
+	    	text-align: center;
+	    	padding: 14px;
+	    	font-family: @Geometos;
+	    	font-size: 18px;
+	    	border-top-left-radius: 7px;
+	  		border-top-right-radius: 7px;
+	    }
 	}
-	.time{
-		font-weight: 500;
+	p.close{
+		font-size: 25px;
+	    margin: 0;
+	    top:0;
+	    right: 15px;
+	    font-family: @Geometos;
+	}
+	.carousel-overlay{
+		background: rgba(0, 0, 0, 0.5);
+		position: absolute;
+		z-index: 5;
+		display: none;
+		top: 0;
+	    bottom: 0;
+	    right: 0;
+	    left: 0;
+	}
+	.init{
+		
+		p{
+			text-align: left;
+		}
+		.title{
+			color: @red;
+			text-transform: uppercase;
+			font-size: 20px;
+		}
+		.time{
+			font-weight: 500;
+		}
+	}
+	.sector-section-container{
+		display: inline-block;
+		width:49.8%;
+		cursor: pointer;
+		p.sector-section-title{
+			padding: 10px;
+			margin: 0px;
+			font-family: @Geometos;
+			text-transform: uppercase;
+			font-size: 20px;
+			border-top-left-radius: 7px;
+	  		border-top-right-radius: 7px;
+	  		background: @gray;
+	  		text-align: center;
+	  		color: @lightgray;
+		}
+		&.section-active{
+			p.sector-section-title{
+				background: @blue;
+				color: @red;
+			}
+		}
+
+	}
+	.carousel{
+		padding-top: 35px;
+		.sector-container{
+			background: @lightgray;
+			display: none;
+			&.active-section{
+				display: block;
+				min-height: 621px;
+				border:1px solid @blue;
+				padding: 30px;
+			}
+		}
+		
+
+	}
+	.three-col{
+		p.excerpt{
+		font-size: 14px;
+		}
+	}
+	.content.section .sector-text{
+		ul{
+			li{
+				font-family: @OpenSans_Regular;
+				text-transform: none;
+			}
+		}
 	}
 }

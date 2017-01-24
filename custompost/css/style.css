@@ -399,7 +399,7 @@ position: fixed;
   padding: 0 1%;
   border-bottom: 1px solid #000;
   border-right: 1px solid #000;
-  height: 375px;
+  height: 280px;
 }
 .three-col:nth-child(3n+1) {
   border-left: 1px solid #000;
@@ -411,16 +411,6 @@ position: fixed;
   .three-col {
     width: 100%;
     float: none;
-  }
-}
-@media only screen and (max-width: 1261px) {
-  .three-col {
-    height: 400px;
-  }
-}
-@media only screen and (min-width: 1024px) and (max-width:1192px) {
-  .three-col {
-    height: 485px;
   }
 }
 .two-column {
@@ -1537,8 +1527,7 @@ nav ul {
   margin: 0;
   overflow: auto;
   padding-left: 0px;
-  text-align: right;
-  margin-right: 3%;
+  text-align: center;
 }
 nav ul li {
   display: inline-block;
@@ -1557,7 +1546,7 @@ nav ul li a {
   font-family: Geometos;
 }
 nav .whiteLogo {
-  width: 200px;
+  max-width: 15vw;
   float: left;
   padding-left: 2%;
   padding-top: 5px;
@@ -1762,22 +1751,22 @@ nav.mobile-nav {
   padding: 19px;
   list-style: none;
   display: inline-block;
-  height: 122px;
-  width: 125px;
+  height: 98px;
+  width: 100px;
   vertical-align: bottom;
   position: relative;
 }
 #partners .wrapper li:nth-child(even) {
-  background: #3399cc;
+  background: #CA272F;
 }
 #partners .wrapper li:nth-child(odd) {
-  background: #CA272F;
+  background: #3399cc;
 }
 #partners .wrapper li h3 {
   color: #fff;
   display: inline;
   padding-left: 16px;
-  font-size: 1.3em;
+  font-size: 2.4em;
 }
 @media only screen and (min-width: 1024px) and (max-width:1192px) {
   #partners .wrapper li h3 {
@@ -1798,11 +1787,8 @@ nav.mobile-nav {
   left: 107px;
 }
 #partners .wrapper li:hover {
-  width: calc(100% - 392.149px);
+  width: calc(100% - 384.149px);
   transition: width .56s;
-  -webkit-transition: width .56s;
-  -moz-transition: width .56s;
-  -o-transition: width .56s;
   -webkit-transform: translate3d(0, 0, 0);
   cursor: pointer;
 }
@@ -1818,17 +1804,12 @@ nav.mobile-nav {
   opacity: 1;
   visibility: visible;
   transition: all .5s;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -o-transition: all .5s;
   -webkit-transition-delay: .15s;
   /* Safari */
-  -moz-transition-delay: .15s;
-  -o-transition-delay: .15s;
   transition-delay: .15s;
 }
 #partners .wrapper li.active {
-  width: calc(100% - 392.149px);
+  width: calc(100% - 384.149px);
 }
 #partners .wrapper li.active:hover ~ li {
   width: 125px;
@@ -1841,9 +1822,6 @@ nav.mobile-nav {
 #partners .wrapper li.expand {
   width: 125px;
   transition: width .56s;
-  -webkit-transition: width .56s;
-  -moz-transition: width .56s;
-  -o-transition: width .56s;
   -webkit-transform: translate3d(0, 0, 0);
   /*dont need
 				& ~ li.active{
@@ -1861,20 +1839,20 @@ nav.mobile-nav {
 }
 @media only screen and (max-width: 769px), only screen and (min-width: 770px) and (max-width: 1044px) {
   #partners .wrapper li {
-    width: calc(100%/4 - 3.8px);
+    width: calc(100%/4 - 2.3px);
     border-bottom: 4px solid #fff;
   }
   #partners .wrapper li .fadein {
     display: none;
   }
   #partners .wrapper li:hover {
-    width: calc(100%/4 - 3.8px);
+    width: calc(100%/4 - 2.3px);
   }
   #partners .wrapper li:hover ~ li {
-    width: calc(100%/4 - 3.8px);
+    width: calc(100%/4 - 2.3px);
   }
   #partners .wrapper li.active {
-    width: calc(100%/4 - 3.8px);
+    width: calc(100%/4 - 2.3px);
     border-bottom: none;
   }
   #partners .wrapper li.active .fadein {
@@ -1883,7 +1861,7 @@ nav.mobile-nav {
     width: 0;
   }
   #partners .wrapper li.active:hover ~ li {
-    width: calc(100%/4 - 3.8px);
+    width: calc(100%/4 - 2.3px);
   }
   #partners .wrapper li img {
     position: absolute;
@@ -1891,7 +1869,7 @@ nav.mobile-nav {
     transform: translateX(-50%);
   }
   #partners .wrapper li.expand {
-    width: calc(100%/4 - 3.8px);
+    width: calc(100%/4 - 2.3px);
   }
 }
 @media only screen and (max-width: 420px) {
@@ -2197,13 +2175,6 @@ section .carousel .sector-container.active-section {
   min-height: 621px;
   border: 1px solid #3399cc;
   padding: 30px;
-}
-section .three-col p.excerpt {
-  font-size: 14px;
-}
-section .content.section .sector-text ul li {
-  font-family: OpenSans_Regular;
-  text-transform: none;
 }
 /** Plugin Specific Styles **/
 .frm_style_formidable-style.with_frm_style input[type=text],

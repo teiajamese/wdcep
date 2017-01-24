@@ -366,9 +366,25 @@ position: fixed;
     vertical-align: top;
     word-wrap: break-word;
     padding: 0 1%;
+    border-bottom: 1px solid @black;
+    border-right: 1px solid @black;
+    height: 375px;
+    &:nth-child(3n+1){
+		border-left: 1px solid @black;
+    }
+    &:nth-child(-n+3){
+    	border-top: 1px solid @black;
+    }
 	@media @tablet{
 		width: 100%;
 		float: none;
+
+	}
+	@media @laptop{
+		height:400px;
+	}
+	@media @smallDesktop{
+		height:485px;
 	}
 }
 .two-column{

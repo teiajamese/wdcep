@@ -18,22 +18,38 @@
 				</div>
 			
 				<div class="wrapper">
+					<?php the_content(); ?>
 					<div class="carousel">
 					<div class="carousel-overlay"></div>
-					<?php the_content(); ?>
+					
+					<?php // check if the repeater field has rows of data
+						if( have_rows('sector_repeater') ):
+						$count = 0;
+						 	// loop through the rows of data
+						    while ( have_rows('sector_repeater') ) : the_row();
+						?>
+						<?php if(get_sub_field('sector_anaylsis_section')): ?>
+						<div class="sector-section-container  <?php if(!$count){echo 'section-active';}?>"  data-name="<?php the_sub_field("sector_anaylsis_section"); ?>">
+							<p class="sector-section-title">
+								<?php the_sub_field("sector_anaylsis_section"); ?>
+							</p>
+						</div>
+						<?php endif; ?>
+					<?php $count++; endwhile; endif; ?>
 					<?php
 
 				// check if the repeater field has rows of data
 				if( have_rows('sector_repeater') ):
-
+					$count = 0;
 				 	// loop through the rows of data
 				    while ( have_rows('sector_repeater') ) : the_row();
 				?>
+				<div class="sector-container <?php if(!$count){echo 'active-section';}?>" data-name="<?php the_sub_field("sector_anaylsis_section"); ?>">
 						<?php
 
 						// check if the repeater field has rows of data
 						if( have_rows('sectors') ):
-
+						
 						 	// loop through the rows of data
 						    while ( have_rows('sectors') ) : the_row();
 						?>
@@ -41,11 +57,11 @@
 							
 							<div class="form-container" data-sector="<?php the_sub_field("title"); ?>">
 								
-									<img src="<?php the_sub_field("image"); ?>">
-									<div class="form-overlay">
-										<h3><?php the_sub_field("title"); ?></h3>
-										
-									</div>
+								<img src="<?php the_sub_field("image"); ?>">
+								<div class="form-overlay">
+									<h3><?php the_sub_field("title"); ?></h3>
+									
+								</div>
 								
 							</div>
 							<div class="sector-overlay" data-sector="<?php the_sub_field("title"); ?>">
@@ -57,7 +73,8 @@
 							</div>
 
 							<?php endwhile; endif;?>
-					<?php endwhile; endif;?>
+							</div>
+					<?php $count++; endwhile; endif;?>
 					
 					</div>
 				</div>

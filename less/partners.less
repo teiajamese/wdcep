@@ -18,22 +18,22 @@
 			padding:19px;
 			list-style: none;
 			display: inline-block;
-			height: 98px;
-			width:100px;
+			height: 122px;
+			width:125px;
 	    	vertical-align: bottom;
 	    	position: relative;
 			&:nth-child(even){
-				background: @red;
+				background: @blue;
 
 			}
 			&:nth-child(odd){
-				background: @blue;
+				background: @red;
 			}
 			h3{
 				color:@white;
 				display: inline;
 				padding-left: 16px;
-				font-size: 2.4em;
+				font-size: 1.3em;
 				@media @smallDesktop{
 					font-size: 1.4em;
 				}
@@ -52,8 +52,11 @@
 			    left: 107px;
 			}
 			&:hover{ 
-				width:calc(~'100% - 384.149px');
+				width:calc(~'100% - 392.149px');
 				transition: width .56s;
+				-webkit-transition: width .56s;
+   				 -moz-transition: width .56s;
+   				 -o-transition: width .56s;
 				-webkit-transform:translate3d(0,0,0);
 				cursor: pointer;
 				& ~ li{
@@ -69,14 +72,19 @@
 					opacity: 1;
 				    visibility: visible;
 				   	transition: all .5s;
+				   	-webkit-transition: all .5s;
+   					-moz-transition: all .5s;
+   					-o-transition: all .5s;
 				   	-webkit-transition-delay: .15s; /* Safari */
+    				 -moz-transition-delay: .15s;
+   					 -o-transition-delay: .15s;
 	    			transition-delay: .15s;
 				    //-webkit-transform:translate3d(0,0,0);
 				}
 
 			}
 			&.active{
-				width:calc(~'100% - 384.149px');
+				width:calc(~'100% - 392.149px');
 				&:hover ~ li{
 					width:125px;
 				}
@@ -90,6 +98,9 @@
 			&.expand{
 				width:125px;
 				transition: width .56s;
+				-webkit-transition: width .56s;
+   				 -moz-transition: width .56s;
+   				 -o-transition: width .56s;
 				-webkit-transform:translate3d(0,0,0);
 				.fadein{
 					opacity: 0;
@@ -106,18 +117,18 @@
 				}*/
 			}
 			@media @tablet, @minilaptop{
-				width: calc(~'100%/4 - 2.3px');
+				width: calc(~'100%/4 - 3.8px');
 				.fadein{
 					display: none;
 				}
 				&:hover {
-					width: calc(~'100%/4 - 2.3px');
+					width: calc(~'100%/4 - 3.8px');
 					& ~ li{
-						width: calc(~'100%/4 - 2.3px');
+						width: calc(~'100%/4 - 3.8px');
 					}
 				}
 				&.active{
-					width: calc(~'100%/4 - 2.3px');
+					width: calc(~'100%/4 - 3.8px');
 					border-bottom: none; 
 					.fadein{
 						opacity: 0;
@@ -125,7 +136,7 @@
 					    width: 0;
 					}
 					&:hover ~ li{
-						width: calc(~'100%/4 - 2.3px');
+						width: calc(~'100%/4 - 3.8px');
 					}
 				}
 				img{
@@ -134,7 +145,7 @@
 				    transform: translateX(-50%);
 				}
 				&.expand{
-					width: calc(~'100%/4 - 2.3px');
+					width: calc(~'100%/4 - 3.8px');
 				}
 				border-bottom: 4px solid @white;
 			}

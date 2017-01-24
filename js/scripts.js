@@ -103,6 +103,14 @@
 			$('div.sector-overlay[data-sector="'+sectorName+'"]').hide();
 			$('.carousel-overlay').hide();
 		});
+		$('.sector-section-container').click(function(){
+			var sectionName = $(this).attr('data-name');
+			$('.sector-section-container').removeClass('section-active');
+			$(this).addClass('section-active');
+			$('.sector-container').removeClass('active-section');
+			$('.sector-container[data-name="'+sectionName+'"]').addClass('active-section');
+			console.log(sectionName);
+		});
 		$(".play").click(function(){
 			var video = $('.landing-hero').attr('data-video');
 		    player = new YT.Player('player', {

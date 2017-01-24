@@ -29,7 +29,8 @@
 							?>
 							<div class="three-col init">
 							<p class="title"><?php the_title();?></p>
-							<?php the_content();?>
+							<p class="excerpt"><?php echo get_the_excerpt();?></p>
+							<p><?php echo get_field('link');?></p>
 							<p class="time"> Timeline: </p>
 							<?php echo get_field('timeline');?>
 							<p class="tags">Tags: </p>
