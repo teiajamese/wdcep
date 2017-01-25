@@ -38,18 +38,18 @@
 					font-size: 1.4em;
 				}
 			}
-			.fadein{
+			/*.fadein{
 				opacity: 0;
 			    visibility: hidden;
 			    /* width: 0; */
 			    /* display: inline; */
-			    position: absolute;
+			/*    position: absolute;
 			    white-space: nowrap;
 			    top: 50%;
 			    transform: translateY(-50%);
 			    /* vertical-align: middle; */
 			    /* align-items: center; */
-			    left: 107px;
+			/*    left: 107px;
 			}
 			&:hover{ 
 				width:calc(~'100% - 392.149px');
@@ -76,7 +76,7 @@
    					-moz-transition: all .5s;
    					-o-transition: all .5s;
 				   	-webkit-transition-delay: .15s; /* Safari */
-    				 -moz-transition-delay: .15s;
+    		/*		 -moz-transition-delay: .15s;
    					 -o-transition-delay: .15s;
 	    			transition-delay: .15s;
 				    //-webkit-transform:translate3d(0,0,0);
@@ -115,8 +115,9 @@
 					    width: auto;
 					}
 				}*/
-			}
-			@media @tablet, @minilaptop{
+			//}
+
+			//@media @tablet, @minilaptop{
 				width: calc(~'100%/4 - 3.8px');
 				.fadein{
 					display: none;
@@ -155,13 +156,13 @@
 				}
 			}
 
-		}
+		//}
 		div.content{
 			padding: 40px;
 			display: none;
 			//padding-bottom: 20px;
 			&:nth-child(odd){
-				border: 2px solid @blue;
+				//border: 2px solid @blue;
 				border-top: none;
 				.info-header{
 					background: @blue;
@@ -169,7 +170,7 @@
 				}
 			}
 			&:nth-child(even){
-				border: 2px solid @red;
+				//border: 2px solid @red;
 				border-top: none;
 				.info-header{
 					background: @red;
@@ -183,13 +184,17 @@
 			}
 			&.open{
 				display: block;
-				margin-top: -11px;
+				margin-top: -18px;
 				background: @lightgray;
+				padding-top: 0;
+			    padding-left: 0;
+			    padding-right: 0;
 			}
 			.span-7{
 				width:67%;
 				display: inline-block;
 				vertical-align: top;
+				padding-left: 40px;
 				p{
 					margin-top: 0;
 					padding-right: 6%;
@@ -202,7 +207,7 @@
 			}
 
 			.info-header{
-				display: none;
+				//display: none;
 				padding: 18px 0px;
 				position: relative;
 				margin-bottom: 20px;
@@ -211,6 +216,7 @@
 					font-size: 2.6em;
 					width: 85%;
 	    			margin: 0 7.5%;
+	    			text-align: center;
 				}
 				img{
 					display: inline-block;

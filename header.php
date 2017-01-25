@@ -93,6 +93,7 @@
 							);
 						wp_nav_menu($args);?>
 					</nav>
+					<div class="newsletter"><a href="<?php get_template_directory_uri()?>/join">Join Our Newsletter</a></div>
 				</div>
 					<!-- logo 
 					<div class="logo">

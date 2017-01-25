@@ -105,6 +105,7 @@
 							'menu' => "custom-posts"
 							);
 						wp_nav_menu($args);?>
+						<div class="newsletter"><a href="<?php get_template_directory_uri()?>/join">Subscribe</a></div>
 				</nav>
 				<div class="mobile-menu">
 				  <div class="bar1"></div>

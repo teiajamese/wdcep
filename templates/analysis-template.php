@@ -20,7 +20,7 @@
 				<div class="wrapper">
 					<?php the_content(); ?>
 					<div class="carousel">
-					<div class="carousel-overlay"></div>
+					
 					
 					<?php // check if the repeater field has rows of data
 						if( have_rows('sector_repeater') ):
@@ -45,6 +45,7 @@
 				    while ( have_rows('sector_repeater') ) : the_row();
 				?>
 				<div class="sector-container <?php if(!$count){echo 'active-section';}?>" data-name="<?php the_sub_field("sector_anaylsis_section"); ?>">
+				<div class="carousel-overlay"></div>
 						<?php
 
 						// check if the repeater field has rows of data
