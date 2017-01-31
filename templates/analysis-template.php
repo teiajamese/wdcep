@@ -14,10 +14,11 @@
 				<div class="side-nav-container">
 					<div class="side-nav">
 						<?php echo do_shortcode('[wpb_childpages]')?>
+						<span class="more-side">More</span>
 					</div>
 				</div>
 			
-				<div class="wrapper">
+				<div class="wrapper entry-content-page">
 					<?php the_content(); ?>
 					<div class="carousel">
 					
@@ -45,7 +46,7 @@
 				    while ( have_rows('sector_repeater') ) : the_row();
 				?>
 				<div class="sector-container <?php if(!$count){echo 'active-section';}?>" data-name="<?php the_sub_field("sector_anaylsis_section"); ?>">
-				<div class="carousel-overlay"></div>
+				<!--<div class="carousel-overlay"></div>-->
 						<?php
 
 						// check if the repeater field has rows of data
@@ -55,23 +56,24 @@
 						    while ( have_rows('sectors') ) : the_row();
 						?>
 					
-							
-							<div class="form-container" data-sector="<?php the_sub_field("title"); ?>">
-								
-								<img src="<?php the_sub_field("image"); ?>">
-								<div class="form-overlay">
-									<h3><?php the_sub_field("title"); ?></h3>
+							<a href="<?php the_sub_field('link');?>">
+								<div class="form-container" data-sector="<?php the_sub_field("title"); ?>">
+									
+									<img src="<?php the_sub_field("image"); ?>">
+									<div class="form-overlay">
+										<h3><?php the_sub_field("title"); ?></h3>
+										
+									</div>
 									
 								</div>
-								
-							</div>
-							<div class="sector-overlay" data-sector="<?php the_sub_field("title"); ?>">
+							</a>
+							<!--<div class="sector-overlay" data-sector="<?php the_sub_field("title"); ?>">
 								<div class="sector-title">
 									<?php the_sub_field("title"); ?>
 									<p class="close" data-sector="<?php the_sub_field("title"); ?>">X</p>
 								</div>
 								<?php the_sub_field("description"); ?>
-							</div>
+							</div>-->
 
 							<?php endwhile; endif;?>
 							</div>
@@ -83,3 +85,4 @@
 		</section>
 	<?php endwhile; ?>
 </div>
+<?php get_footer(); ?>

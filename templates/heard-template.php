@@ -10,6 +10,7 @@
 		<div class="side-nav-container">
 			<div class="side-nav">
 				<?php echo do_shortcode('[wpb_childpages]')?>
+				<span class="more-side">More</span>
 			</div>
 		</div>
 		<div class="wrapper">
@@ -46,3 +47,4 @@
 </section>	
 <?php endwhile;
 ?>
+<?php get_footer(); ?>

@@ -29,7 +29,7 @@
 				<div class="head-wrapper wrapper">
 					<h2><?php echo get_field("headline_text");?></h2>
 					<h3><?php echo get_field("sub_headline_text");?></h3>
-
+					<button class="ui button"><a href="/dc-economic-strategy/">Learn More</a></button>
 				</div>
 				<?php if(get_field('video')):?>
 

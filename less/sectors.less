@@ -14,7 +14,7 @@ section{
 	  	border-top-left-radius: 7px;
 	  	border-top-right-radius: 7px;
 	  	p{
-	  		padding: 2% 4%;
+	  		padding: 31px 30px;
 	  	}
 	    .sector-title{
 	    	background: @purple;
@@ -44,24 +44,15 @@ section{
 	    right: 0;
 	    left: 0;
 	}
-	.init{
-		
-		p{
-			text-align: left;
-		}
-		.title{
-			color: @red;
-			text-transform: uppercase;
-			font-size: 20px;
-		}
-		.time{
-			font-weight: 500;
-		}
-	}
+	
 	.sector-section-container{
 		display: inline-block;
-		width:49.8%;
-		cursor: pointer;
+	    width: 50%;
+	    cursor: pointer;
+	    float: left;
+	    z-index: 29;
+	    position: relative;
+	    margin-bottom: 15px;
 		p.sector-section-title{
 			padding: 10px;
 			margin: 0px;
@@ -80,6 +71,17 @@ section{
 				color: @red;
 			}
 		}
+		@media only screen and (max-width: 1024px) {
+			width:50%;
+			p.sector-section-title{
+				font-size: 16px;
+			}
+		}
+		@media @mobile{
+			p.sector-section-title{
+				font-size: 13px;
+			}
+		}
 
 	}
 	.carousel{
@@ -93,6 +95,22 @@ section{
 				//border:1px solid @blue;
 				padding: 30px;
 				position: relative;
+			}
+			@media only screen and (max-width: 1024px) {
+				.form-container{
+					width: 49%;
+					.form-overlay{
+						h3{
+
+						    font-size: 1.4em;
+						}
+					}
+				}
+			}
+			@media only screen and (max-width:570px){
+				.form-container{
+					width: 100%;
+				}
 			}
 		}
 		
@@ -115,4 +133,7 @@ section{
 			font-size: 18px;
 		}
 	}
+}
+.ui.selection.dropdown .menu>.item{
+	font-size: .8em;
 }

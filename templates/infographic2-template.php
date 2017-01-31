@@ -7,6 +7,7 @@
 					<div class="side-nav-container">
 						<div class="side-nav">
 							<?php echo do_shortcode('[wpb_childpages]')?>
+							<span class="more-side">More</span>
 						</div>
 					</div>
 					
@@ -14,8 +15,9 @@
 				    // TO SHOW THE PAGE CONTENTS
 				    while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
 				        <div class="entry-content-page">
-				            <?php the_content(); ?> <!-- Page Content -->
-				            
+				            <div class="wrapper">
+								<div class="intro-copy"><?php the_content(); ?></div>
+				            </div>
 								<?php
 
 								// check if the repeater field has rows of data
@@ -68,7 +70,7 @@
 												
 													<li class="sector-list" data-name= "<?php the_sub_field('sector_title');?>" style="background: <?php the_sub_field('sector_color');?>">
 														<img src="<?php the_sub_field('sector_icon');?>">
-														<?php the_sub_field('sector_title');?>
+														<p><?php the_sub_field('sector_title');?></p>
 													</li>
 												
 											
@@ -87,7 +89,7 @@
 								endif;
 
 								?>
-
+								
 				        </div><!-- .entry-content-page -->
 
 				    <?php

@@ -29,6 +29,9 @@
 			&:nth-child(odd){
 				background: @red;
 			}
+			&.info-icon{
+				cursor: pointer;
+			}
 			h3{
 				color:@white;
 				display: inline;
@@ -217,6 +220,7 @@
 					width: 85%;
 	    			margin: 0 7.5%;
 	    			text-align: center;
+	    			word-break: break-word;
 				}
 				img{
 					display: inline-block;
@@ -239,6 +243,13 @@
 				.span-3, .span-7{
 					width: 85%;
 					margin: 0 7.5%;
+				}
+			}
+			@media @tablet{
+				.span-3, .span-7{
+					width: 100%;
+					margin: 0;
+					padding: 0px 21px;
 				}
 			}
 		}

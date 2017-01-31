@@ -28,7 +28,7 @@
 		
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/css/jquery.fullpage.css" />
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/slick/slick.css"/>
-
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css" />
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/slick/slick-theme.css"/>
 		<link href="<?php echo get_template_directory_uri();?>/lightbox2-master/dist/css/lightbox.css" rel="stylesheet">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

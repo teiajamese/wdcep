@@ -2,15 +2,17 @@
 <section>	
 	<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
 		<div class="wrapper">
-			<h1>
-				<?php $categories = get_the_category();
-				if ( ! empty( $categories ) ) {
-				    echo esc_html( $categories[0]->name );
-				    $catID= esc_html( $categories[0]->term_id);
-				  //  echo esc_url( get_category_link( $categories[0]->term_id ) ) ;
-				}?>
-			</h1>
-			<h2><?php the_title(); ?></h2>
+			<div class="row">
+				<h1>
+					<?php $categories = get_the_category();
+					if ( ! empty( $categories ) ) {
+					    echo esc_html( $categories[0]->name );
+					    $catID= esc_html( $categories[0]->term_id);
+					  //  echo esc_url( get_category_link( $categories[0]->term_id ) ) ;
+					}?>
+				</h1>
+			</div>
+			<div  class="row"><h2><?php the_title(); ?></h2></div>
 		</div>
 	</div>
 	
@@ -18,47 +20,11 @@
 			<div class="side-nav-container">
 				<div class="side-nav">
 					<?php 
-						$args= array('type'=> 'post');
-						echo '<ul><li><a href="http://dceconomicstrategy.com/economic-dashboard/">Overview</a></li>';
-						$categories = get_categories( $args );
-						foreach($categories as $cat ){
-							?>
-							<?php //if($catID == $cat->term_id): ?>
-							<li class="active-cat"> 
-								<a href="<?php echo get_category_link($cat->term_id)?>"><?php echo $cat->name; ?></a>
-								
-								<?php 
+						$args = array(
+							'menu' => "dashboard"
+							);
+						wp_nav_menu($args);?>
 
-									echo '<ul class="side-sub-nav">';
-									?>
-									
-									<?php
-									$query = new WP_Query( array( 'cat' => $cat->term_id) );
-									if ($query -> have_posts()): while($query -> have_posts() ): $query -> the_post();
-										?>
-										<li>
-											
-											<a href="<?php the_permalink()?>">	
-												<?php the_title();?>
-												<?php if(get_field('icon')):?>
-													<img src="<?php the_field('icon')?>"/>
-												<?php endif;?>
-											</a>
-											
-										</li>
-										<?php endwhile;
-										 wp_reset_query(); 
-									endif;
-									echo '</ul>';
-								?>
-
-							</li>
-							<!--<?php// else: ?>
-								<li><a href="<?php echo get_category_link($cat->term_id)?>"><?php echo $cat->name; ?></a></li>
-							<?php //endif;?>-->
-						<?php	}
-						echo '</ul>';
-					?>
 					<span class="more-side">More</span>
 				</div>
 			</div>

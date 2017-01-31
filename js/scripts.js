@@ -2,19 +2,32 @@
 
 	$(function () {
 		var stickyNavTop = $('#landing').outerHeight(true);
+	
 		var stickyNav = function(){
-			var scrollTop = $(window).scrollTop();  
+			var scrollTop = $(window).scrollTop();  	
 			if (scrollTop > stickyNavTop) { 
 			    $('.nav').addClass('sticky');
 			} else {
 			    $('.nav').removeClass('sticky'); 
 			}
 		};
-		
+		var sideNav = function(){
+			var scrollTop = $(window).scrollTop();  	
+			var scrollSideNav = 217;
+			if (scrollTop > scrollSideNav){
+				$('.side-nav > ul').addClass('stickyNav');
+				$('.initiatives .sector-overlay').addClass('stickyOverlay');
+			}
+			else{
+				$('.side-nav ul').removeClass('stickyNav');
+				$('.initiatives .sector-overlay').removeClass('stickyOverlay');
+			}
+		};
 		stickyNav();
-		 
+		sideNav();
 		$(window).scroll(function() {
 		  stickyNav();
+		  sideNav();
 		});
 		$('.mobile-menu').click(function(){
 			$(this).addClass('hidden');
@@ -100,7 +113,9 @@
 		});
 		$('p.close').click(function(){
 			var sectorName = $(this).attr('data-sector');
+			var sectionName = $(this).attr('data-name');
 			$('div.sector-overlay[data-sector="'+sectorName+'"]').hide();
+			$('.sector-overlay[data-name="'+sectionName+'"]').removeClass('active-section');
 			$('.carousel-overlay').hide();
 		});
 		$('.sector-section-container').click(function(){
@@ -110,6 +125,14 @@
 			$('.sector-container').removeClass('active-section');
 			$('.sector-container[data-name="'+sectionName+'"]').addClass('active-section');
 			console.log(sectionName);
+		});
+		$('.three-col .title').click(function(){
+			var sectionName = $(this).attr('data-name');
+			//$('.three-col .title').removeClass('section-active');
+			//$(this).addClass('section-active');
+			$('.sector-overlay').removeClass('active-section');
+			$('.sector-overlay[data-name="'+sectionName+'"]').addClass('active-section');
+			$('.carousel-overlay').show();
 		});
 		$(".play").click(function(){
 			var video = $('.landing-hero').attr('data-video');
@@ -153,6 +176,7 @@
 			    $('.logo').show();
 			}
 		}
+
 	
 		$('.acf-map').each(function(){
 
@@ -254,6 +278,7 @@
 		});
 
 	});
+
 })(jQuery, this);
 
 

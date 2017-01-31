@@ -585,6 +585,76 @@ function create_taxonomy_topic() {
 
 }
 add_action( 'init', 'create_taxonomy_topic' );
+
+//initiatives Custom Post Type 
+function create_post_type_core_sectors()
+{
+
+    register_post_type('coreSectors', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Core Sectors', 'wdcep'), // Rename these to suit
+            'singular_name' => __('Core Sectors', 'wdcep'),
+            'add_new' => __('Add New', 'wdcep'),
+            'add_new_item' => __('Add New Core Sector', 'wdcep'),
+            'edit' => __('Edit', 'wdcep'),
+            'edit_item' => __('Edit Core Sector', 'wdcep'),
+            'new_item' => __('New Core Sector', 'wdcep'),
+            'view' => __('View Core Sector', 'wdcep'),
+            'view_item' => __('View Core Sector', 'wdcep'),
+            'search_items' => __('Search Core Sector', 'wdcep'),
+            'not_found' => __('No Core Sector found', 'wdcep'),
+            'not_found_in_trash' => __('No Core Sector found in Trash', 'wdcep')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+
+    ));
+}
+add_action( 'init', 'create_post_type_core_sectors' );
+
+//initiatives Custom Post Type 
+function create_post_type_opportunity_areas()
+{
+
+    register_post_type('opportunityAreas', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Opportunity Areas', 'wdcep'), // Rename these to suit
+            'singular_name' => __('Opportunity Areas', 'wdcep'),
+            'add_new' => __('Add New', 'wdcep'),
+            'add_new_item' => __('Add New Opportunity Area', 'wdcep'),
+            'edit' => __('Edit', 'wdcep'),
+            'edit_item' => __('Edit Opportunity Area', 'wdcep'),
+            'new_item' => __('New Opportunity Area', 'wdcep'),
+            'view' => __('View Opportunity Arear', 'wdcep'),
+            'view_item' => __('View Opportunity Area', 'wdcep'),
+            'search_items' => __('Search Opportunity Areas', 'wdcep'),
+            'not_found' => __('No Opportunity Area found', 'wdcep'),
+            'not_found_in_trash' => __('No Opportunity Areas found in Trash', 'wdcep')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+
+    ));
+}
+add_action( 'init', 'create_post_type_opportunity_areas' );
 /*------------------------------------*\
 	ShortCode Functions
 \*------------------------------------*/

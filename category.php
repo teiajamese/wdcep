@@ -23,45 +23,11 @@
 		<div class="side-nav-container">
 			<div class="side-nav">
 				<?php 
-					$args= array('type'=> 'post');
-					echo '<ul>';
-					?>
+		$args = array(
+			'menu' => "dashboard"
+			);
+		wp_nav_menu($args);?>
 
-					<li><a href="http://dceconomicstrategy.com/economic-dashboard/">Overview</a></li>
-
-					<?php 
-					$categories = get_categories( $args );
-					foreach($categories as $cat ){
-						?>
-						<?php if($catID == $cat->term_id): ?>
-						<li class="active-cat"> 
-							<a href="<?php echo get_category_link($cat->term_id)?>"><?php echo $cat->name; ?></a>
-							
-							<?php 
-
-								echo '<ul class="side-sub-nav">';
-								$query = new WP_Query( array( 'cat' => $cat->term_id) );
-								if ($query -> have_posts()): while($query -> have_posts() ): $query -> the_post();
-									?>
-									<li>
-										
-										<a href="<?php the_permalink()?>">	<?php the_title();?></a>
-
-										
-									</li>
-									<?php endwhile;
-									 wp_reset_query(); 
-								endif;
-								echo '</ul>';
-							?>
-
-						</li>
-						<?php else: ?>
-							<li><a href="<?php echo get_category_link($cat->term_id)?>"><?php echo $cat->name; ?></a></li>
-						<?php endif;?>
-					<?php	}
-					echo '</ul>';
-				?>
 				<span class="more-side">More</span>
 			</div>
 		</div>

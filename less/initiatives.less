@@ -1,0 +1,87 @@
+.initiatives{
+	.content-container{
+		background: @lightgray;
+		.wrapper{
+			padding-bottom: 40px;
+			.init{
+				
+				p{
+					text-align: left;
+					font-family: @OpenSans_Regular;
+				}
+				.title{
+					color: @red;
+					text-transform: uppercase;
+					font-size: 18px;
+					font-family: @Geometos;
+					line-height: 1.3em;
+					margin-top:10px;
+					cursor: pointer;
+					&:hover{
+						color: @gray;
+					}
+				}
+				.time{
+					font-weight: 500;
+					font-size: 15px;
+				}
+			}
+			.three-col{
+				background: @white;
+				padding: 13px 20px;
+				border-radius: 4px;
+			}
+			
+		}
+		.sector-overlay{
+			position: fixed;
+    		top: 48%;
+    		transform:none;
+			&.active-section{
+				display: block;
+			}
+			&.stickyOverlay{
+				top:48%;
+			}
+			@media @tablet{
+				top: 30%;
+				&.stickyOverlay{
+					top:30%;
+				}
+			}
+		}
+		.grid{
+			position: relative;
+
+		}
+		.prompt{
+			font-size: 16px;
+			font-family: @OpenSans_Regular;
+			border-radius: .7em;
+		}
+		.search{
+			display: inline;
+		}
+		.ui.selection.dropdown, .ui.button{
+			font-size: 16px;
+			font-family: @OpenSans_Regular;
+			border-radius: .7em;
+		}
+		.filterMenu{
+			text-align: center;
+			margin-bottom: 10px;
+			.ui.selection.dropdown{
+				margin-bottom: 10px;
+			}
+		}
+		.ui.button{
+			&:hover{
+				background: @red;
+				color: @white;
+			}
+		}
+	}
+	.carousel-overlay{
+		position: fixed;
+	}
+}
