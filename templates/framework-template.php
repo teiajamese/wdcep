@@ -1,7 +1,7 @@
-<?php /* Template Name: Infographic 2 Page Template */ get_header('custom'); ?>
+<?php /* Template Name: Action framework Template */ get_header('custom'); ?>
   
 
-			<section>
+			<section class="framework">
 				<?php get_template_part('parts/hero'); ?>
 				<div class="content-container">
 					<div class="side-nav-container">
@@ -15,9 +15,10 @@
 				    // TO SHOW THE PAGE CONTENTS
 				    while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
 				        <div class="entry-content-page">
+				        	<div class="content section">
 				            <div class="wrapper">
-								<div class="intro-copy"><?php the_content(); ?></div>
-				            </div>
+				            	<?php the_content(); ?>
+								
 								<?php
 
 								// check if the repeater field has rows of data
@@ -27,16 +28,46 @@
 								    while ( have_rows('info2') ) : the_row();
 
 								       ?>
+								    <div class="intro-copy two-column"> 
+										<div class="section-desc">
+										   	<?php the_sub_field('section_description')?>
+										</div>
+									</div>
+										<?php 
+										// check if the repeater field has rows of data
+										if( have_rows('sectors_repeater') ):
+										?>
+									
+									<div class="two-column">
+									<ul class="sector-list">
+										<?php 
+										 	// loop through the rows of data
+										    while ( have_rows('sectors_repeater') ) : the_row();
+										?>
+										
+											<?php $colorsTogether = get_sub_field('sector_color'); 
+													$colors = explode(",",$colorsTogether);
+													$backgroundColor = $colors[0];
+													$hoverColor = $colors[1];
+													?>
+												<li class="sector-list" data-name= "<?php the_sub_field('sector_title');?>" style="background:<?php echo $backgroundColor;?>" data-hover-color="<?php echo $hoverColor;?>" data-background-color="<?php echo $backgroundColor;?>" >
+													<img src="<?php the_sub_field('sector_icon');?>">
+													<p><?php the_sub_field('sector_title');?></p>
+												</li>
+
+												
+											
+										
+										<?php endwhile; endif; ?> 
+										</ul>
+									</div>
+								</div>
+				            </div>
+								
 
 									<div class="content section" data-attr="<?php the_sub_field('section_name');?>">
 									<div class="wrapper">
-									    <div class="section-title">
-									    	<h3><?php the_sub_field('section_name');?></h3>
-									    </div>
-									   <div class="section-desc">
-									   		<?php the_sub_field('section_description')?>
-									   </div>
-									    <div class="two-column sector-full">
+									    <div class="sector-full">
 
 										<?php 
 										// check if the repeater field has rows of data
@@ -56,32 +87,6 @@
 											<?php 
 											endwhile;
 											endif;?>
-										</div>
-										<div class="two-column">
-											<ul class="sector-list">
-											<?php 
-											// check if the repeater field has rows of data
-											if( have_rows('sectors_repeater') ):
-
-											 	// loop through the rows of data
-											    while ( have_rows('sectors_repeater') ) : the_row();
-											?>
-											
-												<?php $colorsTogether = get_sub_field('sector_color'); 
-														$colors = explode(",",$colorsTogether);
-														$backgroundColor = $colors[0];
-														$hoverColor = $colors[1];
-														?>
-													<li class="sector-list" data-name= "<?php the_sub_field('sector_title');?>" style="background:<?php echo $backgroundColor;?>" data-hover-color="<?php echo $hoverColor;?>" data-background-color="<?php echo $backgroundColor;?>" >
-														<img src="<?php the_sub_field('sector_icon');?>">
-														<p><?php the_sub_field('sector_title');?></p>
-													</li>
-
-													
-												
-											
-											<?php endwhile; endif; ?> 
-											</ul>
 										</div>
 									</div>
 									</div>

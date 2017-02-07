@@ -12,7 +12,7 @@
 				<div class="carousel-overlay"></div>
 					<div class="side-nav-container">
 						<div class="side-nav">
-							<?php echo do_shortcode('[wpb_childpages]')?>
+							<?php wp_nav_menu( array( 'theme_location' => 'sidebar-menu' ) ); ?>
 							<span class="more-side">More</span>
 						</div>
 					</div>
@@ -31,7 +31,7 @@
 										<select class="filters">
 										
 										<option value=""><?php echo $term->name; ?></option>
-										<option value="*">All</option>
+										<option value="*">All <?php echo $term->name; ?></option>
 										<?php
 										$termchildren = get_terms( $taxonomy, array('child_of' => $termID));
 										foreach ($termchildren as $child) {
@@ -78,7 +78,8 @@
 							<?php 
 								$args = array(
 									'post_type' => 'initiatives',
-									'posts_per_page' => -1); 
+									'posts_per_page' => -1,
+									'order' => 'ASC'); 
 								$the_query = new WP_Query($args);
 								if($the_query->have_posts()){
 									
@@ -108,6 +109,7 @@
 						</div>
 					</div>
 				</div>
+				<div class="overlay"></div> 
 			</section>
 		<?php endwhile; ?>
 		<script type="text/javascript">$('.ui.dropdown')

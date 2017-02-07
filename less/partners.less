@@ -4,10 +4,11 @@
 
 		p{
 	    	line-height: 1.7;
-	    	text-align: center;
+	    	text-align: left;
 		}
 		ul{
 			padding-left: 0;
+			overflow: hidden;
 			@media @tablet,  @minilaptop{
 				padding-bottom: 0;
 				margin-bottom: 0;
@@ -17,17 +18,23 @@
 		li{
 			padding:19px;
 			list-style: none;
-			display: inline-block;
+			float: left;
 			height: 122px;
-			width:125px;
+			width:25%;
 	    	vertical-align: bottom;
 	    	position: relative;
 			&:nth-child(even){
-				background: @blue;
+				background: @red;
+				&:hover{
+					background: #d8585c;
+				}
 
 			}
 			&:nth-child(odd){
-				background: @red;
+				background: @blue;
+				&:hover{
+					background: #6ab8e3;
+				}
 			}
 			&.info-icon{
 				cursor: pointer;
@@ -121,36 +128,39 @@
 			//}
 
 			//@media @tablet, @minilaptop{
-				width: calc(~'100%/4 - 3.8px');
+
 				.fadein{
 					display: none;
 				}
-				&:hover {
-					width: calc(~'100%/4 - 3.8px');
-					& ~ li{
-						width: calc(~'100%/4 - 3.8px');
-					}
-				}
+
 				&.active{
-					width: calc(~'100%/4 - 3.8px');
+				
 					border-bottom: none; 
 					.fadein{
 						opacity: 0;
 					    visibility: hidden;
 					    width: 0;
 					}
-					&:hover ~ li{
-						width: calc(~'100%/4 - 3.8px');
+					&:nth-child(even){
+
+						&:hover{
+							background: @red;
+						}
+
 					}
+					&:nth-child(odd){
+						&:hover{
+							background: @blue;
+						}
+					}
+					
 				}
 				img{
 					position: absolute;
 				    left: 50%;
 				    transform: translateX(-50%);
 				}
-				&.expand{
-					width: calc(~'100%/4 - 3.8px');
-				}
+
 				border-bottom: 4px solid @white;
 			}
 			@media @mobile{

@@ -22,10 +22,13 @@ ol{
 font-size: 1.875em;
 }
 li{
-
+	padding-bottom: 5px;
 	.li1{
 		font-size: 1em;
 		font-family: @OpenSans_Light;
+	}
+	ul{
+		padding-top: 5px;
 	}
 }
 .content{
@@ -57,7 +60,10 @@ h3{
 	font-family: @Geometos;
 	line-height: 1.3em;
 	@media @largeDesktop{
-		font-size: 4.8em;
+		font-size: 4em;
+	}
+	@media @tablet{
+		font-size: 3.8em;
 	}
 	@media @mobile{
 		font-size: 2.3em;
@@ -67,7 +73,17 @@ section{
 	width:100%;
 	//min-height:100vh;
 	overflow: auto;
+	&.overlay{
+		.overlay{
+			background: rgba(0,0,0,0.8);
+			position: fixed;
+			top: 0;left: 0;
+			width: 100%;
+			height: 100%;
 
+		}
+		
+	}
 	@media @height{
 		min-height: 706px;
 	}
@@ -83,19 +99,31 @@ section{
 		@media @tablet{
 			height:170px;
 		}
+
 		.wrapper{
 			display: table;
 			height:100%;
 			width: 100%;
 			float: none;
-			margin-top: 78px;
+			margin-top: 79px;
+			padding: 0;
 			//padding: 25px 13px 0px;
+			.hero-content{
+				display: table-cell;
+    			vertical-align: middle;
+    			h1{
+    				display: block;
+    			}
+    			h2{
+    				display: block;
+    			}
+			}
 			.row{
 				display: table-row;
 			}
 			h1{
 				color: #fff;
-			    font-size: 5vw;
+			    font-size: 4.8em;
 			    text-align: center;
 			    vertical-align: middle;
 	    		display: table-cell;
@@ -104,10 +132,17 @@ section{
 	    		line-height: 1.04em;
     			padding: 0 32px;
 	    		@media @largeDesktop{
-	    			font-size: 7em;
+	    			font-size: 4.8em;
+	    		}
+	    		@media @minilaptop{
+	    			font-size: 4em;
 	    		}
 	    		@media @tablet{
 					color: #fff;
+					font-size: 2.9em;
+	    		}
+	    		@media @mobile{
+	    			font-size: 2em;
 	    		}
 			}
 			@media @tablet{
@@ -117,8 +152,18 @@ section{
 				display: table-cell;
 				margin:0;
 				color: @blue;
-				font-size: 3.8em;
+				font-size: 3em;
 				font-family: @Geometos;
+				padding:0px 15px;
+				@media @minilaptop{
+					font-size: 2.5em;
+				}
+				@media @tablet{
+					font-size: 2.5em;
+				}
+				@media @mobile{
+					font-size: 1.8em;
+				}
 			}
 
 		}
@@ -130,14 +175,15 @@ section{
 		width:95%;
 
 		h3{
-	    	font-size: 4.8em;
+	    	font-size: 4.4em;
+    		line-height: 1.2em;
     		text-transform: uppercase;
     		color: @blue;
     		margin-top: 0;
     		margin-bottom: .42em;
     		font-family: @Geometos;
     		@media @largeDesktop{
-    			font-size: 4.8em;
+    			
     		}
     		@media @mobile{
     			font-size: 2.3em;
@@ -145,7 +191,7 @@ section{
 	    }
 	}
 	.content-container{
-		min-height: calc(~'100vh - 482px');
+		min-height: calc(~'100vh - 356px');
 		.wrapper{
 			padding: 3em 6.5em 0em;
 			p{
@@ -169,12 +215,23 @@ section{
 		}
 		.entry-content-page{
 			padding-bottom: 40px;
-			overflow: auto;
+			overflow-x: hidden;
 			font-family: @OpenSans_Regular;
+			p{
+				 word-wrap: break-word;
+			}
+			a{
+				color: @blue;
+				text-decoration: underline;
+				&.back{
+					text-decoration: none;
+					color: #555;
+				}
+			}
 
 		}
 	}
-	.side-nav{
+.side-nav{
 		width:374px;
 		height:100%;
 		background-color:#555;
@@ -324,6 +381,183 @@ section{
 			
 		}
 	}
+
+	/**************
+	.side-nav{
+		width:374px;
+		//height:100%;
+		background-color:#555;
+		float: left;
+		padding: 0 31px;
+		//transition:.4s;
+		ul{
+			list-style: none;
+		    margin-top: 4.4em;
+		    padding: 0;
+		    top: 71px;
+		    position: relative;
+		    /* width: 75vw; */
+		    //visibility: hidden;
+		    //opacity: 0;
+	/***	    overflow: scroll;
+		    height: 100%;
+		    @media @tablet{
+		    	top: 0px;
+		    }
+			&.stickyNav{
+				position: fixed;
+				top:148px;
+				width: 374px;
+			}
+			
+			li{
+				text-align: right;
+				padding: 20px 31px;
+
+				&.current-menu-item{
+					background: #444;
+				}
+				&.current-menu-parent{
+					background: #444;
+					ul.sub-menu{
+						display: block;
+						li{
+							&:hover{
+								a{
+									color: @blue;
+								}
+							}
+							&.current-menu-item{
+								a{
+									color: @blue;
+								}
+							}
+						} 
+					}
+				}
+
+				&:hover{
+					background: #444;
+				}
+				//margin-right: 7%;
+				.side-sub-nav{
+					//display: none;
+				}
+				ul{
+					&.sub-menu{
+						margin-top:0;
+						overflow: auto;
+						bottom:auto;
+						display: none;
+						top:0;
+						padding-right: 38px;
+						font-size: 9px;
+						li{
+							padding: 15px 0px;
+							border-bottom: 1px solid @white;
+							a{
+								img{
+									max-width: 50px;
+									display: inline-block;
+		    						//vertical-align: top;
+								}
+								span{
+									//width: 70%;
+			    					display: inline-block;
+								}
+							}
+							&:last-child{
+								border: none;
+							}
+						}
+					}
+				}
+				a{
+					color: @white;
+					font-size: 1.4em;
+					font-family: @Geometos;
+					text-transform: uppercase;
+					line-height: 1.2em;
+					padding-right: 13px;
+				}
+			}
+		}
+		&.open{
+			width:27vw;
+			//padding: 0 31px;
+			transition:.4s;
+
+			ul{
+				visibility: visible;
+				opacity: 1;
+				transition: .2s;
+				transition-delay: .2s;
+				li{
+					text-align: right;
+				    padding-bottom: 12px;
+				    border-bottom: 1px solid @gray;
+				    padding-top: 20px;
+				    visibility: visible;
+				    &.active-cat{
+				    	a{
+				    		color: @blue;
+				    	}
+				    	.side-sub-nav{
+				    		margin-top: 0;
+				    		display: block;
+				    		li{
+				    			padding:6px 0px 0px;
+							    margin-right: 0;
+							    border: none;
+							    a{
+							    	color: @white;
+							    	font-size: 1.3em;
+							    }
+				    		}
+				    	}
+				    }
+				}
+			}
+			.more-side{
+				left:95.8%;
+				@media @mobile{
+					left:83.8%;
+				}
+			}
+			
+		}
+		@media @laptop{
+			width: 275px;
+			ul.stickyNav{
+				width: 275px;
+			}
+		}
+
+		@media @tablet{
+		    width: 7px;
+		    padding:0;
+		    bottom: 0;
+		    position: fixed;
+
+		    //top: 0px;
+		    /* left: 2%; */
+		/**    z-index: 2;
+		    ul.stickyNav{
+		    	position: relative;
+		    	width:auto;
+		    	top:0;
+		    }
+		    ul{
+		    	li{
+					visibility: hidden;
+					padding: 16px 9px;
+				}
+		    }
+			
+		}
+	} *******/
+
+	
 	.side-nav-container{
 		
 		@media @tablet{
@@ -423,7 +657,7 @@ h1.title{
 	padding-bottom: 40px;
 	overflow: auto;
 	font-family: @OpenSans_Regular;
-
+	width:100%;
 	ul,ol{
 		font-size: 16px;
 	}
@@ -524,7 +758,7 @@ position: fixed;
 	float: left;
 	padding-top: 15px;
 	p{
-		padding-right: 56px;
+		padding-right: 20px;
 	}
 	@media @tablet{
 		width: 100%;

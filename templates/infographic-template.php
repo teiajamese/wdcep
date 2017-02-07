@@ -6,7 +6,7 @@
 				<div class="content-container">
 					<div class="side-nav-container">
 						<div class="side-nav">
-							<?php echo do_shortcode('[wpb_childpages]')?>
+							<?php wp_nav_menu( array( 'theme_location' => 'sidebar-menu' ) ); ?>
 							<span class="more-side">More</span>
 						</div>
 					</div>
@@ -87,6 +87,7 @@
 				    ?>
 				    </div>
 				</div>
+				<div class="overlay"></div>
 			</section>
 
 <?php get_footer(); ?>

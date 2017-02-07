@@ -32,11 +32,12 @@ get_header('custom'); ?>
 			</div>
 		</div>
 		<div class="wrapper entry-content-page">
-		<a href="/the-strategy/sector-analysis/" class="back"><i class="arrow left icon"></i> Back to Sector Analysis</a>
+		<a href="/the-strategy/sector-analysis/" class="back"><i class="arrow left icon"></i> Back to Sectors</a>
 		<h2><?php the_title()?></h2>
 		<?php the_content()?>
 		</div>
 	</div>
+	<div class="overlay"></div>
 </section>
 
 <?php get_footer(); ?>

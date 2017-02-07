@@ -34,11 +34,12 @@
 			
 		}
 		.sector-overlay{
-			position: fixed;
-    		top: 48%;
-    		transform:none;
+			/*Must be important to work with isotope*/
+			position: fixed !important;
+    		top: 48% !important;
+    		transform:none !important;
 			&.active-section{
-				display: block;
+				display: block !important;
 			}
 			&.stickyOverlay{
 				top:48%;

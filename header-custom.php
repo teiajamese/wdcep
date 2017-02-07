@@ -36,11 +36,11 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV2Udu3PiIjH-mkg98Iid-DwOh4KollJY"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/components/dropdown.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/components/dropdown.min.js"></script>
 		<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 		<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/isotope.js"></script>
-		<meta property="og:title" content="<?php echo get_the_ID(); ?>"/>
+		<meta property="og:title" content="<?php echo the_title(); ?>"/>
    
 
 		<?php wp_head(); ?>
@@ -110,7 +110,7 @@
 							'menu' => "custom-posts"
 							);
 						wp_nav_menu($args);?>
-						<div class="newsletter"><a href="<?php get_template_directory_uri()?>/join">Subscribe</a></div>
+					<!--	<div class="newsletter"><a href="<?php get_template_directory_uri()?>/join">Subscribe/Download the Strategy</a></div>-->
 				</nav>
 				<div class="mobile-menu">
 				  <div class="bar1"></div>

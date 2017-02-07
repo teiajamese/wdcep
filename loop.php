@@ -2,7 +2,7 @@
 <section>	
 	<div class="hero" style="background-image:url(<?php echo get_field('hero_image')?>);">
 		<div class="wrapper">
-			<div class="row">
+			<div class="hero-content">
 				<h1>
 					<?php $categories = get_the_category();
 					if ( ! empty( $categories ) ) {
@@ -11,14 +11,14 @@
 					  //  echo esc_url( get_category_link( $categories[0]->term_id ) ) ;
 					}?>
 				</h1>
-			</div>
-			<div  class="row"><h2><?php the_title(); ?></h2></div>
+			<h2><?php the_title(); ?></h2></div>
 		</div>
 	</div>
 	
 		<div class="content-container">
 			<div class="side-nav-container">
 				<div class="side-nav">
+					<p>close</p>
 					<?php 
 						$args = array(
 							'menu' => "dashboard"
@@ -64,48 +64,21 @@
 				 <div class="charts-container">
 
 				 	<div class="space">
-				 	<?php echo get_field('tableau'); ?>
-			        	<?php
-
+				 	<?php 
 						// check if the repeater field has rows of data
-						if( have_rows('charts_repeater') ):
+						if( have_rows('tableau_repeater') ):
 
 						 	// loop through the rows of data
-						    while ( have_rows('charts_repeater')) : the_row();
-							$rows = get_field('charts_repeater');
-							$row_count = count($rows);
-							if($row_count > 1):
-								?>
-
-								<div class="charts-half">
-									<p class="title"> <?php echo get_sub_field('chart_title');?></p>
-									<div class="chart"><?php echo do_shortcode(get_sub_field('chart_shortcode'));?></div>
-								</div>
-							<?php else:  ?>
-
-						        <div class="charts-full">
-									<p class="title"> <?php echo get_sub_field('chart_title');?></p>
-									<div class="chart"><?php echo do_shortcode(get_sub_field('chart_shortcode'));?></div>
-								</div>
-						   <?php 
-						   endif;
-						   
-						   endwhile;
-
-						else :
-
-						    // no rows found
-
-						endif;
-
-					?>
-
+						    while ( have_rows('tableau_repeater') ) : the_row();
+							?>
+				 	<?php echo get_sub_field('tableau'); ?>
+			        	<?php endwhile; endif;?>
 					</div>
 				</div>
 			</div>
 			<!-- /article -->
 		</div>
-	
+	<div class="overlay"></div>
 </section>
 <?php endwhile; ?>
 

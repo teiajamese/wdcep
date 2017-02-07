@@ -1,6 +1,8 @@
 (function ($, root, undefined) {
 
 	$(function () {
+
+		/** Navigation **/
 		var stickyNavTop = $('#landing').outerHeight(true);
 	
 		var stickyNav = function(){
@@ -15,11 +17,11 @@
 			var scrollTop = $(window).scrollTop();  	
 			var scrollSideNav = 217;
 			if (scrollTop > scrollSideNav){
-				$('.side-nav > ul').addClass('stickyNav');
+				//$('.side-nav > ul').addClass('stickyNav');
 				$('.initiatives .sector-overlay').addClass('stickyOverlay');
 			}
 			else{
-				$('.side-nav ul').removeClass('stickyNav');
+				//$('.side-nav ul').removeClass('stickyNav');
 				$('.initiatives .sector-overlay').removeClass('stickyOverlay');
 			}
 		};
@@ -29,6 +31,8 @@
 		  stickyNav();
 		  sideNav();
 		});
+
+		/** Mobile Navigation **/
 		$('.mobile-menu').click(function(){
 			$(this).addClass('hidden');
 			//$(this).hide();
@@ -46,6 +50,7 @@
 			$('.mobile-menu-container').hide();
 		});
 
+		/*What we've heard Toggling **/
 		$(".title").click(function(){
         	$(this).next(".title-desc").slideToggle();
         	$(this).toggleClass('active');
@@ -68,6 +73,8 @@
 		      //  $('#'+id).parent().find('.all').removeClass('active');
 			}
 		});*/
+
+		/**Infographic **/
 		$("li.info-icon").click(function(){
 			$("li.info-icon").removeClass('active');
 			$(this).toggleClass('active');
@@ -81,6 +88,8 @@
 		});
 		$("div.content").first().addClass('open');
 		$('li.info-icon').first().addClass('active');
+
+
 		$(".image-gallery").slick({
 			arrows: true,
 			dots: true,
@@ -133,6 +142,14 @@
 			$('.sector-overlay').removeClass('active-section');
 			$('.sector-overlay[data-name="'+sectionName+'"]').addClass('active-section');
 			$('.carousel-overlay').show();
+		});
+		$('.sector-list').hover(function(){
+			var hoverColor = $(this).attr('data-hover-color');
+			$(this).css("background",hoverColor);
+		},
+		function(){
+			var backgroundColor = $(this).attr('data-background-color');
+			$(this).css("background",backgroundColor);
 		});
 		$(".play").click(function(){
 			var video = $('.landing-hero').attr('data-video');
@@ -188,6 +205,7 @@
 		$('.more-side').on('click', function(){
 			$('.side-nav').toggleClass('open');
 			$('.side-nav-container').toggleClass('open');
+			//$('section').toggleClass('overlay');
 		});
 /*
 
